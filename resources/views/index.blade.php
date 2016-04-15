@@ -21,38 +21,13 @@
 				<div role="button" class="fotorama_custom__arr fotorama_custom__arr--next"></div>
 			</div>
 		</div>
-		<div class="filter">
-			<div class="wrapper">
-				<h4>Поиск недвижимости</h4>
-				<form action="" method="post" id="filter-form">
-					<div class="select-wrapper"> 
-						<select class="drop-list" name="status">
-							<option disabled selected>Выберите статус</option>
-							<option>Завершено</option>
-							<option>В процессе</option>
-						</select>
-						<div class="select-arrow"></div>
-					</div>
-					<div class="select-wrapper">
-						<select class="drop-list" name="city">
-							<option disabled selected>Выберите город</option>
-							<option>Москва</option>
-							<option>Воронеж</option>
-							<option>Ростов на Дону</option>
-						</select>
-						<div class="select-arrow"></div>
-					</div>
-					<button>Поиск</button>
-				</form>
-				<a href="" class="online-sale">Онлайн продажа</a>
-			</div>
-		</div>
+		@include('includes/simple_search')
 		<div class="wrapper">
 			<div class="section-title">
 				<h2>Предложения</h2>
 				<div class="line"></div>
 			</div>
-				@include('includes/last_projects')
+			@include('includes/last_projects')
 			<div class="section-title">
 				<h2>В центре внимания</h2>
 				<div class="line"></div>

@@ -7,6 +7,7 @@ use Request;
 use App\Http\Requests;
 use App\Project;
 use App\Category;
+use DB;
 
 class MainController extends Controller
 {
@@ -33,13 +34,31 @@ class MainController extends Controller
         return view('projects', compact('projects'));
 	}
 
+	// public function simple_search()
+	// {
+	// 	$search = Request::get('search');
+	// 	$projects = Project::where('title', '=', $search)->paginate(6);
+	// 	return view('offers', compact('projects'));
+	// }
+
 	public function search()
 	{
-		$search = Request::get('search');
-		$result = Project::where('title','like','%'.$search.'%')
-        ->orderBy('title')
-        ->paginate(20);
+		$projects = Project::orderBy('created_at');
 
-        return view('index', compact('result'));
+		if (Request::has('status'))
+		{
+			$projects->where('category_id', Request::get('status'));
+		}
+
+		if (Request::has('city'))
+		{
+			$projects->where('location', Request::get('city'));
+		}
+
+		$projects = $projects->paginate(6);
+
+		$projects->appends(Request::except('page'));
+
+        return view('offers', compact('projects'));
 	}
 }
