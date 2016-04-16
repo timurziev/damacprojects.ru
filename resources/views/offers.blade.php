@@ -6,8 +6,8 @@
 				<h2>{{ Request::is('offers') ? 'Предложения и акции' : 'Проекты' }}</h2>
 			</div>
 		</div>
-		@if (Request::is('search')) 
-			 @include('includes/simple_search') 
+		@if (Request::is('search_pro')) 
+			 @include('includes/search') 
 		@endif
 		<div class="wrapper">
 			<div class="single-page offers">

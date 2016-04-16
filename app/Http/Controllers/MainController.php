@@ -34,12 +34,12 @@ class MainController extends Controller
         return view('projects', compact('projects'));
 	}
 
-	// public function simple_search()
-	// {
-	// 	$search = Request::get('search');
-	// 	$projects = Project::where('title', '=', $search)->paginate(6);
-	// 	return view('offers', compact('projects'));
-	// }
+	public function simple_search()
+	{
+		$projects = Project::where('title', 'like', '%'.Request::get('search').'%')->paginate(6);
+		
+		return view('offers', compact('projects'));
+	}
 
 	public function search()
 	{

@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/message', function () { return view('message'); });
     Route::get('/offers', 'MainController@offers');
     Route::get('/projects', 'MainController@projects');
-    Route::get('/search', 'MainController@search');
-    // Route::get('/search', 'MainController@simple_search');
+    Route::get('/search_pro', 'MainController@search');
+    Route::get('/search', 'MainController@simple_search');
     Route::get('/team', function () { return view('team'); });
 });

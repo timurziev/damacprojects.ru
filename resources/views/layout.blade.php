@@ -24,7 +24,7 @@
 	</header>
 	<div class="menu">
 		<div class="wrapper">
-			<form action="" method="get" id="search-form">
+			<form action="{{ action('MainController@simple_search') }}" method="get" id="search-form">
 				<input autofocus name="search"></input>
 			</form>
 			<ul>

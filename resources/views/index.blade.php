@@ -21,7 +21,7 @@
 				<div role="button" class="fotorama_custom__arr fotorama_custom__arr--next"></div>
 			</div>
 		</div>
-		@include('includes/simple_search')
+		@include('includes/search')
 		<div class="wrapper">
 			<div class="section-title">
 				<h2>Предложения</h2>
@@ -35,36 +35,6 @@
 			<div class="cards">
 				@include('includes/main_projects')
 			</div>
-			<!-- <div class="cards">
-				<div class="cards-small">
-					<img src="upload/spotlight1.jpg">
-					<h3>Luxury ready to move in apartments</h3>
-					<p class="spotlight-preview">With its direct access to Dubai’s business district and close proximity to the prestigious platinum square kilometre of the Burj area.</p>
-					<div class="location">Moscow, Russia</div>
-					<a class="readmore" href="">Подробнее</a>
-				</div>
-				<div class="cards-big">
-					<img src="upload/spotlight2.jpg">
-					<h3>Luxury ready to move in apartments</h3>
-					<p class="spotlight-preview">Viridis Residences & Hotel Apartments at AKOYA Oxygen form a luxury hotel and residential complex located in one of the most anticipated master developments in the UAE. Nestled in lush parkland, the four towers, two residential and two comprising hotel apartments, managed by NAIA Hotels & Resorts.</p>
-					<div class="location">Moscow, Russia</div>
-					<a class="readmore" href="">Подробнее</a>
-				</div>
-				<div class="cards-big">
-					<img src="upload/spotlight3.jpg">
-					<h3>Luxury ready to move in apartments</h3>
-					<p class="spotlight-preview">Viridis Residences & Hotel Apartments at AKOYA Oxygen form a luxury hotel and residential complex located in one of the most anticipated master developments in the UAE. Nestled in lush parkland, the four towers, two residential and two comprising hotel apartments, managed by NAIA Hotels & Resorts.</p>
-					<div class="location">Moscow, Russia</div>
-					<a class="readmore" href="">Подробнее</a>
-				</div>
-				<div class="cards-small">
-					<img src="upload/spotlight4.jpg">
-					<h3>Luxury ready to move in apartments</h3>
-					<p class="spotlight-preview">With its direct access to Dubai’s business district and close proximity to the prestigious platinum square kilometre of the Burj area.</p>
-					<div class="location">Moscow, Russia</div>
-					<a class="readmore" href="">Подробнее</a>
-				</div>
-			</div> -->
 			<div class="partners">
 				<img src="img/banner.jpg">
 				<img src="img/banner.jpg">
