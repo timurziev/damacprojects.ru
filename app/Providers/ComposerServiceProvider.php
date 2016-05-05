@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Request::is('/', 'about'))
+        if (Request::is('/', 'about', 'admin' ))
         {
             view()->composer('includes/last_projects', function ($view) {
                 $view->with('projects', Project::take(3)->orderBy('created_at', 'desc')->get());

@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->string('location');
+            $table->string('location_id');
             $table->text('text');
             $table->string('image')->nullable();
             $table->string('media')->nullable();

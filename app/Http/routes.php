@@ -25,4 +25,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/search_pro', 'MainController@search');
     Route::get('/search', 'MainController@simple_search');
     Route::get('/team', function () { return view('team'); });
+    Route::get('/logged', 'UsersController@login');
+    Route::auth();
 });
+
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::auth();
+// });
+
+
+

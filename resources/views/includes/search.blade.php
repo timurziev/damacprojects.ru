@@ -5,17 +5,21 @@
 			<div class="select-wrapper"> 
 				<select class="drop-list" name="status">
 					<option disabled selected>Выберите статус</option>
-					<option value="1">Завершено</option>
-					<option value="2">В процессе</option>
+					<option value="1" {{ 1 == Request::input('status') ? 'selected' : '' }}>Завершено</option>
+					<option value="2" {{ 2 == Request::input('status') ? 'selected' : '' }}>В процессе</option>
 				</select>
 				<div class="select-arrow"></div>
 			</div>
 			<div class="select-wrapper">
 				<select class="drop-list" name="city">
-					<option disabled selected>Выберите город</option>
-					<option>{{ Request::is('city') ? 'selected' : '' }}Москва</option>
-					<option>Воронеж</option>
-					<option>Ростов на Дону</option>
+					<option disabled selected>Выберите город</option>	
+					@foreach ($locations as $location)
+						<option value="{{ $location->id }}"
+						@if ($location->id == Request::input('city') )
+							selected
+						@endif
+							>{!! $location->name !!}</option>
+					@endforeach	
 				</select>
 				<div class="select-arrow"></div>
 			</div>
