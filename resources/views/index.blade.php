@@ -3,13 +3,13 @@
 	<div class="content-home">
 		<div class="slider">
 			<div data-nav="false" data-autoplay="true" data-arrows="false" data-click="false" data-fit="cover" data-width="100%" data-height="100%" class="fotorama">
-				<div data-img="upload/1.jpg" class="slider-item">
+				<div data-img="uploads/1.jpg" class="slider-item">
 					<div class="wrapper">
 						<h2>Элитная недвижимость в центре Москвы</h2>
 						<a class="readmore" href="">Подробнее</a>
 					</div> 
 				</div>
-				<div data-img="upload/2.jpg" class="slider-item">
+				<div data-img="uploads/2.jpg" class="slider-item">
 					<div class="wrapper">
 						<h2>Крутая недвижимость в не центре Москвы</h2>
 						<a class="readmore" href="">Подробнее</a>

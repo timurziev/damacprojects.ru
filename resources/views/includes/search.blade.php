@@ -18,7 +18,11 @@
 						@if ($location->id == Request::input('city') )
 							selected
 						@endif
+
+							>{{ $location->name }}</option>
+
 							>{!! $location->name !!}</option>
+
 					@endforeach	
 				</select>
 				<div class="select-arrow"></div>

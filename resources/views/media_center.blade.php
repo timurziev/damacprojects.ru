@@ -1,7 +1,7 @@
 @extends ('layout')
 @section('content')
 <div class="content">
-		<div class="title-banner" style="background-image: url(img/media_center.jpg);">
+		<div class="title-banner" style="background-image: url({{ Request::root() }}/img/media_center.jpg);">
 			<div class="wrapper">
 				<h2>Медиа центр</h2>
 			</div>
@@ -45,82 +45,25 @@
 					</div>
 				</div>
 				<div class="left-col">
-					<div class="lid">Добро пожаловать в пресс-центр DAMAC Properties. Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</div>
-					<div class="section-title">
-						<h2>Пресс-релизы</h2>
-						<div class="line"></div>
-					</div>
-					<div class="media-center press">
-						<div class="list-item">
-							<a href="">
-								<img src="upload/media/press1.jpg" alt="">
-							</a>
-							<div class="item-wrapper">
-								<a class="title-item" href="">DAMAC Properties открывает "AYKON Сити"</a>
-								<div class="date">1 марта 2016</div>
-								<p>Председатель DAMAC Properties Хуссейн Сайвани объявляет о запуске в Дубаи одного из крупнейших дубайских проектов недвижимости на дороге Шейх Заед с видом на Дубай канал.</p>
-								<a class="look black" href="">Подробнее</a>
-							</div>
-						</div>
-						<div class="list-item">
-							<a href="">
-								<img src="upload/media/press2.jpg" alt="">
-							</a>
-							<div class="item-wrapper">
-								<a class="title-item" href="">DAMAC Properties открывает "AYKON Сити"</a>
-								<div class="date">1 марта 2016</div>
-								<p>Председатель DAMAC Properties Хуссейн Сайвани объявляет о запуске в Дубаи одного из крупнейших дубайских проектов недвижимости на дороге Шейх Заед с видом на Дубай канал.</p>
-								<a class="look black" href="">Подробнее</a>
-							</div>
-						</div>
-						<div class="list-item">
-							<a href="">
-								<img src="upload/media/press3.jpg" alt="">
-							</a>
-							<div class="item-wrapper">
-								<a class="title-item" href="">DAMAC Properties открывает "AYKON Сити"</a>
-								<div class="date">1 марта 2016</div>
-								<p>Председатель DAMAC Properties Хуссейн Сайвани объявляет о запуске в Дубаи одного из крупнейших дубайских проектов недвижимости на дороге Шейх Заед с видом на Дубай канал.</p>
-								<a class="look black" href="">Подробнее</a>
-							</div>
-						</div>
-					</div>
-					<div class="show-all">
-						<a href="">Показать все</a>
-						<div class="white-square"></div>
-						<div class="line"></div>
-					</div>
-					<div class="section-title">
-						<h2>Новости индустрии</h2>
-						<div class="line"></div>
-					</div>
-					<div class="media-center news-ind">
-						<div class="list-item">
-							<a href="">
-								<img src="upload/media/press2.jpg" alt="">
-							</a>
-							<div class="item-wrapper">
-								<a class="title-item" href="">Почему вы должны купить недвижимость в Дубае сейчас?</a>
-								<div class="date">2 марта 2016</div>
-								<a class="readmore black" href="">Подробнее</a>
-							</div>
-						</div>
-						<div class="list-item">
-							<a href="">
-								<img src="upload/media/press3.jpg" alt="">
-							</a>
-							<div class="item-wrapper">
-								<a class="title-item" href="">DAMAC Properties открывает "AYKON Сити"</a>
-								<div class="date">1 марта 2016</div>
-								<a class="readmore black" href="">Подробнее</a>
-							</div>
-						</div>
-						<div class="show-all">
-							<a href="">Показать все</a>
-							<div class="white-square"></div>
-							<div class="line"></div>
-						</div>
-					</div>
+				    @if(Request::is('media_center'))
+						<div class="lid">Добро пожаловать в пресс-центр DAMAC Properties. Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</div>
+					@endif
+
+					@if(Request::is('release/*'))
+			 			@include('includes/view_release')
+			 		@endif
+
+			 		@if(Request::is('new/*'))
+			 			@include('includes/view_new')
+			 		@endif
+					
+					@if(Request::is('media_center') || (Request::is('press_releases')))
+			 			@include('includes/releases')
+			 		@endif
+			 		
+			 		@if(Request::is('media_center') || (Request::is('news')))
+			 			@include('includes/news')
+					@endif
 				</div>
 			</div>
 		</div>

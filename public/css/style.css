@@ -111,11 +111,11 @@ header .phone {
 	padding-top: 10px;
 }
 
-.menu.menu-fixed ul {
+.menu.menu-fixed .wrapper>ul {
 	margin-left: 180px;
 }
 
-.menu.menu-fixed ul:before {
+.menu.menu-fixed .wrapper>ul:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -128,7 +128,7 @@ header .phone {
     background-repeat: no-repeat;
 }
 
-.menu.menu-fixed ul li {
+.menu.menu-fixed .wrapper>ul>li {
 	margin-left: 25px;
 }
 
@@ -161,18 +161,18 @@ header .phone {
 	height: 20px;
 }
 
-.menu ul {
+.menu .wrapper>ul {
 	margin: 0;
 	padding: 10px 0 0 0;
 	text-align: justify;
 	display: inline-block;
 }
 
-.menu ul li:first-child {
+.menu .wrapper>ul>li:first-child {
 	margin-left: 0;
 }
 
-.menu ul li{
+.menu .wrapper>ul>li{
 	display: inline-block;
 	color: #fff; 
 	margin-left: 40px;
@@ -182,12 +182,12 @@ header .phone {
 
 }
 
-.menu ul li:hover, .menu ul li.active {
+.menu .wrapper>ul>li:hover, .menu ul li.active {
 	border-bottom: 4px solid #fff;
 	height: 35px;
 }
 
-.menu ul li a {
+.menu .wrapper>ul>li a {
 	height: 39px;
 	display: block;
 	color: #fff;
@@ -200,6 +200,71 @@ header .phone {
     top: 104px;
     z-index: 999;
     width: 100%;
+}
+
+.menu .wrapper>ul>li .submenu {
+	display: none;
+	position: absolute;
+	left: 0;
+	border-top: 2px solid #fff;
+	background: #262626;
+	padding: 40px;
+}
+
+.submenu ul {
+	margin: 0;
+	padding: 0;
+	width: 250px;
+	float: left;
+}
+
+.submenu ul li {
+	list-style: none;
+}
+
+.menu .wrapper .submenu ul li a {
+	height: 20px;
+	margin-bottom: 10px;
+	display: inline-block;
+	border-bottom: 2px solid #262626;
+}
+
+.menu .wrapper .submenu ul li:hover a {
+	border-bottom: 2px solid #fff;
+}
+
+.submenu .menu-desc {
+	padding-left: 250px;
+	padding-right: 300px;
+	overflow: hidden;
+	border-left: 2px solid #fff;
+	padding-left: 50px;
+}
+
+.submenu .menu-desc .look {
+	float: left;
+}
+
+.submenu .menu-desc h4 {
+	margin-top: 0;
+}
+
+.submenu .menu-desc p {
+	text-transform: none;
+	font-weight: normal;
+}
+
+.submenu .menu-desc img {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	max-width: 300px;
+}
+
+.menu .wrapper>ul>li:hover .submenu{
+	display: block;
 }
 
 .content {
@@ -641,6 +706,86 @@ button {
 	float: right;
 }
 
+.project-location {
+	margin: 10px 0 50px 0;
+	overflow: hidden;
+}
+
+.project-location .city {
+	text-transform: uppercase;
+	position: relative;
+	padding-left: 17px;
+	display: block;
+	float: left;
+	line-height: 50px;
+}
+
+.project-location .city:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 16px;
+	background: url('../img/sprite.png') no-repeat -367px -15px;
+	width: 9px;
+	height: 15px;
+}
+
+.project-location .show-map {
+	padding: 0 35px;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 30px;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+
+.rel-view p {
+	margin-top: 30px;
+}
+
+.tab-info .tab-nav {
+	list-style: none;
+	margin: 100px 0 30px 0;
+	padding: 0;
+	border-bottom: 2px solid #262626;
+}
+
+.tab-info .tab-nav li {
+	display: inline-block;
+}
+
+.tab-info .tab-nav li {
+	text-transform: uppercase;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+	user-select: none;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+}
+
+.tab-info .tab-nav .active {
+	border-top: 2px solid #262626;
+	border-left: 2px solid #262626;
+	border-right: 2px solid #262626;
+}
+
+.tab-info .tab-inner {
+	display: none;
+}
+
+.tab-info .tab-inner.active {
+	display: block;
+}
+
 .right-col {
 	padding-top: 135px;
 	width: 305px;
@@ -765,7 +910,7 @@ button {
 	margin-top: 50px;
 }
 
-.subscribe-form input {
+.subscribe-form input, .subscribe-form textarea {
 	width: 100%;
 	border: 1px solid #bebebe;
 	padding: 17px 20px;
@@ -774,17 +919,27 @@ button {
 	outline: none;
 }
 
-.subscribe-form input:focus {
+.subscribe-form input:focus, .subscribe-form textarea:focus {
 	border: 1px solid #353535;
 }
 
-.subscribe-form input[type='submit']{
+.subscribe-form textarea {
+	max-width: 100%;
+	height: 100px;
+}
+
+.subscribe-form input[type='submit'], .show-map{
 	background: #262626;
 	border: 0;
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 0.813rem;
     letter-spacing: 2px;
+}
+
+.right-col .subscribe-form {
+	width: 100%;
+	margin-top: 10px;
 }
 
 .management {
@@ -971,9 +1126,9 @@ button {
 	float: left;
 }
 
-.popup-manager div {
+/*.popup-manager div {
 	padding: 40px;
-}
+}*/
 
 .manager:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -1103,7 +1258,7 @@ button {
 	margin-right: 0;
 }
 
-.pagination ul li a, .dots {
+.pagination ul li a {
 	padding: 13px 20px;
 	border: 1px solid #c2c2c2;
 	display: block;

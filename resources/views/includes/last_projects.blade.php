@@ -1,10 +1,12 @@
 <div class="cards">
-	@foreach($projects as $project)
+	@forelse($projects as $project)
 		<div class="cards-small">
-			<img src="{{ URL::asset('upload/projects/small') }}/{{ $project->image, 'small' }}">
+			<img src="{{ URL::asset('uploads/projects/small') }}/{{ $project->img, 'small' }}">
 			<h3>{{ $project->title }}</h3>
 			<p>{{ $project->description }}</p>
-			<a class="look" href="">Смотреть</a>
+			<a class="look" href="{!! action('MainController@show', $project->slug) !!}">Смотреть</a>
 		</div>
-	@endforeach
+	@empty
+		<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;"><h2>Нет проектов</h2></div>
+	@endforelse
 </div>

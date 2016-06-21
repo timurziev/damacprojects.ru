@@ -10,13 +10,18 @@ use App\User;
 
 use Auth;
 
+
+use App\Http\Requests\UserFormRequest;
+
+
+
 class UsersController extends Controller
 {
     public function store(Request $request)
     {
     	$user = new User(array(
-    			'name' => $request->get('name'),
-    			'email' => $request->get('email'),
+    			'name' => Request::input('name'),
+    			'email' => Request::input('email'),
     		));
 
     	$user->save();
@@ -24,6 +29,25 @@ class UsersController extends Controller
     	return view('events')->with('status', 'Вы подписаны!');
     }
 
+
+    public function change_view()
+    {
+        return view('admin.change_log_pass');
+    }
+
+    public function change_log(UserFormRequest $request)
+    {
+        $user = User::first();
+        $password = \Hash::make(Request::input('password'));
+
+        $user->email = Request::input('email');
+        $user->password = $password;
+
+        $user->save();
+
+        return redirect()->back()->with('status', 'Данные изменены!');
+    }
+    
     public function login(Request $request)
     {
     	$email = Request::input('email');
@@ -36,5 +60,6 @@ class UsersController extends Controller
     		{
                 return 'fuck';
             }
+
     }
 }

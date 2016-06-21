@@ -13,8 +13,8 @@
 						<h2>О DAMAC</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a class="active" href="">Слово председателя</a></li>
-						<li><a href="">Управляющая компания</a></li>
+						<li><a class="{{ Request::is('message') ? 'active' : '' }}" href="{{ URL::to('/message') }}">Слово председателя</a></li>
+						<li><a class="{{ Request::is('team') ? 'active' : '' }}" href="{{ URL::to('/team') }}">Управляющая компания</a></li>
 						<li><a href="">История</a></li>
 						<li><a href="">Награды</a></li>
 					</ul>

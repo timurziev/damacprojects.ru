@@ -1,43 +1,128 @@
 <?php
+
 namespace App\Http\Controllers;
 use Request;
 use App\Http\Requests;
 use App\Project;
+use App\Press_release;
+use App\Novelty;
 use App\Category;
 use App\Location;
+use App\MainPage;
+use App\StaticPage;
+use App\Images;
 use DB;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+
 class MainController extends Controller
 {
     public function index()
 	{
 		$projects = Project::take(4)->orderBy('created_at')->get();
 		$locations = Location::all();
+
         return view('index', compact('projects', 'locations'));
 	}
+
+	public function show_page($slug)
+	{
+		$static_pages =StaticPage::all();
+		$static_page = StaticPage::whereSlug($slug)->firstOrFail();
+		$main_pages = MainPage::all();
+
+		return view('static_page', compact('static_page', 'static_pages', 'main_pages'));
+	}
+
 	public function about()
 	{
         return view('about', compact('projects'));
 	}
+
 	public function offers()
 	{
 		$projects = Project::orderBy('created_at', 'desc')->paginate(6);
+
         return view('offers', compact('projects'));
 	}
+
 	public function projects()
 	{
-		$projects = Project::orderBy('created_at', 'desc')->paginate(4);
-        return view('projects', compact('projects'));
+		$projects = Project::orderBy('created_at', 'desc');
+		$locations = Location::all();
+		$images = Images::all();
+
+		if (Request::has('status'))
+		{
+			$projects->where('category_id', Request::get('status'));
+		}
+
+		$projects = $projects->paginate(4);
+
+        return view('projects', compact('projects', 'locations', 'images'));
 	}
+
+	public function releases_and_news()
+	{
+		$releases = Press_release::take(3)->orderBy('created_at', 'desc')->get();
+		$novelties = Novelty::take(2)->orderBy('created_at', 'desc')->get();
+
+		return view('media_center', compact('releases'), compact('novelties'));
+	}
+
+	public function releases()
+	{
+		$releases = Press_release::orderBy('created_at')->paginate(6);
+
+		return view('media_center', compact('releases'));
+	}
+
+	public function show_release($slug)
+	{
+    	$release = Press_release::whereSlug($slug)->first();
+
+	    return view('media_center', compact('release'));
+	}
+
+	public function show_new($slug)
+	{
+    	$novelty = Novelty::whereSlug($slug)->first();
+
+	    return view('media_center', compact('novelty'));
+	}
+
+	public function news()
+	{
+		$novelties = Novelty::orderBy('created_at')->paginate(6);
+
+		return view('media_center', compact('novelties'));
+	}
+
+	public function show($slug)
+	{
+    	$project = Project::whereSlug($slug)->first();
+    	$categories = Category::all();
+    	$locations = Location::all();
+    	$images = Images::all();
+
+    	//$image= explode("|", $project->image);
+    	//$floor_plans= explode("|", $project->floor_plans);
+
+	    return view('view', compact('project', 'categories', 'locations', 'images'));
+	}
+
 	public function simple_search()
 	{
 		$projects = Project::where('title', 'like', '%'.Request::get('search').'%')->paginate(6);
 		
 		return view('offers', compact('projects'));
 	}
+
 	public function search()
 	{
 		$projects = Project::orderBy('created_at');
 		$locations = Location::all();
+
 		if (Request::has('status'))
 		{
 			$projects->where('category_id', Request::get('status'));
@@ -49,5 +134,32 @@ class MainController extends Controller
 		$projects = $projects->paginate(6);
 		$projects->appends(Request::except('page'));
         return view('offers', compact('projects', 'locations'));
+	}
+
+	public function complex_search()
+	{
+		$projects = Project::where('title', 'like', '%'.Request::get('search').'%');
+		$locations = Location::all();
+		
+		if (Request::has('status'))
+		{
+			$projects->where('category_id', Request::get('status'));
+		}
+		if (Request::has('city'))
+		{
+			$projects->where('location_id', Request::get('city'));
+		}
+		$projects = $projects->paginate(6);
+		$projects->appends(Request::except('page'));
+        return view('projects', compact('projects', 'locations'));
+	}
+
+	public function email()
+	{
+		Mail::raw('dfhf', function ($message) {
+	        $message->from('one_day1@mail.ru', 'sffd');
+
+	        $message->to('storona77@gmail.com')->subject('sdfsdf');
+	    });
 	}
 }

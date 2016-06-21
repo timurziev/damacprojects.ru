@@ -1,3 +1,13 @@
+@if (Request::is('press_releases') || Request::is('press_rel'))
+    <?php $projects = $releases ?>
+@elseif (Request::is('news') || Request::is('novel'))
+    <?php $projects = $novelties ?>
+@elseif (Request::is('create_city'))
+    <?php $projects = $locations ?>
+@elseif (Request::is('emails'))
+    <?php $projects = $emails ?>
+@endif
+
 @if ($projects->lastPage() > 1)
 <div class="pagination">
 	<ul>

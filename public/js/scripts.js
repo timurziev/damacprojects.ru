@@ -46,6 +46,12 @@ $(document).ready(function(){
 		e.stopPropagation?e.stopPropagation():e.cancelBubble = true
 	})
 
+	$('.show-map').on('click', function(e){
+		$('.popup').css('visibility','visible')
+		e.preventDefault()
+		e.stopPropagation?e.stopPropagation():e.cancelBubble = true
+	})
+
 	$('.popup-manager').on('click', function(e){
 		e.stopPropagation?e.stopPropagation():e.cancelBubble = true
 	})
@@ -61,6 +67,14 @@ $(document).ready(function(){
 		$('.menu ul').css('visibility','visible')
 		$('.popup').css('visibility','hidden')
 	})
+
+
+	$('ul.tab-nav').on('click', 'li:not(.active)', function() {
+		$(this)
+		    .addClass('active').siblings().removeClass('active')
+		    .closest('div.tab-info').find('div.tab-inner').removeClass('active').eq($(this).index()).addClass('active');
+		e.preventDefault()
+	});
 
 })
 

@@ -1,0 +1,51 @@
+.jq-checkbox {
+	width: 16px;
+    height: 16px;
+    border: 1px solid #d7d8e0;
+    padding: 0 0 0 0;
+}
+
+.in_text{
+	margin: 0 10px 0 4px;
+	cursor: pointer;
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+.pagination {
+	overflow: hidden;
+	margin-top: 100px;
+	width: 100%;
+	text-align: center;
+}
+
+.pagination ul {
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+.pagination ul li {
+	display: inline-block;
+}
+
+.pagination ul li:last-child {
+	margin-right: 0;
+}
+
+.pagination ul li a {
+	padding: 6px 12px;
+	border: 1px solid #c2c2c2;
+	display: block;
+	text-decoration: none;
+	color: #262626;
+	text-transform: uppercase;
+}
+
+.pagination .nav, .pagination .active {
+	border-color: #262626;
+}
+
+.pagination .active {
+	font-weight: bold;
+}

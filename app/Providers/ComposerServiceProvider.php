@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Project;
+use App\StaticPage;
+use App\MainPage;
 use Request;
 
 class ComposerServiceProvider extends ServiceProvider
@@ -22,15 +24,13 @@ class ComposerServiceProvider extends ServiceProvider
             });
         }
 
-        // view()->composer('includes/last_projects', function ($view) {
-        //     $projects = Project::orderBy('created_at');
+        view()->composer('layout', function ($view) {
+            $view->with('static_pages', StaticPage::orderBy('created_at')->get());
+        }); 
 
-        //     if (Request::is('/', 'about'))
-        //     {
-        //         $projects->take(3);
-        //         $view->with('projects', $projects->get());
-        //     }
-        // });
+        view()->composer('investor_relations', function ($view) {
+            $view->with('static_pages', StaticPage::orderBy('created_at')->get());
+        });   
     }
 
     /**

@@ -13,14 +13,11 @@
 						<h2>Информация</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="">Почему DAMAC?</a></li>
-						<li><a href="">Поделиться информацией</a></li>
-						<li><a href="">Финансовая информация</a></li>
-						<li><a href="">Быстрый бюллетень</a></li>
-						<li><a href="">Корпоративное управление</a></li>
-						<li><a href="">Ежегодные отчеты</a></li>
-						<li><a href="">Анонсы компании</a></li>
-						<li><a href="">Свяжитесь с нами</a></li>
+						@foreach ($static_pages as $static_page)
+							@if ($static_page->main_page_id == 4)
+								<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
+							@endif
+						@endforeach
 					</ul>
 					<div class="text-header">
 						<h2>Доля</h2>
