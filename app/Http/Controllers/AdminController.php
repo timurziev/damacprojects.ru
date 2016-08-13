@@ -11,6 +11,7 @@ use App\Novelty;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
+use App\Plan;
 use App\Http\Requests\ProjectsFromRequest;
 use App\Location;
 use App\User;
@@ -70,7 +71,10 @@ class AdminController extends Controller
     {
         $locations = Location::all();
         $project = Project::whereSlug($slug)->firstOrFail();
-        return view('admin.edit', compact('project', 'locations'));
+        $plans = Plan::all();
+        $images = Images::all();
+
+        return view('admin.edit', compact('project', 'locations', 'plans', 'images'));
     }
 
     public function update($slug, ProjectsFromRequest $request)
@@ -87,8 +91,41 @@ class AdminController extends Controller
         $project->update = $request->get('update');
         $project->view_pdf = $request->get('view_pdf');
         $project->download_pdf = $request->get('download_pdf');
+        $project->is_slide = $request->get('is_slide');
+
+        if($request->get('images') !== null) {
+            foreach ($request->get('images') as $key => $image) {
+                if($key == 0) {
+                    $project->image = $image;
+                }
+            }
+        }
         
         $project->save();
+
+
+        if($request->get('images') !== null)
+        {
+            foreach ($request->get('images') as $image)
+            {
+                $i = new Images;
+                $i->project_id = $project->id;
+                $i->name = $image;
+                $i->save();
+            }
+        }
+
+        if($request->get('plans') !== null)
+        {
+            foreach ($request->get('plans') as $plan)
+            {
+                $i = new Plan;
+                $i->project_id = $project->id;
+                $i->name = $plan;
+                $i->save();
+            }
+        }
+
         return redirect(action('AdminController@update', $project->slug))->with('status', 'Проект обновлен!');
 
     }
@@ -97,7 +134,7 @@ class AdminController extends Controller
     {
         $project = Project::whereSlug($slug)->firstOrFail();
         $project->delete();
-        return redirect('/all_proj')->with('status', 'Проект удален!');
+        return redirect('/admin')->with('status', 'Проект удален!');
     }
 
 	public function store(ProjectsFromRequest $request)
@@ -105,11 +142,13 @@ class AdminController extends Controller
 		$project = New Project;
 	    $slug = uniqid();
 	    
-	    //$image = Images::orderBy('id', 'desc')->first();
-	    //$project->image = $image->name;
-
-        $images = $request->get('images');
-	    dd($images);
+        if($request->get('images') !== null) {
+            foreach ($request->get('images') as $key => $image) {
+                if($key == 0) {
+                    $project->image = $image;
+                }
+            }
+        }
 
         $project->title = $request->get('title');
         $project->description = $request->get('description');
@@ -123,8 +162,31 @@ class AdminController extends Controller
         $project->update = $request->get('update');
         $project->view_pdf = $request->get('view_pdf');
         $project->download_pdf = $request->get('download_pdf');
-        
+        $project->is_slide = $request->get('is_slide');
+
 	    $project->save();
+
+        if($request->get('images') !== null)
+        {
+            foreach ($request->get('images') as $image)
+            {
+                $i = new Images;
+                $i->project_id = $project->id;
+                $i->name = $image;
+                $i->save();
+            }
+        }
+
+        if($request->get('plans') !== null)
+        {
+            foreach ($request->get('plans') as $plan)
+            {
+                $i = new Plan;
+                $i->project_id = $project->id;
+                $i->name = $plan;
+                $i->save();
+            }
+        }
 
 	    return redirect('/create')->with('status', 'Проект создан!');
 	}
@@ -141,20 +203,33 @@ class AdminController extends Controller
         $destinationPath2 = public_path('uploads/projects/big/' . $fileName);
         $destinationPath3 = public_path('uploads/projects/small/' . $fileName);
 
-        $upload = Image::make($input)->resize(1750, 967)->save($destinationPath);
-        $upload2 = Image::make($input)->resize(802, 580)->save($destinationPath2);
-        $upload3 = Image::make($input)->resize(401, 580)->save($destinationPath3);
+        $upload = Image::make($input)->fit(1750, 967)->save($destinationPath);
+        $upload2 = Image::make($input)->fit(802, 580)->save($destinationPath2);
+        $upload3 = Image::make($input)->fit(401, 580)->save($destinationPath3);
         
-
-        $image = New Images;
-        $image->name = $fileName;
-        $project = Project::orderBy('created_at', 'desc')->first();
-
-        $image->project_id = $project->id + 1;  
-        $image->save();
  
         if ($upload && $upload2 && $upload3) {
-            return Response::json('success', 200);
+            return Response::json($fileName, 200);
+        } else {
+            return Response::json('error', 400);
+        }
+    }
+
+    public function uploadPlans() 
+    {
+        $input = Input::file('file');
+
+        $extension = $input->getClientOriginalExtension();
+        
+        $planName = rand(11111, 99999) . '.' . $extension;
+
+        $destinationPath = public_path('uploads/plans/' . $planName);
+
+        $upload = Image::make($input)->resize(622, 623)->save($destinationPath);
+
+ 
+        if ($upload) {
+            return Response::json($planName, 200);
         } else {
             return Response::json('error', 400);
         }
@@ -186,8 +261,8 @@ class AdminController extends Controller
             $destinationPath = public_path('uploads/media/big/' . $fileName);
             $destinationPath2 = public_path('uploads/media/small/' . $fileName);
 
-            $upload = Image::make(Input::file('image'))->resize(802, 580)->save($destinationPath);
-            $upload2 = Image::make(Input::file('image'))->resize(305, 221)->save($destinationPath2);
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
         }
 
         $release = New Press_release;
@@ -228,8 +303,8 @@ class AdminController extends Controller
             $destinationPath = public_path('uploads/media/big/' . $fileName);
             $destinationPath2 = public_path('uploads/media/small/' . $fileName);
 
-            $upload = Image::make(Input::file('image'))->resize(802, 580)->save($destinationPath);
-            $upload2 = Image::make(Input::file('image'))->resize(305, 221)->save($destinationPath2);
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
         }
 
 
@@ -276,8 +351,8 @@ class AdminController extends Controller
             $destinationPath = public_path('uploads/media/big/' . $fileName);
             $destinationPath2 = public_path('uploads/media/small/' . $fileName);
 
-            $upload = Image::make(Input::file('image'))->resize(802, 580)->save($destinationPath);
-            $upload2 = Image::make(Input::file('image'))->resize(305, 221)->save($destinationPath2);
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
         }
 
         $novelty = New Novelty;
@@ -318,8 +393,8 @@ class AdminController extends Controller
             $destinationPath = public_path('uploads/media/big/' . $fileName);
             $destinationPath2 = public_path('uploads/media/small/' . $fileName);
 
-            $upload = Image::make(Input::file('image'))->resize(802, 580)->save($destinationPath);
-            $upload2 = Image::make(Input::file('image'))->resize(305, 221)->save($destinationPath2);
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
         }
 
 
@@ -410,6 +485,22 @@ class AdminController extends Controller
         $emails = User::orderBy('created_at')->paginate(22);
 
         return view('admin.emails', compact('emails'));
+    }
+
+    public function destroy_plan($id)
+    {
+        $plan = Plan::whereId($id)->first();
+        $plan->delete();
+
+        return redirect()->back()->with('status', 'Изображение удалено!'); 
+    }
+
+    public function destroy_image($id)
+    {
+        $image = Images::whereId($id)->first();
+        $image->delete();
+
+        return redirect()->back()->with('status', 'Изображение удалено!'); 
     }
 }
 

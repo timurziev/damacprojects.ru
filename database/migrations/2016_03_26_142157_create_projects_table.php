@@ -16,17 +16,11 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-
             $table->integer('location_id');
-
-            $table->string('location_id');
-
             $table->text('text');
             $table->string('image')->nullable();
-            $table->string('img')->nullable();
             $table->string('media')->nullable();
             $table->text('facilities')->nullable();
-            $table->string('floor_plans')->nullable();
             $table->text('community_info')->nullable();
             $table->text('update')->nullable();
             $table->string('download_pdf')->nullable();

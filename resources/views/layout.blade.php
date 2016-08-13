@@ -9,18 +9,21 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/fonts/fonts.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/fotorama.css') }}">
-	<link rel="icon" href="{{ URL::asset('img/favicon.png') }}">
-	<title>Damac Projects</title>
+	<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}"> 
+	<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.css') }}">
+	<link rel="icon" href="{{ URL::asset('img/favicon.ico') }}">
+	<title>SHEIKH Projects</title>
 </head>
 <body>
 	<header>
 		<div class="wrapper">
 			<a href="{{ Request::root() }}" class="logo"></a>
-			<a class="header-nav" href="">Написать нам</a>
-			<a class="header-nav" href="">Онлайн продажа</a>
+			<a class="header-nav nav2" href="{{ URL::to('contacts') }}">Связаться с нами</a>
+			<!-- <a class="header-nav" href="">Онлайн продажа</a> -->
 			<div class="phone">+7 999 123 45 67</div>
 		</div>
 	</header>
+	<a href="" class="burger" id="open-nav"><i></i></a>
 	<div class="menu">
 		<div class="wrapper">
 			<form action="{{ action('MainController@simple_search') }}" method="get" id="search-form">
@@ -28,15 +31,15 @@
 			</form>
 			<ul>
 				<li class="{{ Request::is('about') ? 'active' : '' }}">
-					<a href="{{ URL::to('/about') }}">О DAMAC</a>
+					<a href="{{ URL::to('/about') }}">ОБ АГЕНТСТВЕ</a>
 					<div class="submenu">
 						<ul>
-							<li><a href="{{ URL::to('/message') }}">Слово председателя</a></li>
-							<li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li>
+							<!-- <li><a href="{{ URL::to('/message') }}">Слово председателя</a></li> -->
+							<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/about-small.jpg" alt="">
-							<h4>О DAMAC</h4>
+							<h4>О SHEIKH</h4>
 							<p>Компания DAMAC была создана в 2002 году как частная организация в сфере строительства жилой и коммерческой недвижимости в Дубае и на ближнем востоке. С тех пор, компания быстро расширяется в Северной Африке, Иордании, Ливане, Катаре и Саудовской Аравии.</p>
 							<a class="look" href="{{ URL::to('/about') }}">Подробнее</a>
 						</div>
@@ -83,14 +86,11 @@
 					<a href="{{ URL::to('/investor_relations') }}">Инвесторам</a>
 					<div class="submenu">
 						<ul>
-							<li><a href="">Почему DAMAC?</a></li>
-							<li><a href="">Поделиться информацией</a></li>
-							<li><a href="">Финансовая информация</a></li>
-							<li><a href="">Быстрый бюллетень</a></li>
-							<li><a href="">Корпоративное управление</a></li>
-							<li><a href="">Ежегодные отчеты</a></li>
-							<li><a href="">Анонсы компании</a></li>
-							<li><a href="">Свяжитесь с нами</a></li>
+							@foreach ($static_pages as $static_page)
+						            @if ($static_page->main_page_id == 4)
+							       <li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
+						            @endif
+					                @endforeach
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
@@ -111,9 +111,9 @@
 		<div class="footer-menu1">	
 			<div class="wrapper">
 				<ul>
-					<h4>О Damac</h4>
-					<li><a href="{{ URL::to('/message') }}">Обращение председателя</a></li>
-					<li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li>
+					<h4>О SHEIKH</h4>
+					<!-- <li><a href="{{ URL::to('/message') }}">Обращение председателя</a></li> -->
+					<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
 					@foreach ($static_pages as $static_page)
 						@if ($static_page->main_page_id == 1)
 							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
@@ -121,7 +121,7 @@
 					@endforeach
 				</ul>
 				<ul>
-					<h4>Проекты Damac</h4>
+					<h4>Проекты SHEIKH</h4>
 					@foreach ($static_pages as $static_page)
 						@if ($static_page->main_page_id == 2)
 							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
@@ -148,7 +148,7 @@
 		</div>
 			<div class="footer-menu2">
 			<div class="wrapper">
-				<span class="copyright">Все права защищены 2016 Damac</span>
+				<span class="copyright">Все права защищены 2016 SHEIKH</span>
 				<a href="" class="footer-links">Контакты</a>
 				<a href="" class="footer-links">Карта сайта</a>
 				<a href="" class="footer-links">Условия использования</a>
@@ -170,26 +170,8 @@
 	</div>
 	<script src="{{ URL::asset('js/jquery-2.2.1.min.js') }}"></script>
 	<script src="{{ URL::asset('js/fotorama.js') }}"></script>
+	<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
 	<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript">
-        ymaps.ready(init);
-        var myMap, 
-            myPlacemark;
-
-        function init(){ 
-            myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
-                zoom: 7
-            }); 
-            
-            myPlacemark = new ymaps.Placemark([58.76, 37.64], {
-                hintContent: 'Москва!',
-                balloonContent: 'Столица России'
-            });
-            
-            myMap.geoObjects.add(myPlacemark);
-        }
-    </script>
 </body>
 </html>

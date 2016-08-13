@@ -47,8 +47,6 @@
 
                     Главная
 
-                    Laravel
-
                 </a>
             </div>
 
@@ -58,10 +56,6 @@
                 <!-- <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Главная</a></li>
                 </ul> -->
-
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
 
 
                 <!-- Right Side Of Navbar -->

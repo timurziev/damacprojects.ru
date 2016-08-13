@@ -2,37 +2,40 @@
 @section('content')
 	<div class="content-home">
 		<div class="slider">
-			<div data-nav="false" data-autoplay="true" data-arrows="false" data-click="false" data-fit="cover" data-width="100%" data-height="100%" class="fotorama">
-				<div data-img="uploads/1.jpg" class="slider-item">
-					<div class="wrapper">
-						<h2>Элитная недвижимость в центре Москвы</h2>
-						<a class="readmore" href="">Подробнее</a>
-					</div> 
-				</div>
-				<div data-img="uploads/2.jpg" class="slider-item">
-					<div class="wrapper">
-						<h2>Крутая недвижимость в не центре Москвы</h2>
-						<a class="readmore" href="">Подробнее</a>
-					</div> 
-				</div>
+			<div class="owl-carousel owl-theme" id="owl-demo2">
+				@foreach ($posts as $post)
+					@if ($post->is_slide)
+					<div class="item">
+						<img src="{{ URL::asset('uploads/projects/large') }}/{{ $post->image }}" alt="">
+						<div class="wrapper item-desc">
+							<h2>{{ $post->title }}</h2>
+							<a class="readmore" href="{{ action('MainController@show', $post->slug) }}">Подробнее</a>
+						</div> 
+					</div>
+					@endif
+				@endforeach
 			</div>
 			<div class="arrows">
-				<div role="button" class="fotorama_custom__arr fotorama_custom__arr--prev"></div>
-				<div role="button" class="fotorama_custom__arr fotorama_custom__arr--next"></div>
-			</div>
+				<div  class="arrow-left"></div>
+				<div  class="arrow-right"></div>
+			</div> 
 		</div>
 		@include('includes/search')
 		<div class="wrapper">
 			<div class="section-title">
-				<h2>Предложения</h2>
+				<h2>Предложения и акции</h2>
 				<div class="line"></div>
 			</div>
-			@include('includes/last_projects')
+			<div class="carousel">
+				<div class="arrow-left"></div>
+				<div class="arrow-right"></div>
+				@include('includes/last_projects')
+			</div> 
 			<div class="section-title">
 				<h2>В центре внимания</h2>
 				<div class="line"></div>
 			</div>
-			<div class="cards">
+			<div class="cards center">
 				@include('includes/main_projects')
 			</div>
 			<div class="partners">

@@ -2,7 +2,7 @@
 	<h2>Новости индустрии</h2>
 	<div class="line"></div>
 </div>
-@foreach($novelties as $novelty)
+@forelse($novelties as $novelty)
 <div class="media-center news-ind">
 	<div class="list-item">
 		<a href="{{ action('MainController@show_new', $novelty->slug) }}">
@@ -15,7 +15,9 @@
 		</div>
 	</div>
 </div>
-@endforeach
+@empty
+<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;"><h2>Нет новостей</h2></div><br><br><br>
+@endforelse
 
 @if (Request::is('media_center'))
 	<div class="show-all">

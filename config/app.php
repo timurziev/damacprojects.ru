@@ -159,8 +159,6 @@ return [
         App\Providers\ComposerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
-        Frozennode\Administrator\AdministratorServiceProvider::class
-
     ],
 
     /*

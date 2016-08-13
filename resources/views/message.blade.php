@@ -15,8 +15,11 @@
 					<ul class="right-col-menu">
 						<li><a class="{{ Request::is('message') ? 'active' : '' }}" href="{{ URL::to('/message') }}">Слово председателя</a></li>
 						<li><a class="{{ Request::is('team') ? 'active' : '' }}" href="{{ URL::to('/team') }}">Управляющая компания</a></li>
-						<li><a href="">История</a></li>
-						<li><a href="">Награды</a></li>
+						@foreach ($static_pages as $page)
+							@if ($page->main_page_id == $static_page->main_page_id)
+								<li><a href="{!! action('MainController@show_page', $page->slug) !!}">{!! $page->title !!}</a></li>
+							@endif
+						@endforeach
 					</ul>
 					<div class="text-header">
 						<h2>Контакты</h2>

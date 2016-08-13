@@ -11,6 +11,7 @@ use App\Location;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
+use App\Plan;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -21,8 +22,9 @@ class MainController extends Controller
 	{
 		$projects = Project::take(4)->orderBy('created_at')->get();
 		$locations = Location::all();
+                $posts = Project::all();
 
-        return view('index', compact('projects', 'locations'));
+        return view('index', compact('projects', 'locations', 'posts'));
 	}
 
 	public function show_page($slug)
@@ -36,7 +38,20 @@ class MainController extends Controller
 
 	public function about()
 	{
-        return view('about', compact('projects'));
+        $static_pages = StaticPage::all();
+        return view('about', compact('static_pages '));
+	}
+
+        public function team()
+	{
+	$static_pages = StaticPage::all();
+        return view('team', compact('static_pages'));
+	}
+
+        public function message()
+	{
+	$static_pages = StaticPage::all();
+        return view('message', compact('static_pages'));
 	}
 
 	public function offers()
@@ -104,11 +119,12 @@ class MainController extends Controller
     	$categories = Category::all();
     	$locations = Location::all();
     	$images = Images::all();
+    	$plans = Plan::all();
 
     	//$image= explode("|", $project->image);
     	//$floor_plans= explode("|", $project->floor_plans);
 
-	    return view('view', compact('project', 'categories', 'locations', 'images'));
+	    return view('view', compact('project', 'categories', 'locations', 'images', 'plans'));
 	}
 
 	public function simple_search()
@@ -154,12 +170,10 @@ class MainController extends Controller
         return view('projects', compact('projects', 'locations'));
 	}
 
-	public function email()
+        public function email() 
 	{
-		Mail::raw('dfhf', function ($message) {
-	        $message->from('one_day1@mail.ru', 'sffd');
-
-	        $message->to('storona77@gmail.com')->subject('sdfsdf');
-	    });
+	 	Mail::send('includes/email', ['user' => 'Check'], function($message) {
+	 		$message->to('one_day1@mail.ru')->subject('Welcome');
+	 	});
 	}
 }

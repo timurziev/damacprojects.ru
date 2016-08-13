@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(../img/investor_relations.jpg);">
 			<div class="wrapper">
-				<h2>AYKON City</h2>
+				<h2>{{ $project->title}}</h2>
 			</div>
 		</div>
 		<div class="wrapper">
@@ -13,8 +13,8 @@
 						<h2>Документация</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="">Посмотреть брошюру</a></li>
-						<li><a href="">Скачать брошюру</a></li>
+						<li><a href="{{ $project->view_pdf }}">Посмотреть брошюру</a></li>
+						<li><a href="{{ $project->download_pdf }}">Скачать брошюру</a></li>
 					</ul>
 					<div class="text-header">
 						<h2>Узнать о проекте</h2>
@@ -32,14 +32,14 @@
 						>
 							@foreach ($images as $item)
 								@if($project->id == $item->project_id)
-									<a href="upload/1.jpg"><img src="{{ Request::root() }}/uploads/projects/big/{{ $item->name }}"></a>
+									<a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $item->name }}"></a>
 								@endif
 							@endforeach
 						</div>
 					</div>
 					<div class="project-location">
 						<div class="city">{!! $project->location->name !!}</div>
-						<a href="#" class="show-map">Показать на карте</a>
+						<!-- <a href="#" class="show-map">Показать на карте</a> -->
 					</div>
 					{!! $project->text !!}
 					@if (empty($project->media) == false)
@@ -57,7 +57,11 @@
 						</div>
 						<div id="tbi2" class="tab-inner">
 							<div class="fotorama" data-width="100%" data-navposition="top">
-								
+								@foreach ($plans as $plan)
+									@if($project->id == $plan->project_id)
+										<a href=""><img class="plans" src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"></a>
+									@endif
+								@endforeach
 							</div>
 						</div>
 						<div id="tbi3" class="tab-inner">

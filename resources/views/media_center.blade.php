@@ -13,8 +13,8 @@
 						<h2>Медиа центр</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="">Пресс-релизы</a></li>
-						<li><a href="">Новости индустрии</a></li>
+						<li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li>
+						<li><a href="{{ URL::to('/news') }}">Новости индустрии</a></li>
 						<li><a href="">Фотогалерея</a></li>
 						<li><a href="">Видеогалерея</a></li>
 					</ul>

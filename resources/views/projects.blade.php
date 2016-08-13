@@ -15,7 +15,7 @@
 					<h2>Наши проекты</h2>
 					<div class="line"></div>
 				</div>
-				<div class="cards">
+				<div class="cards center">
 					@include('includes/main_projects')
 				</div>
 					@include ('includes/pagination')

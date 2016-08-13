@@ -20,7 +20,7 @@ class ComposerServiceProvider extends ServiceProvider
         if (Request::is('/', 'about', 'admin' ))
         {
             view()->composer('includes/last_projects', function ($view) {
-                $view->with('projects', Project::take(3)->orderBy('created_at', 'desc')->get());
+                $view->with('projects', Project::orderBy('created_at', 'desc')->get());
             });
         }
 

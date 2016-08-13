@@ -1,4 +1,52 @@
+$(document).ready(function() {
+
+ 
+  $("#owl-example").owlCarousel();
+ 
+  var owl = $("#owl-demo");
+ 
+  owl.owlCarousel({
+     
+      itemsCustom : [
+        [0, 1],
+        [600, 2],
+        [950, 3]
+      ]
+ 
+  });
+
+  var owl2 = $("#owl-demo2");
+
+  owl2.owlCarousel({
+     
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      autoHeight : true,
+      singleItem:true
+      
+  });
+
+var owl = $(".owl-carousel").data('owlCarousel');
+
+  $('.arrow-right').on('click', function(){
+    owl.next()
+  });
+
+    $('.arrow-left').on('click', function(){
+    owl.prev()
+  });
+ 
+});
+
 $(document).ready(function(){
+
+	$("#open-nav").click(function(e) {
+        $('.menu').toggleClass('menu-mobile')
+        $(this).toggleClass('active')
+        return false
+        e.preventDefault()
+    })
 
 	$('.search').on('click', function(e){
 		

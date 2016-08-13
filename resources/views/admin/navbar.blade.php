@@ -30,8 +30,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Страницы <span class="caret"></span></a>  
                     <ul class="dropdown-menu" role="menu">
-                        <li class="{{ Request::is('about_dam') ? 'active' : '' }}"><a href="{{ URL::to('/about_dam') }}?page=1">O Damac</a></li>
-                        <li class="{{ Request::is('dam_proj') ? 'active' : '' }}"><a href="{{ URL::to('/dam_proj') }}?page=2">Проекты Damac</a></li>
+                        <li class="{{ Request::is('about_dam') ? 'active' : '' }}"><a href="{{ URL::to('/about_dam') }}?page=1">O Sheikh</a></li>
+                        <li class="{{ Request::is('dam_proj') ? 'active' : '' }}"><a href="{{ URL::to('/dam_proj') }}?page=2">Проекты Sheikh</a></li>
                         <li class="{{ Request::is('offers') ? 'active' : '' }}"><a href="{{ URL::to('/offers_dam') }}?page=3">Предложения</a></li>
                         <li class="{{ Request::is('investor') ? 'active' : '' }}"><a href="{{ URL::to('/investor') }}?page=4">Инвесторам</a></li>
                     </ul>
@@ -50,7 +50,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Админ <span class="caret"></span></a>  
                     <ul class="dropdown-menu" role="menu">
                         <li class="{{ Request::is('change_log') ? 'active' : '' }}"><a href="{!! action('UsersController@change_view') !!}">Сменить логин и пароль</a></li>
-                        <li><a href="{{ URL::to('/') }}?page=2">Выйти</a></li>
+                        <li><a href="{{ URL::to('/') }}">На сайт</a></li>
                     </ul>
                 </li>
             </ul>

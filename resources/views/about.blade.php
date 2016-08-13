@@ -3,7 +3,7 @@
 	<div class="content">
 		<div class="title-banner" style="background-image: url(img/about.jpg);">
 			<div class="wrapper">
-				<h2>О DAMAC</h2>
+				<h2>О SHEIKH</h2>
 			</div>
 		</div>
 		<div class="wrapper">
@@ -26,7 +26,7 @@
 				</div>
 				<p>Опытная команда управления директоров и топ-менеджеров имеет большой опыт в недвижимости и строительной отрасли.</p>
 				<div class="text-header">
-					<h2>Наша история</h2>
+					<!-- <h2>Наша история</h2>
 				</div>
 				<p>Компания DAMAC была создана в 2002 году как разработчик элитной недвижимости, имеющий огромный опыт работы в Дубае и ОАЭ. За последние 13 лет, компания превратилась в одного из ведущих разработчиков...</p>
 				<div class="statistic">
@@ -54,7 +54,7 @@
 					<h2>Наши проекты</h2>
 					<div class="line"></div>
 				</div>
-				@include('includes/last_projects')
+				@include('includes/last_projects') -->
 			</div>
 		</div>
 	</div>

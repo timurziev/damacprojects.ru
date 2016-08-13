@@ -40,6 +40,21 @@
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label"></label>
                         <div class="col-lg-10">
+                            <select class="form-control" name="country">
+                                <option disabled selected>Выберите страну</option>   
+                                @foreach ($countries as $country)
+                                    <option value="{{ $country->id }}"
+                                    @if ($country->id == Request::input('country') )
+                                        selected
+                                    @endif
+                                        >{{ $location->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
                                 @foreach ($locations as $location)
@@ -50,6 +65,14 @@
                                         >{{ $location->name }}</option>
                                 @endforeach 
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label">Изображения</label>
+                        <div class="col-lg-10">
+                            <div action="{{ Request::root() }}/upload" class="dropzone" id="my-awesome-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -93,19 +116,20 @@
                         <div class="col-lg-10">
                             <label><input type="radio" name="status" value="1" class="jq-checkbox"><span class="in_text">Завершено</span></label>
                             <label><input type="radio" name="status" value="2" class="jq-checkbox" checked><span class="in_text">В процессе</span></label>
+                            <label><input type="checkbox" value="1" name="is_slide"><span class="in_text">Вывод в слайдер</span></label>
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="content" class="col-lg-2 control-label">Изображения</label>
-                            <div class="col-lg-10">
-                                <div action="{{ Request::root() }}/upload" class="dropzone" id="my-awesome-dropzone">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                </div>
+                        <label for="content" class="col-lg-2 control-label">Планы этажей</label>
+                        <div class="col-lg-10">
+                            <div action="{{ Request::root() }}/upload_plans" class="dropzone" id="my-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                            <button class="btn btn-default">Назад</button>
+                            <!-- <button class="btn btn-default">Назад</button> -->
                             <button type="submit" class="btn btn-primary" id ="submit-form">Отправить</button>
                         </div>
                     </div>

@@ -15,7 +15,6 @@ class CreateMigrationLocations extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-
             $table->string('slug')->nullable();
             $table->timestamps();
 

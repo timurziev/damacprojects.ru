@@ -1,0 +1,451 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201608 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.sheikhhouse.ru.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1994                
+POS_TIME 2673                
+POS_VISITOR 8411                
+POS_DAY 10793               
+POS_DOMAIN 3474                
+POS_LOGIN 3708                
+POS_ROBOT 3863                
+POS_WORMS 4369                
+POS_EMAILSENDER 4500                
+POS_EMAILRECEIVER 4643                
+POS_SESSION 11188               
+POS_SIDER 11394               
+POS_FILETYPES 4778                
+POS_DOWNLOADS 5025                
+POS_OS 5095                
+POS_BROWSER 5244                
+POS_SCREENSIZE 5828                
+POS_UNKNOWNREFERER 5902                
+POS_UNKNOWNREFERERBROWSER 6045                
+POS_ORIGIN 6183                
+POS_SEREFERRALS 6323                
+POS_PAGEREFS 6489                
+POS_SEARCHWORDS 6778                
+POS_KEYWORDS 6930                
+POS_MISC 2335                
+POS_ERRORS 6989                
+POS_CLUSTER 3564                
+POS_SIDER_404 7149                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20160813114752 62 13125 12080369542437
+FirstTime 20160801013846
+LastTime 20160813112607
+LastUpdate 20160813130259 0 0 0 0 0
+TotalVisits 102                 
+TotalUnique 55                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 57                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 235 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 10 41 2494226 4 6 57834
+1 6 6 88047 8 13 339260
+2 0 0 0 33 40 473594
+3 5 5 71702 15 17 154580
+4 12 27 1272509 5 11 248531
+5 3 3 35091 4 7 42561
+6 0 0 0 6 10 355968
+7 2 2 25718 7 16 179762
+8 7 19 640239 15 17 173953
+9 5 29 283318 8 12 129627
+10 95 550 12423853 15 146 1566344
+11 18 76 3694466 9 19 185229
+12 46 265 2453684 6 79 902093
+13 24 111 4702856 24 39 536746
+14 209 757 15986455 57 175 3167177
+15 272 1582 32278310 170 356 6533872
+16 286 1673 22299404 42 158 3698089
+17 111 567 10159722 9 31 243184
+18 31 153 2933145 8 25 370283
+19 29 96 3079429 5 22 358062
+20 19 88 3618604 8 44 1423825
+21 2 2 30556 3 8 69389
+22 23 49 1844282 7 13 116905
+23 5 45 2869376 0 3 89819
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1220 6146 123284992
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 10
+mj12bot 127 720508 20160813052520 63
+yandex 48 979097 20160812155159 11
+[\s_+:,\.\;\/\\-]bot 30 276789 20160805032214 2
+no_user_agent 13 171143 20160812135611 0
+favicon 13 183183 20160813114752 0
+bot[\s_+:,\.\;\/\\-] 8 91186 20160813093154 1
+surveybot 3 25870 20160811225121 1
+python 2 24651 20160805022036 0
+facebook 1 9373 20160803153220 0
+robot 1 15582 20160811102306 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+css 1171 14608833 0 0
+map 1 54416 0 0
+png 585 3819824 0 0
+html 357 4918045 0 0
+js 802 46832130 0 0
+jpg 2272 44120775 0 0
+Unknown 429 4490633 0 0
+svg 96 278016 0 0
+otf 433 4162320 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/robots.txt 78 0 1872
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 10
+linuxandroid 2
+winxp 1
+winlong 13
+winnt 5470
+winvista 6
+linux 69
+win7 441
+macosx 132
+winunknown 2
+Unknown 10
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 29
+firefox28.0 1
+msie6.0 3
+chrome52.0.2743.116 3221
+chrome29.0.1547.57 2
+safari9.0.3 1
+chrome44.0.2415.36 1
+firefox44.0 2
+chrome48.0.2564.116 4
+chrome28.0.1469.0 2
+chrome43.0.2359.64 1
+chrome31.0.1650.57 4
+safari9.1.2 1
+chrome43.0.2357.132 2
+opera9.80 15
+firefox47.0 18
+chrome51.0.2704.103 1268
+chrome52.0.2743.82 1349
+safari9.0 20
+chrome44.0.2425.90 1
+chrome51.0.2704.106 56
+chrome48.0.2564.109 5
+chrome37.0.2062.120 2
+chrome27.0.1453 15
+chrome43.0.2357.93 2
+safari8.0 109
+chrome41.0.2228.0 4
+Unknown 10
+safari 26
+chrome48.0.2564.97 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+Yo-yo 20160813034109
+Go_1.1_package_http 20160811034445
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+Yo-yo 20160813034109
+Go_1.1_package_http 20160811034445
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 150 151
+From1 1 1
+From2 4 4
+From3 9 9
+From4 1056 5981
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 1 1
+yandex 3 3
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 5
+http://hostx.ru 4 4
+http://damacprojects.ru 2 2
+http://pizza-imperia.com 1 1
+http://l.facebook.com/lsr.php 1 1
+http://burger-imperia.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+302 22 8100
+206 25 1730016
+500 232 10497308
+405 14 168742
+404 482 5413824
+301 7 2214
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 37
+/mysqldump.sql 1 -
+/pma 1 -
+/admin.php 2 -
+/contacts 8 http://sheikhhouse.ru/investor_relations
+/upload/media/photo-small2.jpg 34 http://sheikhhouse.ru/media_center
+/public_html.tar.bz2 1 -
+/engine/engine.php 2 -
+/mysqldump 1 -
+/backup.sql.gz 1 -
+/blog 4 http://sheikhhouse.ru/blog/
+/dump.sql.bz2 1 -
+/public_html.rar 1 -
+/upload/media/photo-small1.jpg 39 -
+/backup.sql 1 -
+/umbraco 1 -
+/dump.sql.zip 1 -
+/js/owl.carousel.js 70 http://sheikhhouse.ru/
+/damacprojects.zip 1 http://damacprojects.ru/damacprojects.zip
+/sheikhhouse.zip 1 -
+/js/fotorama.js 151 http://sheikhhouse.ru/
+/backup.zip 3 http://damacprojects.ru/backup.zip
+/css/fotorama.css 99 http://sheikhhouse.ru/
+/img/favicon.png 43 http://sheikhhouse.ru/
+/public_html.tar.gz 1 -
+/cache.php 1 -
+/administrator/index.php 1 -
+/dump 1 -
+/backup.rar 1 -
+/dump.sql 1 -
+/backup.tar.gz 1 -
+/public_html.zip 1 -
+/phpmyadmin 1 -
+/dump.sql.gz 1 -
+/project 1 -
+/dump.zip 1 -
+/wp-login.php 2 -
+/backup 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 57
+77.87.102.83 214 1047 25276218 20160804181559
+77.87.101.163 181 1591 14645339 20160810191552
+77.87.101.162 146 306 12705089 20160803175314
+77.87.102.90 140 994 12507340 20160810162426
+77.87.102.46 104 662 8634644 20160811133246
+81.89.75.10 94 290 10730892 20160806002255
+77.87.101.149 68 214 5800280 20160804144550
+77.87.102.39 59 263 3058669 20160811180033
+212.94.26.153 54 194 7082758 20160812173738
+77.87.101.167 41 157 3008926 20160808155528
+5.18.48.186 1 1 15278 20160805211812
+82.112.194.41 4 26 2419206 20160810004939
+82.146.63.123 1 1 9373 20160801013846
+37.204.89.211 1 13 388726 20160802154953
+82.146.58.161 1 1 15278 20160807161515
+77.87.101.185 6 38 2505086 20160813112607 20160813102505 /create
+66.220.145.244 2 9 349620 20160803153227
+31.195.128.97 1 19 1049521 20160808230711
+185.154.13.83 3 3 39929 20160807015432
+185.89.100.170 1 1 16345 20160812054810
+62.109.26.168 1 1 9373 20160803031416
+109.86.72.191 2 2 31693 20160811122021
+185.35.128.19 5 18 855980 20160803220803
+66.102.9.107 2 7 259708 20160803080127
+91.215.153.151 1 1 9373 20160801085756
+94.45.81.87 2 2 31623 20160813004201
+80.58.250.73 1 1 15278 20160809170643
+77.87.101.49 6 34 1025510 20160807182030
+188.162.183.239 2 22 251695 20160810203151
+188.162.183.109 3 27 2479280 20160810202940
+91.210.145.95 1 1 16345 20160812185438
+149.202.98.161 1 1 15278 20160805211733
+178.123.61.157 2 2 28743 20160811222140
+188.163.107.140 1 1 16345 20160813094955
+185.100.87.120 1 1 9373 20160802042436
+82.146.62.80 1 1 15428 20160811034445
+66.102.9.97 1 8 337134 20160803080127
+213.159.212.73 2 2 18746 20160803055824
+66.220.145.246 0 3 64554 
+66.220.145.243 1 2 180302 20160803153227
+185.146.170.146 1 1 9373 20160801153444
+91.189.112.7 8 8 98604 20160810093543
+185.35.131.187 7 20 873107 20160804105159
+46.98.49.220 8 23 1221700 20160801045628
+92.63.99.123 2 2 30556 20160809033300
+83.220.237.155 1 10 1496883 20160804160130
+77.87.102.209 9 56 3011992 20160811104750
+83.149.25.67 6 6 73953 20160807133203
+79.137.223.57 4 4 63686 20160812040925
+123.57.65.21 1 1 9373 20160802070107
+91.210.146.33 2 2 32690 20160813011940
+77.87.101.75 4 22 160471 20160805143922
+103.54.134.61 1 1 9373 20160804042830
+5.19.138.13 4 4 63246 20160813034109
+77.87.102.134 3 17 187968 20160805154011
+164.132.216.252 1 1 9373 20160803052243
+66.220.145.245 0 1 2366 
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 13
+20160801 20 51 2284242 8
+20160802 23 83 2459849 11
+20160803 184 398 16482896 13
+20160804 312 1350 37263763 10
+20160805 76 240 8630599 14
+20160806 4 13 61112 3
+20160807 14 63 1294672 5
+20160808 43 177 4073725 4
+20160809 4 4 61112 4
+20160810 340 2703 33074717 8
+20160811 181 1002 14857755 10
+20160812 9 20 170084 7
+20160813 10 42 2570466 5
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 8
+5mn-15mn 2
+0s-30s 73
+2mn-5mn 2
+30s-2mn 8
+15mn-30mn 5
+30mn-1h 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 43
+/ 357 4918045 94 60
+/css/fonts/ProximaNova-Regular.otf 217 1893360 1 4
+/css/fonts/FuturaPTCond-Bold.otf 216 2268960 1 15
+/project/57a328733edcc 52 618726 1 1
+/about 41 537293 1 2
+/admin 30 287000 0 0
+/projects 26 287212 1 4
+/message 22 236980 0 0
+/create 20 265562 0 0
+/investor_relations 20 184810 0 4
+/edit/57a328733edcc 10 196250 0 0
+/upload_plans 6 66 0 0
+/contacts 5 42168 0 0
+/edit/57a32b36b77b3 3 53871 0 0
+/edit/57a34a39e6ba7 1 17852 0 0
+/dam_proj 2 14351 0 0
+/project/57a32c7a7c95a 9 101236 0 0
+/project/57a34a39e6ba7 5 52666 1 2
+/press_releases 4 39034 0 0
+/news 7 68276 0 0
+/press_rel 5 35938 0 0
+/css/bootstrap.min.css.map 1 54416 0 0
+/novel 4 28790 0 0
+/in_progress_projects 3 23244 0 0
+/search 3 30897 0 0
+/create_city 6 51979 0 0
+/offers 16 147518 0 1
+/team 20 241378 1 1
+/investor 2 14353 0 0
+/comp_search 6 58605 0 1
+/events 15 127647 0 1
+/completed_projects 2 15496 0 0
+/media_center 14 151586 0 1
+/upload 6 66 0 0
+/about_dam 4 28659 0 0
+/create_rel 1 8590 0 0
+/create_page 11 102648 0 1
+/all_projects 3 26441 0 0
+/offers_dam 3 21517 0 0
+/search_pro 10 97889 0 1
+/login 5 26850 0 0
+/project/57a32b36b77b3 14 155534 0 1
+/emails 13 91655 1 1
+END_SIDER

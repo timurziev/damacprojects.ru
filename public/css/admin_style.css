@@ -49,3 +49,19 @@
 .pagination .active {
 	font-weight: bold;
 }
+
+.button-warning {
+	color: #fff;
+	background-color: #9ea1a2;
+	border-color: #fff
+}
+
+.button-warning:hover {
+	background-color: #7b7b7a;
+}
+
+.button {
+	margin-left: -42px;position: absolute;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}

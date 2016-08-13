@@ -4,6 +4,7 @@
 @section('content')
     <div class="container col-md-8 col-md-offset-2">
         <div class="well well bs-component">
+        <fieldset>
             <form class="form-horizontal" method="post" enctype="multipart/form-data">
 
             @foreach ($errors->all() as $error)
@@ -17,7 +18,7 @@
             @endif
 
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                <fieldset>
+                
                     <legend>Обновить проект</legend>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Заголовок</label>
@@ -52,6 +53,14 @@
                             </select>
                         </div>
                         {{ Request::input('city') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label">Изображения</label>
+                        <div class="col-lg-10">
+                            <div action="{{ Request::root() }}/upload" class="dropzone" id="my-awesome-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Видео</label>
@@ -92,26 +101,57 @@
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Выберите статус</label>
                         <div class="col-lg-10">
-                            <label><input type="radio" name="status" value="1" class="jq-checkbox"><span class="in_text">Завершено</span></label>
-                            <label><input type="radio" name="status" value="2" class="jq-checkbox" checked><span class="in_text">В процессе</span></label>
+                            <label><input type="radio" name="status" value="1" class="jq-checkbox" @if(1 == $project->category_id) checked @endif><span class="in_text">Завершено</span></label>
+                            <label><input type="radio" name="status" value="2" class="jq-checkbox" @if(2 == $project->category_id) checked @endif><span class="in_text">В процессе</span></label>
+                            <label><input type="checkbox" value="1" name="is_slide" @if($project->is_slide) checked @endif><span class="in_text">Вывод в слайдер</span></label>
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="content" class="col-lg-2 control-label">Изображения</label>
-                            <div class="col-lg-10">
-                                <div action="{{ Request::root() }}/upload" class="dropzone" id="my-awesome-dropzone">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                </div>
+                        <label for="content" class="col-lg-2 control-label">Планы этажей</label>
+                        <div class="col-lg-10">
+                            <div action="{{ Request::root() }}/upload_plans" class="dropzone" id="my-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                            <button type="submit" class="btn btn-warning">Назад</button>
                             <button type="submit" class="btn btn-primary" id ="submit-form">Отправить</button>
                         </div>
                     </div>
+                    </form> 
+                    <div class="form-group">
+                        @if (empty($images[0]) === false )
+                            <label for="content" class="col-lg-2 control-label">Изображения</label>
+                        @endif
+                        <div class="col-lg-10">
+                            @foreach ($images as $image)
+                                <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
+                                    @if($project->id == $image->project_id)
+                                        <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @endif 
+                                </form>
+                            @endforeach
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        @if (empty($plans[0]) === false )
+                            <label for="content" class="col-lg-2 control-label">Планы этажей</label>
+                        @endif
+                        <div class="col-lg-10">
+                            @foreach ($plans as $plan)
+                                <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
+                                    @if($project->id == $plan->project_id)
+                                        <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @endif 
+                                </form>
+                            @endforeach
+                        </div>
+                    </div>
                 </fieldset>
-            </form>
         </div>
     </div>
 @endsection
