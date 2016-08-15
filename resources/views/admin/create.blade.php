@@ -47,7 +47,7 @@
                                     @if ($country->id == Request::input('country') )
                                         selected
                                     @endif
-                                        >{{ $location->name }}</option>
+                                        >{{ $country->name }}</option>
                                 @endforeach 
                             </select>
                         </div>

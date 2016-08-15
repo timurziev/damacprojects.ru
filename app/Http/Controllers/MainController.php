@@ -8,6 +8,7 @@ use App\Press_release;
 use App\Novelty;
 use App\Category;
 use App\Location;
+use App\Country;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
@@ -21,10 +22,10 @@ class MainController extends Controller
     public function index()
 	{
 		$projects = Project::take(4)->orderBy('created_at')->get();
-		$locations = Location::all();
+		$countries = Country::all();
                 $posts = Project::all();
 
-        return view('index', compact('projects', 'locations', 'posts'));
+        return view('index', compact('projects', 'countries', 'posts'));
 	}
 
 	public function show_page($slug)
@@ -137,19 +138,19 @@ class MainController extends Controller
 	public function search()
 	{
 		$projects = Project::orderBy('created_at');
-		$locations = Location::all();
+		$countries = Country::all();
 
 		if (Request::has('status'))
 		{
 			$projects->where('category_id', Request::get('status'));
 		}
-		if (Request::has('city'))
+		if (Request::has('country'))
 		{
-			$projects->where('location_id', Request::get('city'));
+			$projects->where('country_id', Request::get('country'));
 		}
 		$projects = $projects->paginate(6);
 		$projects->appends(Request::except('page'));
-        return view('offers', compact('projects', 'locations'));
+        return view('offers', compact('projects', 'countries'));
 	}
 
 	public function complex_search()
