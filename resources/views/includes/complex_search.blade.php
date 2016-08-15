@@ -7,7 +7,18 @@
 				<form action="{{ action('MainController@complex_search') }}" method="get" id="filter-form">
 					<div class="row1">
 						<div class="input-wrapper"> 
-							<input type="text" name="search" placeholder="Что ищем?">
+							<input type="text" name="search" placeholder="Введите ключевое слово">
+						</div>
+						<div class="select-wrapper">
+							<select class="drop-list" name="country">
+								<option disabled selected>Выберите страну</option>
+								<option value="">Иордания</option>
+								<option value="">Ливан</option>
+								<option value="">Катар</option>
+								<option value="">Саудовская Аравия</option>
+								<option value="">ОАЭ</option>
+							</select>
+							<div class="select-arrow"></div>
 						</div>
 						<div class="select-wrapper">
 							<select class="drop-list" name="city">
@@ -24,6 +35,15 @@
 						</div>
 					</div>
 					<div class="row2">
+						<div class="select-wrapper"> 
+							<select class="drop-list" name="district">
+								<option disabled selected>Выберите район</option>
+								<option value="">Абдали</option>
+								<option value="">Солидер</option>
+								<option value="">Лусаил</option>
+							</select>
+							<div class="select-arrow"></div>
+						</div>
 						<div class="select-wrapper"> 
 							<select class="drop-list" name="status">
 								<option disabled selected>Выберите статус</option>
