@@ -41,6 +41,22 @@
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label"></label>
                         <div class="col-lg-10">
+                            <select class="form-control" name="country">
+                                <option disabled selected>Выберите страну</option>   
+                                @foreach ($countries as $country)
+                                    <option value="{{ $country->id }}"
+                                    @if ($country->id == $project->country_id)
+                                        selected
+                                    @endif
+                                        >{{ $country->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                        {{ Request::input('country') }}
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
                                 @foreach ($locations as $location)

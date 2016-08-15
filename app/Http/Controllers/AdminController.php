@@ -14,6 +14,7 @@ use App\Images;
 use App\Plan;
 use App\Http\Requests\ProjectsFromRequest;
 use App\Location;
+use App\Country;
 use App\User;
 use Session;
 use Redirect;
@@ -36,7 +37,8 @@ class AdminController extends Controller
     public function create()
 	{
 		$locations = Location::all();
-    	return view('admin.create', compact('locations'));
+        $countries = Country::all();
+    	return view('admin.create', compact('locations', 'countries'));
 	}
 
     public function create_city()
@@ -70,11 +72,12 @@ class AdminController extends Controller
     public function edit($slug)
     {
         $locations = Location::all();
+        $countries = Country::all();
         $project = Project::whereSlug($slug)->firstOrFail();
         $plans = Plan::all();
         $images = Images::all();
 
-        return view('admin.edit', compact('project', 'locations', 'plans', 'images'));
+        return view('admin.edit', compact('project', 'locations', 'plans', 'images', 'countries'));
     }
 
     public function update($slug, ProjectsFromRequest $request)
@@ -84,6 +87,7 @@ class AdminController extends Controller
         $project->description = $request->get('description');
         $project->text = $request->get('text');
         $project->location_id = $request->get('city');
+        $project->country_id = $request->get('country');
         $project->category_id = $request->get('status');
         $project->media = $request->get('media');
         $project->facilities = $request->get('facilities');
@@ -155,6 +159,7 @@ class AdminController extends Controller
         $project->text = $request->get('text');
         $project->slug = $slug;
         $project->location_id = $request->get('city');
+        $project->country_id = $request->get('country');
         $project->category_id = $request->get('status');
         $project->media = $request->get('media');
         $project->facilities = $request->get('facilities');

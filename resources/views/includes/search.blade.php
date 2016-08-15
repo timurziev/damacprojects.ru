@@ -11,17 +11,17 @@
 				<div class="select-arrow"></div>
 			</div>
 			<div class="select-wrapper">
-				<select class="drop-list" name="city">
-					<option disabled selected>Выберите город</option>	
-					@foreach ($locations as $location)
-						<option value="{{ $location->id }}"
-						@if ($location->id == Request::input('city') )
+				<select class="drop-list" name="country">
+					<option disabled selected>Выберите страну</option>	
+					@foreach ($countries as $country)
+						<option value="{{ $country->id }}"
+						@if ($country->id == Request::input('country') )
 							selected
 						@endif
 
-							>{{ $location->name }}</option>
+							>{{ $country->name }}</option>
 
-							>{!! $location->name !!}</option>
+							>{!! $country->name !!}</option>
 
 					@endforeach	
 				</select>
