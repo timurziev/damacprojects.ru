@@ -71,7 +71,7 @@
 					<a href="{{ URL::to('/media_center') }}">Медиа-центр</a>
 					<div class="submenu">
 						<ul>
-							<li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li>
+							{{-- <li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li> --}}
 							<li><a href="{{ URL::to('/news') }}">Новости индустрии</a></li>
 							<li><a href="">Фотогалерея</a></li>
 							<li><a href="">Видеогалерея</a></li>
@@ -85,7 +85,7 @@
 					</div>
 				</li>
 				<li class="{{ Request::is('investor_relations') ? 'active' : '' }}">
-					<a href="{{ URL::to('/investor_relations') }}">Инвесторам</a>
+					<a href="{{ URL::to('/investor_relations') }}">Инвестирование</a>
 					<div class="submenu">
 						<ul>
 							@foreach ($static_pages as $static_page)
@@ -113,7 +113,7 @@
 		<div class="footer-menu1">	
 			<div class="wrapper">
 				<ul>
-					<h4>О SHEIKH</h4>
+					<h4>ОБ АГЕНТСТВЕ</h4>
 					<!-- <li><a href="{{ URL::to('/message') }}">Обращение председателя</a></li> -->
 					<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
 					@foreach ($static_pages as $static_page)
@@ -155,10 +155,11 @@
 				<a href="" class="footer-links">Карта сайта</a>
 				<a href="" class="footer-links">Условия использования</a>
 				<div class="social">
-					<a class="vk" href=""></a>
-					<a class="fb" href=""></a>
-					<a class="tw" href=""></a>
-					<a class="ok" href=""></a>
+					<a class="vk" href="https://vk.com/sheikhhouse"></a>
+					{{-- <a class="fb" href=""></a> --}}
+					{{-- <a class="tw" href=""></a> --}}
+					{{-- <a class="ok" href=""></a> --}}
+					<a class="in" href="https://www.instagram.com/sheikhhouse"></a>
 				</div>
 			</div>
 		</div>
