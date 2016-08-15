@@ -55,6 +55,11 @@ header .logo {
 	position: relative;
 }
 
+.container {
+	display: block;
+	margin: 0 auto;
+}
+
 header .header-nav, header .phone {
 	float: right;
 	color: #fff;
@@ -1051,9 +1056,33 @@ button {
 }
 
 .item-desc {
-	position: absolute;
-	bottom: 0;
-	display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.item-desc .shadow {
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.item-desc .shadow h2 {
+	margin: 0 0 20px;
+}
+
+.item-desc .shadow a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.info-block p {
+	font-size: 18px;
+	line-height: 24px;
+	color: #fff;
 }
 
 .list-item .item-wrapper p{

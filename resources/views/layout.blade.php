@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/fotorama.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}"> 
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/mobile.css') }}">
 	<link rel="icon" href="{{ URL::asset('img/favicon.ico') }}">
 	<title>SHEIKH Projects</title>
 </head>
