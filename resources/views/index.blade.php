@@ -42,12 +42,12 @@
 			<div class="cards center">
 				@include('includes/main_projects')
 			</div>
+			<div class="section-title">
+				<h3>Официальные сайты компаний, с которыми сотрудничает агентсво «SHEIKH REAL ESTATE»</h3>
+			</div>
 			<div class="partners">
-				<img src="img/banner.jpg">
-				<img src="img/banner.jpg">
-				<img src="img/banner.jpg">
-				<img src="img/banner.jpg">
-				<img src="img/banner.jpg">
+				<a href="https://www.damacproperties.com"><img src="img/damac-logo.jpg"></a>
+				<a href="http://www.palace-emerald.com"><img src="img/palace-logo.jpg"></a>
 			</div>
 		</div>
 	</div>
