@@ -1697,3 +1697,134 @@ button {
     width: 100%;
     height: auto;
 }
+
+/* 
+	projects search results view 
+*/
+
+.projects-search-results img {
+	opacity: 1!important;
+}
+.projects-search-results .info-block h3,
+.projects-search-results .info-block p,
+.projects-search-results .info-block .more {
+	top: auto;
+	position: relative;
+	margin: 20px 30px;
+}
+.projects-search-results .info-block .more {
+	padding: 15px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.813rem;
+	text-transform: uppercase;
+}
+
+/* list view */
+.projects-search-results {
+	background: transparent;
+}
+.list-view .item {
+	margin-bottom: 20px;
+	display: block;
+	height: 300px;
+	overflow: hidden;
+	float: none;
+	clear: both;
+	background: #262626;
+}
+.list-view .item:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+.list-view .item .img {
+	width: 33%;
+	height: 100%;
+	float: left;
+}
+.list-view .item img {
+    width: auto;
+    max-height: 90%;
+    display: block;
+    margin: 15px auto 0;	
+}
+.list-view .info-block {
+	display: block;
+	float: left;
+	width: 66%;
+}
+.list-view .info-block p {
+	margin-bottom: 40px;
+}
+
+/* grid view */
+.grid-view .big-item, .grid-view .small-item {
+	float: left;
+	vertical-align: top;
+}
+.grid-view .big-item {
+	width: 50%;
+}
+.grid-view .small-item {
+	width: 25%;
+}
+.grid-view .item {
+	margin: 10px;
+	box-sizing: border-box;
+	background: #262626;
+	padding-bottom: 40px;
+}
+
+
+/* switch view */
+.switch-view:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+.switch-view {
+	text-align: right;
+	margin-bottom: 20px;
+}
+.switch-view a {
+	display: inline-block;
+	vertical-align: top;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 100%;
+	border: 1px solid #000;
+	text-align: center;
+	cursor: pointer;
+	margin: 0 5px;
+	overflow: hidden;
+	background: url('../img/sprite.png') no-repeat 0 0;
+}
+.switch-view a:last-child {
+	margin-right: 0;
+}
+.switch-view a:hover, .switch-view a.active {
+	background-color: #666;
+	border-color: #666;	
+}
+.switch-view .list {
+	background-position: -238px -56px;
+}
+.switch-view .list:hover, .switch-view .list.active {
+	background-position: -269px -56px;
+}
+.switch-view .grid {
+	background-position: -300px -56px;
+}
+.switch-view .grid:hover, .switch-view .grid.active {
+	background-position: -331px -56px;
+}
+.switch-view .map {
+	background-position: -351px -2px;
+}
+.switch-view .map:hover, .switch-view .map.active {
+	background-position: -181px -3px;
+}
