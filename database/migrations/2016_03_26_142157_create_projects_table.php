@@ -27,6 +27,7 @@ class CreateProjectsTable extends Migration
             $table->string('download_pdf')->nullable();
             $table->string('view_pdf')->nullable();
             $table->tinyinteger('is_slide');
+            $table->tinyinteger('is_popular');
             $table->string('slug')->nullable();
             $table->integer('category_id');
             $table->timestamps();

@@ -21,9 +21,9 @@ class MainController extends Controller
 {
     public function index()
 	{
-		$projects = Project::take(4)->orderBy('created_at')->get();
+		$projects = Project::take(4)->where('is_popular', 1)->orderBy('created_at')->get();
 		$countries = Country::all();
-                $posts = Project::all();
+        $posts = Project::all();
 
         return view('index', compact('projects', 'countries', 'posts'));
 	}

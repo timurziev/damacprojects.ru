@@ -120,6 +120,7 @@
                             <label><input type="radio" name="status" value="1" class="jq-checkbox" @if(1 == $project->category_id) checked @endif><span class="in_text">Завершено</span></label>
                             <label><input type="radio" name="status" value="2" class="jq-checkbox" @if(2 == $project->category_id) checked @endif><span class="in_text">В процессе</span></label>
                             <label><input type="checkbox" value="1" name="is_slide" @if($project->is_slide) checked @endif><span class="in_text">Вывод в слайдер</span></label>
+                            <label><input type="checkbox" value="1" name="is_popular" @if($project->is_popular) checked @endif><span class="in_text">В центре внимания</span></label>
                         </div>
                     </div>
                     <div class="form-group">

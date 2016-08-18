@@ -96,6 +96,7 @@ class AdminController extends Controller
         $project->view_pdf = $request->get('view_pdf');
         $project->download_pdf = $request->get('download_pdf');
         $project->is_slide = $request->get('is_slide');
+        $project->is_popular = $request->get('is_popular');
 
         if($request->get('images') !== null) {
             foreach ($request->get('images') as $key => $image) {
@@ -168,6 +169,7 @@ class AdminController extends Controller
         $project->view_pdf = $request->get('view_pdf');
         $project->download_pdf = $request->get('download_pdf');
         $project->is_slide = $request->get('is_slide');
+        $project->is_popular = $request->get('is_popular');
 
 	    $project->save();
 
