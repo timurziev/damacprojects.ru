@@ -11,7 +11,6 @@
 				<div class="select-arrow"></div>
 			</div>
 			<div class="select-wrapper">
-
 				<select class="drop-list" name="country">
 					<option disabled selected>Выберите страну</option>	
 					@foreach ($countries as $country)
