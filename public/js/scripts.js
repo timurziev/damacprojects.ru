@@ -23,7 +23,8 @@ $(document).ready(function() {
       slideSpeed : 300,
       paginationSpeed : 400,
       autoHeight : true,
-      singleItem:true
+      singleItem:true,
+		transitionStyle : "fade"
       
   });
 

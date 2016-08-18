@@ -1,6 +1,6 @@
 <div class="filter">
 	<div class="wrapper">
-		<h4>Поиск недвижимости</h4>
+		<h4>Найди свой дом</h4>
 		<form action="{{ action('MainController@search') }}" method="get" id="filter-form">
 			<div class="select-wrapper"> 
 				<select class="drop-list" name="status">
@@ -11,11 +11,19 @@
 				<div class="select-arrow"></div>
 			</div>
 			<div class="select-wrapper">
+<<<<<<< HEAD
+				<select class="drop-list" name="city">
+					<option disabled selected>Выбор страны</option>	
+					@foreach ($locations as $location)
+						<option value="{{ $location->id }}"
+						@if ($location->id == Request::input('city') )
+=======
 				<select class="drop-list" name="country">
 					<option disabled selected>Выберите страну</option>	
 					@foreach ($countries as $country)
 						<option value="{{ $country->id }}"
 						@if ($country->id == Request::input('country') )
+>>>>>>> origin/master
 							selected
 						@endif
 

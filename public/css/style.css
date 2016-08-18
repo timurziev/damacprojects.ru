@@ -55,6 +55,11 @@ header .logo {
 	position: relative;
 }
 
+.container {
+	display: block;
+	margin: 0 auto;
+}
+
 header .header-nav, header .phone {
 	float: right;
 	color: #fff;
@@ -135,7 +140,7 @@ header .phone {
 	}
 
 	.menu.menu-fixed .wrapper>ul>li {
-		margin-left: 25px;
+		margin-left: 20px;
 	}
 
 	.menu.menu-fixed #search-form {
@@ -428,6 +433,7 @@ button {
 	margin: 0; 
 	text-transform: uppercase;
 	width: 180px;
+	line-height: 60px;
 	display: block;
     float: left;
 }
@@ -623,6 +629,8 @@ button {
 	margin: 0 40px 120px 40px;
 	bottom: 0;
 	position: absolute;
+	padding: 15px;
+	border: 1px solid #fff;
 }
 
 .location {
@@ -633,33 +641,37 @@ button {
 	text-decoration: none;
 }
 
-.location:after {
+.location:before {
 	content: '';
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
+	display: inline-block;
+	position: relative;
+	margin-right: 5px;
 	background: url('../img/sprite.png') no-repeat -197px -17px;
 	width: 9px;
 	height: 15px;
 }
 
 .cards .spotlight-preview {
-	margin-bottom: 150px;
+	margin-bottom: 190px;
 }
 
 .partners {
-	margin: 145px 0 0 0;
+	margin: 120px 0 0 0;
 	overflow: hidden;
+	text-align: center;
+}
+
+.partners a {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16%;
+	margin-right: 10%;
+	margin-bottom: 30px;
+	min-width: 150px;
 }
 
 .partners img {
-	display: block;
-	float: left;
-	width: 16%;
-	margin-right: 5%;
-	margin-bottom: 30px;
-	min-width: 150px;
+	max-width: 100%;
 }
 
 .partners img:last-child {
@@ -1051,9 +1063,33 @@ button {
 }
 
 .item-desc {
-	position: absolute;
-	bottom: 0;
-	display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.item-desc .shadow {
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.item-desc .shadow h2 {
+	margin: 0 0 20px;
+}
+
+.item-desc .shadow a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.info-block p {
+	font-size: 18px;
+	line-height: 24px;
+	color: #fff;
 }
 
 .list-item .item-wrapper p{
@@ -1359,6 +1395,7 @@ button {
 
 .footer-menu2 .social a {
 	display: inline-block;
+	vertical-align: middle;
 	margin-left: 40px;
 }
 
@@ -1389,6 +1426,12 @@ button {
 	background: url('../img/sprite.png') no-repeat -165px -61px;
 	width: 17px;
 	height: 29px;
+}
+
+.footer-menu2 .social .in {
+	background: url('../img/sprite.png') no-repeat -199px -61px;
+	width: 31px;
+	height: 31px;
 }
 
 /*Бургер*/
