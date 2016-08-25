@@ -66,6 +66,7 @@ class MainController extends Controller
 	{
 		$projects = Project::orderBy('created_at', 'desc');
 		$locations = Location::all();
+		$countries = Country::all();
 		$images = Images::all();
 
 		if (Request::has('status'))
@@ -75,7 +76,7 @@ class MainController extends Controller
 
 		$projects = $projects->paginate(4);
 
-        return view('projects', compact('projects', 'locations', 'images'));
+        return view('projects', compact('projects', 'locations', 'images', 'countries'));
 	}
 
 	public function releases_and_news()
@@ -157,10 +158,15 @@ class MainController extends Controller
 	{
 		$projects = Project::where('title', 'like', '%'.Request::get('search').'%');
 		$locations = Location::all();
+		$countries = Country::all();
 		
 		if (Request::has('status'))
 		{
 			$projects->where('category_id', Request::get('status'));
+		}
+		if (Request::has('country'))
+		{
+			$projects->where('country_id', Request::get('country'));
 		}
 		if (Request::has('city'))
 		{
@@ -168,13 +174,27 @@ class MainController extends Controller
 		}
 		$projects = $projects->paginate(6);
 		$projects->appends(Request::except('page'));
-        return view('projects', compact('projects', 'locations'));
+        return view('projects', compact('projects', 'locations', 'countries'));
 	}
 
         public function email() 
 	{
-	 	Mail::send('includes/email', ['user' => 'Check'], function($message) {
-	 		$message->to('one_day1@mail.ru')->subject('Welcome');
-	 	});
+		$name = Request::get('name');
+		$email = Request::get('email');
+		$text = Request::get('text');
+		$project_id = Request::get('project_id');
+
+		$data = [
+			'name' => $name,
+			'email' => $email,
+			'text' => $text,
+			'project_id' => $project_id
+		];
+
+	 	Mail::send( 'mail.email', $data, function ($message){
+            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
+        });
+
+        return redirect()->back();
 	}
 }

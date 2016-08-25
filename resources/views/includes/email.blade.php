@@ -1,7 +1,8 @@
 <form class="subscribe-form" action="{{ action('MainController@email') }}" method="post">
-<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-	<input type="text" placeholder="Имя">
+	{!! csrf_field() !!}
+	<input type="hidden" value="{{ $project->id }}" name="project_id">
+	<input type="text" placeholder="Имя" name="name">
 	<input type="text" placeholder="E-mail" name="email">
-	<textarea placeholder="Текст запроса"></textarea>
-	<input type="submit" value="Получать уведомления">
+	<textarea placeholder="Текст запроса" name="text"></textarea>
+	<input type="submit" value="Получать уведомления" onclick="alert('Запрос отправлен')">
 </form>

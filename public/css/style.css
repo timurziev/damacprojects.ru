@@ -44,7 +44,7 @@ header .logo {
 	float: left;
 	width: 163px;
 	height: 40px;
-	background: url('../img/logo.png') no-repeat;
+	background: url('../img/logo.svg') no-repeat;
 }
 
 .wrapper {
@@ -135,7 +135,7 @@ header .phone {
 		width: 122px;
 	    height: 30px;
 	    background-size: contain;
-	    background-image: url('../img/logo.png');
+	    background-image: url('../img/logo.svg');
 	    background-repeat: no-repeat;
 	}
 

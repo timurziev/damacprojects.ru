@@ -12,11 +12,13 @@
 						<div class="select-wrapper">
 							<select class="drop-list" name="country">
 								<option disabled selected>Выберите страну</option>
-								<option value="">Иордания</option>
-								<option value="">Ливан</option>
-								<option value="">Катар</option>
-								<option value="">Саудовская Аравия</option>
-								<option value="">ОАЭ</option>
+								@foreach ($countries as $country)
+									<option value="{{ $country->id }}"
+									@if ($country->id == Request::input('country') )
+										selected
+									@endif
+										>{{ $country->name }}</option>
+								@endforeach	
 							</select>
 							<div class="select-arrow"></div>
 						</div>
