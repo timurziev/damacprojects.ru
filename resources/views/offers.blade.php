@@ -11,8 +11,23 @@
 		@endif
 		<div class="wrapper">
 			<div class="single-page offers">
-				<div class="cards offers-wrapper">
-					@include ('includes/last_projects')
+				<div class="cards offers-wrapper projects-search-results">
+					{{-- @include ('includes/last_projects') --}}
+					
+					<div class="switch-view">
+						<a href="?view=list" class="list active"></a>
+						<a href="?view=grid" class="grid"></a>
+						<a href="?view=map" class="map"></a>
+					</div>
+					
+					{{-- LIST VIEW --}}
+					@include ('includes/list_projects')
+
+					{{-- GRID VIEW --}}
+					{{-- @include ('includes/grid_projects') --}}
+
+					{{-- MAP VIEW --}}
+					{{-- @include ('includes/map_projects') --}}
 				</div>
 		    	@include ('includes/pagination')
 			</div>

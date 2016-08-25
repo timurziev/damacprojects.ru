@@ -174,6 +174,7 @@
 	<script src="{{ URL::asset('js/jquery-2.2.1.min.js') }}"></script>
 	<script src="{{ URL::asset('js/fotorama.js') }}"></script>
 	<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
+	<script src="{{ URL::asset('js/masonry.pkgd.min.js') }}"></script>
 	<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </body>
