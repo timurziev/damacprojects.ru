@@ -17,7 +17,10 @@
 	</div>
 </div>
 @empty
-<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;"><h2>Нет релизов</h2></div><br><br><br>
+<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;">
+	<h2>Нет релизов</h2>
+</div>
+<br><br><br>
 @endforelse
 
 @if (Request::is('media_center'))
