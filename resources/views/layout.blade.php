@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/fonts/fonts.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/fotorama.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}"> 
+	<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/mobile.css') }}">
@@ -110,7 +110,7 @@
 	@yield('content')
 
 	<footer>
-		<div class="footer-menu1">	
+		<div class="footer-menu1">
 			<div class="wrapper">
 				<ul>
 					<h4>ОБ АГЕНТСТВЕ</h4>

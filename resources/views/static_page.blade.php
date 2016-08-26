@@ -8,6 +8,11 @@
 		</div>
 		<div class="wrapper">
 			<div class="single-page">
+				<div class="content-left-block">
+					<div class="left-col">
+						{!! $static_page->text !!}
+					</div>
+				</div>
 				<div class="right-col">
 					<div class="text-header">
 					@foreach ($main_pages as $main_page)
@@ -23,9 +28,6 @@
 							@endif
 						@endforeach
 					</ul>
-				</div>
-				<div class="left-col">
-					{!! $static_page->text !!}
 				</div>
 			</div>
 		</div>

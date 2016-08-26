@@ -8,6 +8,29 @@
 		</div>
 		<div class="wrapper">
 			<div class="single-page">
+				<div class="content-left-block">
+					<div class="left-col">
+						@if(Request::is('media_center'))
+							<div class="lid">Добро пожаловать в пресс-центр DAMAC Properties. Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</div>
+						@endif
+
+						@if(Request::is('release/*'))
+							@include('includes/view_release')
+						@endif
+
+						@if(Request::is('new/*'))
+							@include('includes/view_new')
+						@endif
+
+						@if(Request::is('media_center') || (Request::is('press_releases')))
+							@include('includes/releases')
+						@endif
+
+						@if(Request::is('media_center') || (Request::is('news')))
+							@include('includes/news')
+						@endif
+					</div>
+				</div>
 				<div class="right-col">
 					<div class="text-header">
 						<h2>Медиа центр</h2>
@@ -43,27 +66,6 @@
 						<p>Факс: <strong>+7 928 123 45 67</strong></p>
 						<p>Адрес: <strong>г.Москва, ул. Магасовская 06</strong></p>
 					</div>
-				</div>
-				<div class="left-col">
-				    @if(Request::is('media_center'))
-						<div class="lid">Добро пожаловать в пресс-центр DAMAC Properties. Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</div>
-					@endif
-
-					@if(Request::is('release/*'))
-			 			@include('includes/view_release')
-			 		@endif
-
-			 		@if(Request::is('new/*'))
-			 			@include('includes/view_new')
-			 		@endif
-					
-					@if(Request::is('media_center') || (Request::is('press_releases')))
-			 			@include('includes/releases')
-			 		@endif
-			 		
-			 		@if(Request::is('media_center') || (Request::is('news')))
-			 			@include('includes/news')
-					@endif
 				</div>
 			</div>
 		</div>

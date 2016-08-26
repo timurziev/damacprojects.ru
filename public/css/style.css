@@ -187,7 +187,7 @@ header .phone {
 
 .menu .wrapper>ul>li{
 	display: inline-block;
-	color: #fff; 
+	color: #fff;
 	margin-left: 40px;
 	font-size: 0.813rem;
 	text-transform: uppercase;
@@ -311,8 +311,8 @@ header .phone {
 	position: relative;
 }
 
-.slider .arrows { 
-} 
+.slider .arrows {
+}
 
 .slider .item {
 	position: relative;
@@ -345,7 +345,7 @@ header .phone {
 	top: 22px;
 	background: url('../img/sprite.png') no-repeat -114px -18px;
 	width: 7px;
-	height: 12px; 
+	height: 12px;
 }
 
 .readmore:after {
@@ -430,7 +430,7 @@ button {
 
 .filter h4 {
 	color: #7d7d7d;
-	margin: 0; 
+	margin: 0;
 	text-transform: uppercase;
 	width: 180px;
 	line-height: 60px;
@@ -472,6 +472,10 @@ button {
  	position: relative;
  	margin-top: 130px;
  	margin-bottom: 75px;
+}
+
+.content-left-block .section-title {
+	margin-top: 0;
 }
 
 .section-title .line, .show-all .line{
@@ -688,6 +692,8 @@ button {
 .left-col .lid {
 	text-align: left;
 	padding: 0;
+	margin-top: 0;
+	margin-bottom: 130px;
 }
 
 .text-header {
@@ -701,6 +707,12 @@ button {
 	display: inline-block;
 	line-height: 1;
 	border-bottom: 2px solid #262626;
+}
+
+.single-page:after {
+	display: block;
+	clear: both;
+	content: '';
 }
 
 .single-page p {
@@ -731,6 +743,10 @@ button {
 
 .single-page .quote .readmore {
 	float: right;
+}
+
+.content-left-block .page-slider img, .content-left-block iframe {
+	width: 100%;
 }
 
 .project-location {
@@ -812,7 +828,18 @@ button {
 .right-col {
 	padding-top: 135px;
 	width: 305px;
-	float: right;
+	margin-left: -305px;
+	float: left;
+	position: relative;
+}
+
+.content-left-block {
+	float: left;
+	width: 100%;
+}
+
+.left-col {
+	padding: 135px 385px 0 0;
 }
 
 .right-col .fotorama__caption {
@@ -828,20 +855,16 @@ button {
 	color: #fff;
 }
 
-.left-col {
-	padding: 135px 385px 0 0;
-}
-
 .left-col p, .right-col p {
 	padding: 0;
 }
 
-.left-col .lid {
-	margin-top: 0;
-}
-
 .left-col .text-header {
 	text-align: left;
+}
+
+.right-col .text-header {
+	overflow: inherit;
 }
 
 .left-col .text-header h2 {
@@ -1020,6 +1043,7 @@ button {
 	position: relative;
 	text-align: right;
 	overflow: hidden;
+	margin-bottom: 130px;
 }
 
 .show-all a {
@@ -1231,6 +1255,7 @@ button {
 .filter-text h4 {
 	width: 100%;
 	margin-bottom: 10px;
+	line-height: 1;
 }
 
 .input-wrapper {
@@ -1254,7 +1279,7 @@ button {
 .input-wrapper input {
 	border: 1px solid #3c3c3c;
     padding: 0 20px;
-    height: 60px;
+    height: 58px;
     width: 100%;
     color: #fff;
     outline: none;
@@ -1283,6 +1308,7 @@ button {
 	margin-left: 0;
 	width: 32%;
 	border-color: #3c3c3c;
+	padding: 20px 100px 17px 40px;
 }
 
 .advanced-filter .row2 .readmore:after {
@@ -1403,7 +1429,6 @@ button {
 	margin-left: 0;
 }
 
-
 .footer-menu2 .social .vk {
 	background: url('../img/sprite.png') no-repeat -20px -63px;
 	width: 38px;
@@ -1441,7 +1466,7 @@ button {
 	display: none;
 	right: 0;
 	top: 0;
-	z-index: 1000; 
+	z-index: 10001;
 	vertical-align: middle;
 	width: 70px;
 	height: 44px;
@@ -1462,7 +1487,7 @@ button {
 	width: 30px;
 	height: 2px;
 	margin-top: 22px;
-	color: #fff; 
+	color: #fff;
 	text-transform: uppercase;
 	text-indent: -55px;
 	background: #fff;
@@ -1553,7 +1578,7 @@ button {
 	.menu .wrapper {
 		box-sizing: border-box;
 	}
-	
+
 	.search {
 		display: none;
 	}
@@ -1561,21 +1586,21 @@ button {
 	.menu {
 		padding-top: 95px;
 	    width: 300px;
-	    right: -300px; 
-	    background: #1d1d1d; 
+	    right: -300px;
+	    background: #1d1d1d;
 	    height: 100%;
 	    position: fixed;
 	    top: 0;
-	    z-index: 999;
+	    z-index: 9991;
 	    -webkit-transition: all 200ms ease 0s;
 	    -moz-transition: all 200ms ease 0s;
 	    -ms-transition: all 200ms ease 0s;
 	    -o-transition: all 200ms ease 0s;
 	    transition: all 200ms ease 0s;
 	}
-	
+
 	.menu.menu-mobile {
-		right: 0; 
+		right: 0;
 		-webkit-transition: all 200ms ease 0s;
 	    -moz-transition: all 200ms ease 0s;
 	    -ms-transition: all 200ms ease 0s;
@@ -1669,7 +1694,7 @@ button {
 
 }
 
-@media screen and (max-width: 400px) { 
+@media screen and (max-width: 400px) {
 
 	.section-title h2 {
 		font-size: 2rem;
@@ -1698,8 +1723,8 @@ button {
     height: auto;
 }
 
-/* 
-	projects search results view 
+/*
+	projects search results view
 */
 
 .projects-search-results img {
@@ -1749,7 +1774,7 @@ button {
     width: auto;
     max-height: 90%;
     display: block;
-    margin: 15px auto 0;	
+    margin: 15px auto 0;
 }
 .list-view .info-block {
 	display: block;
@@ -1808,7 +1833,7 @@ button {
 }
 .switch-view a:hover, .switch-view a.active {
 	background-color: #666;
-	border-color: #666;	
+	border-color: #666;
 }
 .switch-view .list {
 	background-position: -238px -56px;
