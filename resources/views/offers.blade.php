@@ -6,19 +6,20 @@
 				<h2>{{ Request::is('offers') ? 'Предложения и акции' : 'Проекты' }}</h2>
 			</div>
 		</div>
-		@if (Request::is('search_pro')) 
-			 @include('includes/search') 
+		@if (Request::is('search_pro'))
+			 @include('includes/search')
 		@endif
 		<div class="wrapper">
 			<div class="single-page offers">
 				<div class="cards offers-wrapper projects-search-results">
 					{{-- @include ('includes/last_projects') --}}
-					
+
 					<div class="switch-view">
 						<a href="?view=list" class="list {{ Request::input('view') == 'list' ? 'active' : '' }}"></a>
 						<a href="?view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
 						<a href="?view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
 					</div>
+<<<<<<< HEAD
 					
 					 @if(Request::input('view') == 'list')
 						@include ('includes/list_projects');
@@ -29,6 +30,11 @@
 					@else 
 						@include ('includes/list_projects');
 					@endif
+=======
+
+					{{-- LIST VIEW --}}
+					@include ('includes/list_projects')
+>>>>>>> 721a077442685d2a554753c7cd7f42131686465b
 
 				</div>
 		    	@include ('includes/pagination')

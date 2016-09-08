@@ -57,6 +57,6 @@
 				@include('includes/last_projects') -->
 			</div>
 		</div>
+		</div>
 	</div>
 @endsection
-	
