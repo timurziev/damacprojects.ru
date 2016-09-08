@@ -15,19 +15,21 @@
 					{{-- @include ('includes/last_projects') --}}
 					
 					<div class="switch-view">
-						<a href="?view=list" class="list active"></a>
-						<a href="?view=grid" class="grid"></a>
-						<a href="?view=map" class="map"></a>
+						<a href="?view=list" class="list {{ Request::input('view') == 'list' ? 'active' : '' }}"></a>
+						<a href="?view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
+						<a href="?view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
 					</div>
 					
-					{{-- LIST VIEW --}}
-					@include ('includes/list_projects')
+					 @if(Request::input('view') == 'list')
+						@include ('includes/list_projects');
+					@elseif (Request::input('view') == 'grid')
+						@include ('includes/grid_projects');
+					@elseif (Request::input('view') == 'map')
+						@include ('includes/map_projects');
+					@else 
+						@include ('includes/list_projects');
+					@endif
 
-					{{-- GRID VIEW --}}
-					{{-- @include ('includes/grid_projects') --}}
-
-					{{-- MAP VIEW --}}
-					{{-- @include ('includes/map_projects') --}}
 				</div>
 		    	@include ('includes/pagination')
 			</div>

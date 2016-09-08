@@ -10,39 +10,26 @@
 							<input type="text" name="search" placeholder="Введите ключевое слово">
 						</div>
 						<div class="select-wrapper">
-							<select class="drop-list" name="country">
-								<option disabled selected>Выберите страну</option>
+							<select class="drop-list" name="country" id="country">
+								<option value="" selected>Выберите страну</option>
 								@foreach ($countries as $country)
 									<option value="{{ $country->id }}"
-									@if ($country->id == Request::input('country') )
-										selected
-									@endif
 										>{{ $country->name }}</option>
 								@endforeach	
 							</select>
 							<div class="select-arrow"></div>
 						</div>
 						<div class="select-wrapper">
-							<select class="drop-list" name="city">
-								<option disabled selected>Выберите город</option>
-								@foreach ($locations as $location)
-									<option value="{{ $location->id }}"
-									@if ($location->id == Request::input('city') )
-										selected
-									@endif
-										>{{ $location->name }}</option>
-								@endforeach	
+							<select class="drop-list" name="city" id="city">
+							
 							</select>
 							<div class="select-arrow"></div>
 						</div>
 					</div>
 					<div class="row2">
 						<div class="select-wrapper"> 
-							<select class="drop-list" name="district">
-								<option disabled selected>Выберите район</option>
-								<option value="">Абдали</option>
-								<option value="">Солидер</option>
-								<option value="">Лусаил</option>
+							<select class="drop-list" name="region" id="region">
+							
 							</select>
 							<div class="select-arrow"></div>
 						</div>

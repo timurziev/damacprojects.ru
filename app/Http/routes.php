@@ -16,8 +16,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'MainController@index');
     Route::get('pages/{slug}', 'MainController@show_page');
     Route::get('/about', 'MainController@about');
-    Route::get('/events', function () { return view('events'); });
+    Route::get('/events', 'MainController@events');
     Route::post('/events', 'UsersController@store');
+    Route::get('/event/{slug}', 'MainController@show_event');
     Route::get('/investor_relations', function () { return view('investor_relations'); });
     Route::get('/contacts', function () { return view('contacts'); });
     Route::get('/message', 'MainController@message');
@@ -27,6 +28,17 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/press_releases', 'MainController@releases');
     Route::get('/release/{slug}', 'MainController@show_release');
     Route::get('/news', 'MainController@news');
+    Route::get('/ajax-call', function(){
+        $coun_id = Input::get('coun_id');
+        $city = \App\City::where('country_id', '=', $coun_id )->get();
+        return response()->json($city);
+    });
+    Route::get('/ajax-get', function(){
+        $region_id = Input::get('region_id');
+        $region = \App\Region::where('city_id', '=', $region_id )->get();
+        return response()->json($region);
+    });
+    
     Route::get('/new/{slug}', 'MainController@show_new');
     Route::get('/all_projects', 'MainController@projects');
     Route::get('/in_progress_projects', 'MainController@projects');
@@ -65,6 +77,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/edit_new/{slug}', ['uses' => 'AdminController@edit_new', 'middleware' => 'auth']);
     Route::post('/edit_new/{slug}',['uses' => 'AdminController@update_new', 'middleware' => 'auth']);
     Route::post('/novel/{slug}',['uses' => 'AdminController@destroy_new', 'middleware' => 'auth']);
+
+    Route::get('/create_event', function () { return view('admin/create_event'); });
+    Route::post('/create_event', ['uses' => 'AdminController@store_event', 'middleware' => 'auth']);
+    Route::get('/event', ['uses' => 'AdminController@event', 'middleware' => 'auth']);
+    Route::get('/edit_event/{slug}', ['uses' => 'AdminController@edit_event', 'middleware' => 'auth']);
+    Route::post('/edit_event/{slug}',['uses' => 'AdminController@update_event', 'middleware' => 'auth']);
+    Route::post('/event/{slug}',['uses' => 'AdminController@destroy_event', 'middleware' => 'auth']);
 
     Route::get('/create_page', ['uses' => 'AdminController@create_static', 'middleware' => 'auth']);
     Route::post('/create_page', ['uses' => 'AdminController@store_static', 'middleware' => 'auth']);

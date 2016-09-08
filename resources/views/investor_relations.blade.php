@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/investor_relations.jpg);">
 			<div class="wrapper">
-				<h2>Инвесторам</h2>
+				<h2>Инвестирование</h2>
 			</div>
 		</div>
 		<div class="wrapper">

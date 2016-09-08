@@ -6,7 +6,7 @@
 </head>
 <body>
 	<p>Пользователь  {{ $name }} !</p>
-	<p>Почтовый адрес {{ $email }}. Подписка на проект с id <strong>{{ $project_id }}</strong></p>
+	<p>Почтовый адрес {{ $email }}. Подписка на проект с id <strong>{{ $id }}</strong></p>
 	<p>{{ $text }}</p>
 </body>
 </html>

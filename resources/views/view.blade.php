@@ -1,5 +1,7 @@
 @extends ('layout')
 @section('content')
+
+
 <div class="content">
 		<div class="title-banner" style="background-image: url(../img/investor_relations.jpg);">
 			<div class="wrapper">
@@ -31,15 +33,17 @@
 							data-thumbheight="100"
 						>
 							@foreach ($images as $item)
-								@if($project->id == $item->project_id)
 									<a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $item->name }}"></a>
-								@endif
 							@endforeach
 						</div>
 					</div>
+					<script>
+					  var lat = {{$project->lat}};
+					  var lng = {{$project->lng}};
+					</script>
 					<div class="project-location">
-						<div class="city">{!! $project->location->name !!}</div>
-						<!-- <a href="#" class="show-map">Показать на карте</a> -->
+						<div class="city">{!! $project->city->name !!}</div>
+						<a href="#" class="show-map">Показать на карте</a>
 					</div>
 					{!! $project->text !!}
 					@if (empty($project->media) == false)
@@ -58,9 +62,7 @@
 						<div id="tbi2" class="tab-inner">
 							<div class="fotorama" data-width="100%" data-navposition="top">
 								@foreach ($plans as $plan)
-									@if($project->id == $plan->project_id)
 										<a href=""><img class="plans" src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"></a>
-									@endif
 								@endforeach
 							</div>
 						</div>

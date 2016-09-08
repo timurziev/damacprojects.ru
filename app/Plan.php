@@ -8,7 +8,7 @@ class Plan extends Model
 {
     public $timestamps = false;
 	
-    public function projects() {
+    public function project() {
     	return $this->belongsTo('App\Project');
     }
 }

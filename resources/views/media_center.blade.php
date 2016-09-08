@@ -13,7 +13,7 @@
 						<h2>Медиа центр</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li>
+						<!-- <li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li> -->
 						<li><a href="{{ URL::to('/news') }}">Новости индустрии</a></li>
 						<li><a href="">Фотогалерея</a></li>
 						<li><a href="">Видеогалерея</a></li>
@@ -49,17 +49,17 @@
 						<div class="lid">Добро пожаловать в пресс-центр DAMAC Properties. Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</div>
 					@endif
 
-					@if(Request::is('release/*'))
+					<!-- @if(Request::is('release/*'))
 			 			@include('includes/view_release')
-			 		@endif
+			 		@endif -->
 
 			 		@if(Request::is('new/*'))
 			 			@include('includes/view_new')
 			 		@endif
 					
-					@if(Request::is('media_center') || (Request::is('press_releases')))
+					<!-- @if(Request::is('media_center') || (Request::is('press_releases')))
 			 			@include('includes/releases')
-			 		@endif
+			 		@endif -->
 			 		
 			 		@if(Request::is('media_center') || (Request::is('news')))
 			 			@include('includes/news')

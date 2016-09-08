@@ -8,13 +8,15 @@ use App\Http\Controllers\Controller;
 use App\Project;
 use App\Press_release;
 use App\Novelty;
+use App\Event;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
 use App\Plan;
 use App\Http\Requests\ProjectsFromRequest;
-use App\Location;
+use App\City;
 use App\Country;
+use App\Region;
 use App\User;
 use Session;
 use Redirect;
@@ -36,48 +38,53 @@ class AdminController extends Controller
 
     public function create()
 	{
-		$locations = Location::all();
+		$cities = City::all();
         $countries = Country::all();
-    	return view('admin.create', compact('locations', 'countries'));
+        $regions = Region::all();
+
+    	return view('admin.create', compact('cities', 'countries', 'regions'));
 	}
 
     public function create_city()
     {
-        $locations = Location::orderBy('created_at', 'desc');
-        $locations = $locations->paginate(12);
+        $cities = City::orderBy('created_at', 'desc');
+        $countries = Country::all();
+        $cities = $cities->paginate(12);
 
-        return view('admin.create_city', compact('locations', 'releases'));
+        return view('admin.create_city', compact('cities', 'releases', 'countries'));
     }
 
     public function store_city()
     {
-        $location = New Location;
+        $city = New City;
 
         $slug = uniqid();
-        $location->name = Request::input('city');
-        $location->slug = $slug;
+        $city->name = Request::input('city');
+        $city->country_id = Request::input('country');
+        $city->slug = $slug;
 
-        $location->save();
+        $city->save();
 
         return redirect('/create_city')->with('status', 'Город добавлен!');
     }
 
     public function destroy_city($slug)
     {
-        $location = Location::whereSlug($slug)->firstOrFail();
-        $location->delete();
+        $city = City::whereSlug($slug)->firstOrFail();
+        $city->delete();
         return redirect('/create_city')->with('status', 'Город удален!');
     }
 
     public function edit($slug)
     {
-        $locations = Location::all();
+        $cities = City::all();
         $countries = Country::all();
+        $regions = Region::all();
         $project = Project::whereSlug($slug)->firstOrFail();
         $plans = Plan::all();
         $images = Images::all();
 
-        return view('admin.edit', compact('project', 'locations', 'plans', 'images', 'countries'));
+        return view('admin.edit', compact('project', 'cities', 'plans', 'images', 'countries', 'regions'));
     }
 
     public function update($slug, ProjectsFromRequest $request)
@@ -86,8 +93,9 @@ class AdminController extends Controller
         $project->title = $request->get('title');
         $project->description = $request->get('description');
         $project->text = $request->get('text');
-        $project->location_id = $request->get('city');
+        $project->city_id = $request->get('city');
         $project->country_id = $request->get('country');
+        $project->region_id = $request->get('region');
         $project->category_id = $request->get('status');
         $project->media = $request->get('media');
         $project->facilities = $request->get('facilities');
@@ -97,6 +105,11 @@ class AdminController extends Controller
         $project->download_pdf = $request->get('download_pdf');
         $project->is_slide = $request->get('is_slide');
         $project->is_popular = $request->get('is_popular');
+
+        if($request->get('lat') && $request->get('lng') !== null) {
+            $project->lat = $request->get('lat');
+            $project->lng = $request->get('lng');
+        }
 
         if($request->get('images') !== null) {
             foreach ($request->get('images') as $key => $image) {
@@ -159,8 +172,9 @@ class AdminController extends Controller
         $project->description = $request->get('description');
         $project->text = $request->get('text');
         $project->slug = $slug;
-        $project->location_id = $request->get('city');
+        $project->city_id = $request->get('city');
         $project->country_id = $request->get('country');
+        $project->region_id = $request->get('region');
         $project->category_id = $request->get('status');
         $project->media = $request->get('media');
         $project->facilities = $request->get('facilities');
@@ -170,6 +184,8 @@ class AdminController extends Controller
         $project->download_pdf = $request->get('download_pdf');
         $project->is_slide = $request->get('is_slide');
         $project->is_popular = $request->get('is_popular');
+        $project->lat = $request->get('lat');
+        $project->lng = $request->get('lng');
 
 	    $project->save();
 
@@ -421,6 +437,108 @@ class AdminController extends Controller
         $novelty->delete();
         return redirect('/novel')->with('status', 'Новость удалена!');
     }
+
+    public function event()
+    {
+        $events = Event::orderBy('created_at', 'desc')->paginate(12);
+
+        return view('admin/event', compact('events'));
+    }
+
+    public function store_event()
+    {
+        if(Input::file('image')!== null)
+        {
+            $extension = Input::file('image')->getClientOriginalExtension();
+            $fileName = rand(11111, 99999) . '.' . $extension;
+
+            $file = array('image' => Input::file('image'));
+            $rules = array('image' => 'required');
+            $validator = Validator::make($file, $rules);
+
+            if ($validator->fails()) 
+            {
+                return Redirect::to('create_event')->withInput()->withErrors($validator);
+            }
+
+            $destinationPath = public_path('uploads/media/big/' . $fileName);
+            $destinationPath2 = public_path('uploads/media/small/' . $fileName);
+
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
+        }
+
+        $event = New Event;
+        $slug = uniqid();
+        
+        if(isset($fileName)) { $event->image = $fileName; }
+        $event->title = Request::input('title');
+        $event->text = Request::input('text');
+        $event->time = Request::input('time');
+        $event->lat = Request::input('lat');
+        $event->lng = Request::input('lng');
+        $event->location = Request::input('location');
+        $event->slug = $slug;
+        
+        $event->save();
+
+        return redirect('/create_event')->with('status', 'Мероприятие создано!');
+    }
+
+    public function edit_event($slug)
+    {
+        $event = Event::whereSlug($slug)->firstOrFail();
+        return view('admin.create_event', compact('event'));
+    }
+
+    public function update_event($slug)
+    {
+        if(Input::file('image')!== null)
+        {
+            $extension = Input::file('image')->getClientOriginalExtension();
+            $fileName = rand(11111, 99999) . '.' . $extension;
+
+            $file = array('image' => Input::file('image'));
+            $rules = array('image' => 'required');
+            $validator = Validator::make($file, $rules);
+
+            if ($validator->fails()) 
+            {
+                return Redirect::to('create_event')->withInput()->withErrors($validator);
+            }
+
+            $destinationPath = public_path('uploads/media/big/' . $fileName);
+            $destinationPath2 = public_path('uploads/media/small/' . $fileName);
+
+            $upload = Image::make(Input::file('image'))->fit(802, 580)->save($destinationPath);
+            $upload2 = Image::make(Input::file('image'))->fit(305, 221)->save($destinationPath2);
+        }
+
+        $event = Event::whereSlug($slug)->firstOrFail();
+        
+        if(isset($fileName)) { $event->image = $fileName; }
+        $event->title = Request::input('title');
+        $event->text = Request::input('text');
+        $event->time = Request::input('time');
+        $event->location = Request::input('location');
+
+        if(Request::get('lat') && Request::get('lng') !== null) {
+            $event->lat = Request::input('lat');
+            $event->lng = Request::input('lng');
+        }
+        
+        $event->save();
+
+        return redirect(action('AdminController@update_event', $event->slug))->with('status', 'Мероприятие обновлено!');
+    }
+
+    public function destroy_event($slug)
+    {
+        $event = Event::whereSlug($slug)->firstOrFail();
+        $event->delete();
+        return redirect('/event')->with('status', 'Мероприятие удалено!');
+    }
+
 
     public function create_static()
     {

@@ -678,7 +678,7 @@ button {
 	margin-right: 0;
 }
 
-.single-page .lid {
+.event-page .lid {
 	font-size: 1.25rem;
 	text-align: center;
 	margin-top: 100px;
@@ -767,6 +767,37 @@ button {
     display: block;
     float: left;
     text-decoration: none;
+}
+
+.event-location .show-map {
+	text-transform: uppercase;
+    position: relative;
+    padding: 6px 30px;
+    margin-right: 77px;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.event-location .city {
+	text-transform: uppercase;
+	position: relative;
+	padding: 0 17px;
+	display: block;
+	float: left;
+	line-height: 61px;
+}
+
+.event-location .city:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 21px;
+	background: url('../img/sprite.png') no-repeat -367px -15px;
+	width: 9px;
+	height: 15px;
 }
 
 .tab-info .tab-nav {
@@ -1179,9 +1210,7 @@ button {
 	float: left;
 }
 
-.popup-manager div {
-	padding: 40px;
-}
+
 
 .manager:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
@@ -1827,4 +1856,14 @@ button {
 }
 .switch-view .map:hover, .switch-view .map.active {
 	background-position: -181px -3px;
+}
+
+/* Message alert */
+.alert-success {
+	background: #6eda6e;
+    text-align: center;
+    padding: 6px;
+    font-size: 16px;
+    margin-bottom: 45px;
+    color: #fff;
 }

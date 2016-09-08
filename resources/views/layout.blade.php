@@ -64,7 +64,7 @@
 					</div>
 				</li>
 				<li class="{{ Request::is('offers') ? 'active' : '' }}">
-					<a href="{{ URL::to('/offers') }}">Предложения и акции</a>
+					<a href="{{ URL::to('/offers') }}?view=list">Предложения и акции</a>
 				<li class="{{ Request::is('events') ? 'active' : '' }}">
 					<a href="{{ URL::to('/events') }}">Мероприятия</a>
 				<li class="{{ Request::is('media_center') ? 'active' : '' }}">
@@ -96,7 +96,7 @@
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
-							<h4>Инвесторам</h4>
+							<h4>Инвестирование</h4>
 							<p>Как лидер развития элитной недвижимости в Дубае, считает, в предоставлении четкой, последовательной и прозрачной информации, относящейся к организации. Таким образом, компания имеет подразделение опытного связям с инвесторами, посвященную поддержанию акционеров обоснованных путем своевременного обновления на деятельности Общества.</p>
 							<a class="look" href="">Подробнее</a>
 						</div>
@@ -166,7 +166,6 @@
 	</footer>
 	<div class="popup">
 		<div class="popup-manager">
-			<img src="" alt="">
 			<div id="map" style="width: 900px; height: 395px"></div>
 			<a href="" class="close"></a>
 		</div>
@@ -176,6 +175,79 @@
 	<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
 	<script src="{{ URL::asset('js/masonry.pkgd.min.js') }}"></script>
 	<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
+  type="text/javascript"></script>
+	<script>
+	  var map = new google.maps.Map(document.getElementById('map'),{
+	    center:{
+	      lat: lat,
+	      lng: lng
+	    },
+	    zoom: 10
+	  });
+	  var marker = new google.maps.Marker({
+	    position:{
+	      lat:lat,
+	      lng: lng
+	    },
+	    map:map
+	  });
+	</script>
+	<script>
+	function initialize() {
+	  var map_canvas = new google.maps.Map(document.getElementById('map-canvas'),{
+	  	center:{
+	  		lat: 25.17,
+            lng: 55.27
+	  	},
+	  	zoom:6
+	  });
+
+	  var markers = [
+		@foreach($projects as $project)
+		  [{{$project->lat}}, {{$project->lng}}],
+		@endforeach
+		];
+
+	  for (i = 0; i < markers.length; i++) {
+		    var location = new google.maps.LatLng(markers[i][0], markers[i][1]);
+
+		    var marker = new google.maps.Marker({
+		        position: location,
+		        map: map_canvas,
+		    }); 
+		}
+	}
+	google.maps.event.addDomListener(window, "load", initialize);
+	</script>
+	<script>
+        $('#country').on('change', function(e) {
+        	
+            console.log(e);
+            var coun_id = e.target.value;
+            $.get('/sheikhhouse/public/ajax-call?coun_id=' + coun_id, function (data) {
+            	$('#city').empty();
+                $('#city').append('<option value="" disabled selected>'+'Выберите город'+'</option>');
+                $.each(data, function(index, cityObj){
+                    $('#city').append('<option value="'+cityObj.id+'">'+cityObj.name+'</option>');
+                });
+            });
+        });
+
+        $('#city').on('change', function(e) {
+            console.log(e);
+            var region_id = e.target.value;
+            $.get('/sheikhhouse/public/ajax-get?region_id=' + region_id, function (data) {
+            	$('#region').empty();
+            	$('#region').append('<option value="" disabled selected>'+'Выберите район'+'</option>');
+                $.each(data, function(index, regionObj){
+                    $('#region').append('<option value="'+regionObj.id+'">'+regionObj.name+'</option>');
+                });
+            });
+        });
+    </script>
+    <script>
+        
+    </script>
 </body>
 </html>

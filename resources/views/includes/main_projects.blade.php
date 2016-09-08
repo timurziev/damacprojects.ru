@@ -3,7 +3,7 @@
 			<img src="{{ URL::asset('uploads/projects') }}/{{ round($key/2) % 2 ? 'big' : 'small' }}/{{ $project->image }}">
 		<h3>{{ $project->title }}</h3>
 		<p class="spotlight-preview">{{ $project->description }}</p>
-		<div class="location">{{ $project->location->name }}</div>
+				<div class="location">{{ $project->city->name }}</div>
 		<a class="readmore" href="{{ action('MainController@show', $project->slug) }}">Подробнее</a>
 	</div>
 @empty

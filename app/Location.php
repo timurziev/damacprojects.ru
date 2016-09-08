@@ -11,4 +11,12 @@ class Location extends Model
     public function projects() {
         return $this->hasMany('App\Project');
     }
+
+    public function regions() {
+        return $this->hasMany('App\Region');
+    }
+
+    public function country() {
+    	return $this->belongsTo('App\Country');
+    }
 }

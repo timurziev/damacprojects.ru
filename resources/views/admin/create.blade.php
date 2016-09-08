@@ -57,16 +57,42 @@
                         <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
-                                @foreach ($locations as $location)
-                                    <option value="{{ $location->id }}"
-                                    @if ($location->id == Request::input('city') )
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}"
+                                    @if ($city->id == Request::input('city') )
                                         selected
                                     @endif
-                                        >{{ $location->name }}</option>
+                                        >{{ $city->name }}</option>
                                 @endforeach 
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="region">
+                                <option disabled selected>Выберите район</option>   
+                                @foreach ($regions as $region)
+                                    <option value="{{ $region->id }}"
+                                    @if ($region->id == Request::input('region') )
+                                        selected
+                                    @endif
+                                        >{{ $region->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-lg-2 control-label">Карта</label>
+                        <div class="col-lg-10">
+                        <input type="text" id="searchmap" class="form-control">
+                            <div id="map-canvas" class="col-lg-10"></div>
+                        </div>
+                        <input type="hidden" name="lat" id="lat">
+                        <input type="hidden" name="lng" id="lng">
+                    </div>
+                        
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Изображения</label>
                         <div class="col-lg-10">

@@ -3,9 +3,11 @@
 @elseif (Request::is('news') || Request::is('novel'))
     <?php $projects = $novelties ?>
 @elseif (Request::is('create_city'))
-    <?php $projects = $locations ?>
+    <?php $projects = $cities ?>
 @elseif (Request::is('emails'))
     <?php $projects = $emails ?>
+@elseif (Request::is('event') || Request::is('events'))
+    <?php $projects = $events ?>
 @endif
 
 @if ($projects->lastPage() > 1)

@@ -7,12 +7,14 @@ use App\Project;
 use App\Press_release;
 use App\Novelty;
 use App\Category;
-use App\Location;
+use App\City;
 use App\Country;
+use App\Region;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
 use App\Plan;
+use App\Event;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -43,13 +45,13 @@ class MainController extends Controller
         return view('about', compact('static_pages '));
 	}
 
-        public function team()
+    public function team()
 	{
 	$static_pages = StaticPage::all();
         return view('team', compact('static_pages'));
 	}
 
-        public function message()
+    public function message()
 	{
 	$static_pages = StaticPage::all();
         return view('message', compact('static_pages'));
@@ -65,8 +67,9 @@ class MainController extends Controller
 	public function projects()
 	{
 		$projects = Project::orderBy('created_at', 'desc');
-		$locations = Location::all();
+		$cities = City::all();
 		$countries = Country::all();
+		$regions = Region::all();
 		$images = Images::all();
 
 		if (Request::has('status'))
@@ -76,7 +79,21 @@ class MainController extends Controller
 
 		$projects = $projects->paginate(4);
 
-        return view('projects', compact('projects', 'locations', 'images', 'countries'));
+        return view('projects', compact('projects', 'cities', 'images', 'countries', 'regions'));
+	}
+
+	public function events() 
+	{
+		$events = Event::orderBy('created_at', 'desc')->paginate(1);
+
+		return view('events', compact('events'));
+	}
+
+	public function show_event($slug) 
+	{
+		$event = Event::whereSlug($slug)->firstOrFail();
+
+		return view('show_event', compact('event'));
 	}
 
 	public function releases_and_news()
@@ -119,14 +136,14 @@ class MainController extends Controller
 	{
     	$project = Project::whereSlug($slug)->first();
     	$categories = Category::all();
-    	$locations = Location::all();
-    	$images = Images::all();
-    	$plans = Plan::all();
+    	$cities = City::all();
+    	$images = Images::where('project_id', $project->id)->get();
+    	$plans = Plan::where('project_id', $project->id)->get();
 
     	//$image= explode("|", $project->image);
     	//$floor_plans= explode("|", $project->floor_plans);
 
-	    return view('view', compact('project', 'categories', 'locations', 'images', 'plans'));
+	    return view('view', compact('project', 'categories', 'cities', 'images', 'plans'));
 	}
 
 	public function simple_search()
@@ -157,8 +174,9 @@ class MainController extends Controller
 	public function complex_search()
 	{
 		$projects = Project::where('title', 'like', '%'.Request::get('search').'%');
-		$locations = Location::all();
+		$cities = City::all();
 		$countries = Country::all();
+		$regions = Region::all();
 		
 		if (Request::has('status'))
 		{
@@ -170,31 +188,55 @@ class MainController extends Controller
 		}
 		if (Request::has('city'))
 		{
-			$projects->where('location_id', Request::get('city'));
+			$projects->where('city_id', Request::get('city'));
+		}
+		if (Request::has('region'))
+		{
+			$projects->where('region_id', Request::get('region'));
 		}
 		$projects = $projects->paginate(6);
 		$projects->appends(Request::except('page'));
-        return view('projects', compact('projects', 'locations', 'countries'));
+        return view('projects', compact('projects', 'cities', 'countries', 'regions'));
 	}
 
-        public function email() 
+    public function email() 
 	{
 		$name = Request::get('name');
 		$email = Request::get('email');
 		$text = Request::get('text');
-		$project_id = Request::get('project_id');
+
+		if(Request::get('project_id'))
+		{
+			$id = Request::get('project_id');
+		}
+		else
+		{
+			$id = Request::get('event_id');
+		}
+		
 
 		$data = [
 			'name' => $name,
 			'email' => $email,
 			'text' => $text,
-			'project_id' => $project_id
+			'id' => $id,
 		];
 
-	 	Mail::send( 'mail.email', $data, function ($message){
-            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
-        });
+		if(Request::get('project_id'))
+		{
+			Mail::send( 'mail.email', $data, function ($message){
+	            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
+	        });
+		}
+		else
+		{
+			Mail::send( 'mail.email_ev', $data, function ($message){
+	            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
+	        });
+		}
 
-        return redirect()->back();
+	 	
+
+        return redirect()->back()->with('status', 'Сообщение успешно отправлено!');
 	}
 }

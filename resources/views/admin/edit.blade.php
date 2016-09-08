@@ -59,17 +59,49 @@
                         <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
-                                @foreach ($locations as $location)
-                                    <option value="{{ $location->id }}"
-                                    @if ($location->id == $project->location_id)
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}"
+                                    @if ($city->id == $project->city_id)
                                         selected
                                     @endif
-                                        >{{ $location->name }}</option>
+                                        >{{ $city->name }}</option>
                                 @endforeach 
                             </select>
                         </div>
                         {{ Request::input('city') }}
                     </div>
+                    <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label"></label>
+                        <div class="col-lg-10">
+                            <select class="form-control" name="region">
+                                <option disabled selected>Выберите район</option>   
+                                @foreach ($regions as $region)
+                                    <option value="{{ $region->id }}"
+                                    @if ($region->id == $project->region_id)
+                                        selected
+                                    @endif
+                                        >{{ $region->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                        {{ Request::input('region') }}
+                    </div>
+
+                    <script>
+                        var lati = {{$project->lat}};
+                        var lngi = {{$project->lng}};
+                    </script>   
+                    
+                    <div class="form-group">
+                        <label for="" class="col-lg-2 control-label">Карта</label>
+                        <div class="col-lg-10">
+                        <input type="text" id="searchmap_edit" class="form-control">
+                            <div id="map-canvas-edit" class="col-lg-10"></div>
+                        </div>
+                        <input type="hidden" name="lat" id="lat">
+                        <input type="hidden" name="lng" id="lng">
+                    </div>
+                            
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Изображения</label>
                         <div class="col-lg-10">

@@ -26,7 +26,7 @@ class UsersController extends Controller
 
     	$user->save();
 
-    	return view('events')->with('status', 'Вы подписаны!');
+    	return redirect('events')->with('status', 'Вы подписались на рассылку!');
     }
 
 
@@ -58,7 +58,7 @@ class UsersController extends Controller
     		return 'hi';
     	}else
     		{
-                return 'fuck';
+                return 'no';
             }
 
     }
