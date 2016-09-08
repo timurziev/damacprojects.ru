@@ -52,9 +52,14 @@
                                 var lngi = {{ $event->lng }};
                             </script>
                         @endif
-                        <input type="text" @if (Request::is('create_event/*')) id="searchmap" @else id="searchmap_edit" @endif  class="form-control">
-                            <div @if (Request::is('create_event')) id="map-canvas" @else id="map-canvas-edit" @endif  class="col-lg-10"></div>
+                        @if (Request::is('create_event'))
+                        <input type="text"  id="searchmap" class="form-control">
+                            <div id="map-canvas" class="col-lg-10"></div>
+                        @else 
+                        <input type="text" id="searchmap_edit" class="form-control">
+                            <div id="map-canvas-edit" class="col-lg-10"></div>
                         </div>
+                        @endif
                         <input type="hidden" name="lat" id="lat">
                         <input type="hidden" name="lng" id="lng">
                     </div>

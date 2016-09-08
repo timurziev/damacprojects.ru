@@ -665,6 +665,13 @@ button {
 	text-align: center;
 }
 
+.single-page .lid {
+	font-size: 1.25rem;
+	text-align: center;
+	margin-top: 100px;
+	padding: 0 100px;
+}
+
 .partners a {
 	display: inline-block;
 	vertical-align: middle;
@@ -871,6 +878,12 @@ button {
 
 .left-col {
 	padding: 135px 385px 0 0;
+}
+
+.right-col {
+	padding-top: 135px;
+	width: 305px;
+	float: right;
 }
 
 .right-col .fotorama__caption {
@@ -1882,7 +1895,7 @@ button {
 .switch-view .map:hover, .switch-view .map.active {
 	background-position: -181px -3px;
 }
-<<<<<<< HEAD
+
 
 /* Message alert */
 .alert-success {
@@ -1893,5 +1906,4 @@ button {
     margin-bottom: 45px;
     color: #fff;
 }
-=======
->>>>>>> 721a077442685d2a554753c7cd7f42131686465b
+

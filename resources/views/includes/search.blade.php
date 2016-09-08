@@ -15,20 +15,11 @@
 					<option disabled selected>Выберите страну</option>	
 					@foreach ($countries as $country)
 						<option value="{{ $country->id }}"
-<<<<<<< HEAD
 							@if ($country->id == Request::input('country') )
 								selected
 							@endif
 								>{{ $country->name }}
 						</option>
-=======
-						@if ($country->id == Request::input('country') )
-							selected
-						@endif
-							>{{ $country->name }}</option>
-
-							>{!! $country->name !!}</option>
->>>>>>> d0e969921adca59d24bb8227543aecc8c6fde322
 					@endforeach	
 				</select>
 				<div class="select-arrow"></div>
