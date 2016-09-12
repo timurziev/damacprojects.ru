@@ -15,24 +15,33 @@
 					{{-- @include ('includes/last_projects') --}}
 
 					<div class="switch-view">
-						<a href="?view=list" class="list {{ Request::input('view') == 'list' ? 'active' : '' }}"></a>
-						<a href="?view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
-						<a href="?view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
 					</div>
 					
 					 @if(Request::input('view') == 'list')
-						@include ('includes/list_projects');
+						@include ('includes/list_projects')
 					@elseif (Request::input('view') == 'grid')
-						@include ('includes/grid_projects');
+						@include ('includes/grid_projects')
 					@elseif (Request::input('view') == 'map')
-						@include ('includes/map_projects');
+						@include ('includes/map_projects')
 					@else 
-						@include ('includes/list_projects');
+						@include ('includes/list_projects')
 					@endif
 
 				</div>
-		    	@include ('includes/pagination')
+				@if(Request::input('view') !== 'map')
+		    		@include ('includes/pagination')
+		    	@endif
 			</div>
 		</div>
 	</div>
+	<script>
+		  var markers = [
+			@foreach($projects as $project)
+			  [{{$project->lat}}, {{$project->lng}}],
+			@endforeach
+			];
+	</script>
 @endsection

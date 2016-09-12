@@ -59,8 +59,16 @@ class MainController extends Controller
 
 	public function offers()
 	{
-		$projects = Project::orderBy('created_at', 'desc')->paginate(6);
-
+		if(Request::get('view') == 'map')
+		{
+			$projects = Project::orderBy('created_at', 'desc')->get();
+		}
+		else
+		{
+			$projects = Project::orderBy('created_at', 'desc')->paginate(6);
+			$projects->appends(Request::except('page'));
+		}
+		
         return view('offers', compact('projects'));
 	}
 
@@ -84,7 +92,7 @@ class MainController extends Controller
 
 	public function events() 
 	{
-		$events = Event::orderBy('created_at', 'desc')->paginate(1);
+		$events = Event::orderBy('created_at', 'desc')->paginate(6);
 
 		return view('events', compact('events'));
 	}
@@ -157,6 +165,8 @@ class MainController extends Controller
 	{
 		$projects = Project::orderBy('created_at');
 		$countries = Country::all();
+		$country = Request::get('country');
+		$status = Request::get('status');
 
 		if (Request::has('status'))
 		{
@@ -166,9 +176,18 @@ class MainController extends Controller
 		{
 			$projects->where('country_id', Request::get('country'));
 		}
-		$projects = $projects->paginate(6);
-		$projects->appends(Request::except('page'));
-        return view('offers', compact('projects', 'countries'));
+		if (Request::get('view') !== 'map')
+		{
+			$projects = $projects->paginate(6);
+			$projects->appends(Request::except('page'));
+		}
+		else
+		{
+			$projects = $projects->get();
+		}
+		
+		
+        return view('offers', compact('projects', 'countries', 'country', 'status'));
 	}
 
 	public function complex_search()

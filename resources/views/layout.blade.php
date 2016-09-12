@@ -80,7 +80,7 @@
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
 							<h4>Медиа-центр</h4>
 							<p>Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</p>
-							<a class="look" href="">Подробнее</a>
+							<a class="look" href="{{ URL::to('/media_center') }}">Подробнее</a>
 						</div>
 					</div>
 				</li>
@@ -98,12 +98,12 @@
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
 							<h4>Инвестирование</h4>
 							<p>Как лидер развития элитной недвижимости в Дубае, считает, в предоставлении четкой, последовательной и прозрачной информации, относящейся к организации. Таким образом, компания имеет подразделение опытного связям с инвесторами, посвященную поддержанию акционеров обоснованных путем своевременного обновления на деятельности Общества.</p>
-							<a class="look" href="">Подробнее</a>
+							<a class="look" href="{{ URL::to('/investor_relations') }}">Подробнее</a>
 						</div>
 					</div>
 				</li>
 			</ul>
-			<div class="search"></div>
+			<div class="search">{{ Request::input('search') }}</div>
 		</div>
 	</div>
 
@@ -177,77 +177,55 @@
 	<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
   type="text/javascript"></script>
+  
+  <!--ajax search-->
 	<script>
-	  var map = new google.maps.Map(document.getElementById('map'),{
-	    center:{
-	      lat: lat,
-	      lng: lng
-	    },
-	    zoom: 10
-	  });
-	  var marker = new google.maps.Marker({
-	    position:{
-	      lat:lat,
-	      lng: lng
-	    },
-	    map:map
-	  });
+		$('#country').on('change', function(e) { 	
+		    console.log(e);
+		    var coun_id = e.target.value;
+		    $.get('/sheikhhouse/public/ajax-call?coun_id=' + coun_id, function (data) {
+		    	$('#city').empty();
+		        $('#city').append('<option value="" disabled selected>'+'Выберите город'+'</option>');
+			        $.each(data, function(index, cityObj){
+			            $('#city').append('<option value="'+cityObj.id+'">'+cityObj.name+'</option>');
+			        });
+			    });
+			});
+
+		$('#city').on('change', function(e) {
+		    console.log(e);
+		    var region_id = e.target.value;
+		    $.get('/sheikhhouse/public/ajax-get?region_id=' + region_id, function (data) {
+		    	$('#region').empty();
+		    	$('#region').append('<option value="" disabled selected>'+'Выберите район'+'</option>');
+		        $.each(data, function(index, regionObj){
+		            $('#region').append('<option value="'+regionObj.id+'">'+regionObj.name+'</option>');
+		        });
+		    });
+		});
 	</script>
+
+	<!--show map multiple projects -->
 	<script>
-	function initialize() {
-	  var map_canvas = new google.maps.Map(document.getElementById('map-canvas'),{
-	  	center:{
-	  		lat: 25.17,
-            lng: 55.27
-	  	},
-	  	zoom:6
-	  });
+		function initialize() {
+		  var map_canvas = new google.maps.Map(document.getElementById('map-canvas'),{
+		  	center:{
+		  		lat: 25.17,
+	            lng: 55.27
+		  	},
+		  	zoom:4
+		  });
 
-	  var markers = [
-		@foreach($projects as $project)
-		  [{{$project->lat}}, {{$project->lng}}],
-		@endforeach
-		];
+		  for (i = 0; i < markers.length; i++) {
+			    var location = new google.maps.LatLng(markers[i][0], markers[i][1]);
 
-	  for (i = 0; i < markers.length; i++) {
-		    var location = new google.maps.LatLng(markers[i][0], markers[i][1]);
-
-		    var marker = new google.maps.Marker({
-		        position: location,
-		        map: map_canvas,
-		    }); 
+			    var marker = new google.maps.Marker({
+			        position: location,
+			        map: map_canvas,
+			    }); 
+			}
 		}
-	}
-	google.maps.event.addDomListener(window, "load", initialize);
+		google.maps.event.addDomListener(window, "load", initialize);
 	</script>
-	<script>
-        $('#country').on('change', function(e) {
-        	
-            console.log(e);
-            var coun_id = e.target.value;
-            $.get('/sheikhhouse/public/ajax-call?coun_id=' + coun_id, function (data) {
-            	$('#city').empty();
-                $('#city').append('<option value="" disabled selected>'+'Выберите город'+'</option>');
-                $.each(data, function(index, cityObj){
-                    $('#city').append('<option value="'+cityObj.id+'">'+cityObj.name+'</option>');
-                });
-            });
-        });
-
-        $('#city').on('change', function(e) {
-            console.log(e);
-            var region_id = e.target.value;
-            $.get('/sheikhhouse/public/ajax-get?region_id=' + region_id, function (data) {
-            	$('#region').empty();
-            	$('#region').append('<option value="" disabled selected>'+'Выберите район'+'</option>');
-                $.each(data, function(index, regionObj){
-                    $('#region').append('<option value="'+regionObj.id+'">'+regionObj.name+'</option>');
-                });
-            });
-        });
-    </script>
-    <script>
-        
-    </script>
 </body>
 </html>

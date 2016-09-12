@@ -137,6 +137,8 @@ $(window).resize(function() {
 	masonryInit();
 });
 
+
+
 // $('.fotorama').on('fotorama:ready', function (e, fotorama, extra) {
 // 	$('.fotorama_custom__arr--prev').on('click', function(){
 // 		fotorama.show('<');
@@ -145,3 +147,21 @@ $(window).resize(function() {
 // 		fotorama.show('>');
 // 	});
 // });
+
+// map single show
+var map = new google.maps.Map(document.getElementById('map'),{
+    center:{
+      lat: lat,
+      lng: lng
+    },
+    zoom: 10
+  });
+var marker = new google.maps.Marker({
+    position:{
+      lat:lat,
+      lng: lng
+    },
+    map:map
+  });
+
+

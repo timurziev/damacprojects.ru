@@ -15,6 +15,7 @@
 
 @yield('content')
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
@@ -22,6 +23,7 @@
 
 <script src="{{ asset('/js/dropzone.js') }}"></script>
 
+<!--upload multiple images-->
 <script type="text/javascript">
     var $createAdForm = $('.form-horizontal');
     Dropzone.options.myAwesomeDropzone = {
@@ -44,6 +46,7 @@
     };
 </script>
 
+<!--upload multiple plans-->
 <script type="text/javascript">
     var $createAdForm = $('.form-horizontal');
     Dropzone.options.myDropzone = {
@@ -71,6 +74,7 @@
         var editor = CKEDITOR.replace( 'editor1' );
 </script>
 
+<!--create map-->
 <script>
     var map = new google.maps.Map(document.getElementById('map-canvas'),{
         center:{
@@ -107,6 +111,7 @@
     });
 </script>
 
+<!--edit map-->
 <script>
     var map = new google.maps.Map(document.getElementById('map-canvas-edit'),{
     center:{

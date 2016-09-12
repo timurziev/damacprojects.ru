@@ -7,13 +7,16 @@
 				<form action="{{ action('MainController@complex_search') }}" method="get" id="filter-form">
 					<div class="row1">
 						<div class="input-wrapper"> 
-							<input type="text" name="search" placeholder="Введите ключевое слово">
+							<input type="text" name="search" placeholder="Введите ключевое слово" value="{{ Request::input('search') }}">
 						</div>
 						<div class="select-wrapper">
 							<select class="drop-list" name="country" id="country">
 								<option value="" selected>Выберите страну</option>
 								@foreach ($countries as $country)
 									<option value="{{ $country->id }}"
+									@if ($country->id == Request::input('country') )
+										selected
+									@endif
 										>{{ $country->name }}</option>
 								@endforeach	
 							</select>

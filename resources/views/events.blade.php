@@ -28,7 +28,7 @@
 								</script>
 								<div class="event-location">
 									<div class="city">{{ $event->location }}</div>
-									<a href="#" class="show-map">Показать на карте</a>
+									<!-- <a href="#" class="show-map">Показать на карте</a> -->
 								</div>
 								<a class="readmore black" href="{{ action('MainController@show_event', $event->slug) }}">Подробнее</a>
 							</div>
