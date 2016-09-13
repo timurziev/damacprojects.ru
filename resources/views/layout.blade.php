@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/mobile.css') }}">
 	<link rel="icon" href="{{ URL::asset('img/favicon.ico') }}">
-	<title>SHEIKH Projects</title>
+	<title>SHEIKH RE</title>
 </head>
 <body>
 	<header>
@@ -166,7 +166,7 @@
 	</footer>
 	<div class="popup">
 		<div class="popup-manager">
-			<div id="map" style="width: 900px; height: 395px"></div>
+			<div id="map"></div>
 			<a href="" class="close"></a>
 		</div>
 	</div>
@@ -178,7 +178,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
   type="text/javascript"></script>
   
-  <!--ajax search-->
+  	<!--ajax search-->
 	<script>
 		$('#country').on('change', function(e) { 	
 		    console.log(e);
@@ -226,6 +226,24 @@
 			}
 		}
 		google.maps.event.addDomListener(window, "load", initialize);
+	</script>
+	
+	<!-- map single show -->
+	<script>
+		var map = new google.maps.Map(document.getElementById('map'),{
+			center:{
+				lat: lat,
+				lng: lng
+			},
+			zoom: 10
+		});
+		var marker = new google.maps.Marker({
+			position:{
+				lat: lat,
+				lng: lng
+			},
+			map:map
+		});
 	</script>
 </body>
 </html>

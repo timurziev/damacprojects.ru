@@ -28,22 +28,22 @@ h4 {
 }
 
 header {
-	background: #262626;
-    padding: 40px 0 20px 0;
+	background: #000;
+    padding: 20px 0 20px 0;
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 45px;
+    height: 65px;
     z-index: 900;
 }
 
 header .logo {
 	display: block;
 	float: left;
-	width: 163px;
-	height: 40px;
+	width: 300px;
+	height: 75px;
 	background: url('../img/logo.svg') no-repeat;
 }
 
@@ -208,7 +208,7 @@ header .phone {
 }
 
 .menu {
-	background: #262626;
+	background: #000;
     position: absolute;
     top: 104px;
     z-index: 999;
@@ -551,19 +551,19 @@ button {
 .cards>div img {
 	display: block;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-	filter: alpha(opacity=40);
-	-moz-opacity: 0.4;
-	-khtml-opacity: 0.4;
-	opacity: 0.4;
+	filter: alpha(opacity=90);
+	-moz-opacity: 0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
 	width: 100%;
 }
 
 .cards .cards-big:hover img, .cards .cards-small:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=70);
-	-moz-opacity: 0.7;
-	-khtml-opacity: 0.7;
-	opacity: 0.7;
+	filter: alpha(opacity=40);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
 	-webkit-transition: opacity .15s ease-in-out;
         -moz-transition: opacity .15s ease-in-out;
         -ms-transition: opacity .15s ease-in-out;
@@ -1155,7 +1155,7 @@ button {
 }
 
 .info-block p {
-	font-size: 18px;
+	font-size: 22px;
 	line-height: 24px;
 	color: #fff;
 }
@@ -1224,10 +1224,12 @@ button {
 	top: 50%;
 	left: 50%;
 	margin-top: -213px;
-	margin-left: -450px;
 	background: #fff;
-	width: 900px;
-	height: 395px
+	max-width: 900px;
+	width: 100%;
+	height: 395px;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
 }
 
 .popup-manager .close {
@@ -1602,11 +1604,10 @@ button {
 	background-color: #000;
 }
 
-
 @media screen and (max-width: 1280px) {
 	.burger {
 		display: block;
-		margin-top: 40px;
+		margin-top: 30px;
 	}
 
 	.burger.active {
@@ -1615,6 +1616,11 @@ button {
 
 	header .header-nav.nav2 {
 		margin-right: 40px;
+		margin-top: 10px;
+	}
+
+	header .phone {
+	    margin-top: 10px;
 	}
 
 	.menu .wrapper {
@@ -1696,7 +1702,7 @@ button {
 }
 
 @media screen and (max-width: 1000px) {
-/*	.cards.offers .cards-small:last-child {
+	/*	.cards.offers .cards-small:last-child {
 		display: none;
 	}
 
@@ -1711,8 +1717,6 @@ button {
 	.cards.center .cards-big {
 		display: none;
 	}*/
-
-
 }
 
 @media screen and (max-width: 870px) {
@@ -1733,7 +1737,6 @@ button {
 	.cards.offers .cards-small,.cards.center .cards-small {
 		width: 100%;
 	}*/
-
 }
 
 @media screen and (max-width: 400px) {
@@ -1742,7 +1745,6 @@ button {
 		font-size: 2rem;
 	}
 }
-
 
 #owl-demo .item{
     background: #42bdc2;
@@ -1844,7 +1846,32 @@ button {
 	background: #262626;
 	padding-bottom: 40px;
 }
-
+.grid-view .big-item .img {
+	height: 820px;
+	overflow: hidden;
+}
+.grid-view .small-item .img {
+	
+}
+.big-item .info-block, .small-item .info-block {
+	height: 200px;
+}
+.h3-block {
+	width: 100%;
+}
+.h3-block h3 {
+	position: relative!important;
+	word-wrap: break-word;
+}
+.last-projects-items .h3-block {
+	position: absolute;
+	top: 300px;
+}
+.last-projects-items .h3-block h3 {
+	margin: 0;
+	padding: 20px;
+	background: rgba(0,0,0,0.5);
+}
 
 /* switch view */
 .switch-view:after {
@@ -1907,3 +1934,13 @@ button {
     color: #fff;
 }
 
+.event-thumbnail {
+	width: 100%;
+}
+
+#map {
+	max-width: 900px;
+	width: 100%;
+	height: 395px;
+    margin: 0 auto;
+}

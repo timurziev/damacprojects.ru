@@ -17,7 +17,7 @@
 				@include('includes/email')
 			</div>
 			<div class="left-col">
-					<a href=""><img src="{{ Request::root() }}/uploads/media/big/{{ $event->image }}"></a>
+					<a href=""><img class="event-thumbnail" src="{{ Request::root() }}/uploads/media/big/{{ $event->image }}"></a>
 				<script>
 				  var lat = {{$event->lat}};
 				  var lng = {{$event->lng}};

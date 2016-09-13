@@ -9,7 +9,7 @@
 			<div class="item">
 				<div class="img"><img src="{{ URL::asset('uploads/projects/small') }}/{{ $project->image, 'small' }}"></div>
 				<div class="info-block">
-					<h3>{{ $project->title }}</h3>
+					<div class="h3-block"><h3>{{ $project->title }}</h3></div>
 					<p>{{ $project->description }}</p>
 					<a class="more" href="{!! action('MainController@show', $project->slug) !!}">Узнать больше</a>
 				</div>

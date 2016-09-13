@@ -1,6 +1,6 @@
 // masonry init in projects search results grid view
 var masonryInit = function() {
-	if($(document).width() > 1199) {
+	if($(document).width() > 1199 && $('.grid-view').length) {
 		$('.grid-view').masonry({
 		  columnWidth: 100,
 		  itemSelector: '.grid-item',
@@ -11,49 +11,49 @@ var masonryInit = function() {
 
 $(document).ready(function() {
 
-  $("#owl-example").owlCarousel();
+  	$("#owl-example").owlCarousel();
 
-  var owl = $("#owl-demo");
+  	var owl = $("#owl-demo");
 
-  owl.owlCarousel({
+	owl.owlCarousel({
+		itemsCustom : [
+			[0, 1],
+			[600, 2],
+			[950, 3]
+		]
+	});
 
-      itemsCustom : [
-        [0, 1],
-        [600, 2],
-        [950, 3]
-      ]
+  	var owl2 = $("#owl-demo2");
 
-  });
-
-  var owl2 = $("#owl-demo2");
-
-  owl2.owlCarousel({
-
-      navigation : true, // Show next and prev buttons
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      autoHeight : true,
-      singleItem:true,
-	transitionStyle : "fade"
-
-  });
+  	owl2.owlCarousel({
+		loop: true,
+		autoPlay: true,
+		autoPlayTimeout: 2000,
+	    autoPlayHoverPause: true,
+		navigation: true,
+		slideSpeed: 300,
+		paginationSpeed: 400,
+		autoHeight: true,
+		singleItem: true,
+		transitionStyle: "fade"
+  	});
 
 	var owl = $(".owl-carousel").data('owlCarousel');
 
-  $('.arrow-right').on('click', function(){
-    owl.next();
-  });
+  	$('.arrow-right').on('click', function(){
+    	owl.next();
+  	});
 
-  $('.arrow-left').on('click', function(){
-    owl.prev();
-  });
+  	$('.arrow-left').on('click', function(){
+    	owl.prev();
+  	});
 
 	$("#open-nav").click(function(e) {
       $('.menu').toggleClass('menu-mobile');
       $(this).toggleClass('active');
       return false;
       e.preventDefault();
-  });
+  	});
 
 	$('.search').on('click', function(e){
 
@@ -137,8 +137,6 @@ $(window).resize(function() {
 	masonryInit();
 });
 
-
-
 // $('.fotorama').on('fotorama:ready', function (e, fotorama, extra) {
 // 	$('.fotorama_custom__arr--prev').on('click', function(){
 // 		fotorama.show('<');
@@ -147,21 +145,3 @@ $(window).resize(function() {
 // 		fotorama.show('>');
 // 	});
 // });
-
-// map single show
-var map = new google.maps.Map(document.getElementById('map'),{
-    center:{
-      lat: lat,
-      lng: lng
-    },
-    zoom: 10
-  });
-var marker = new google.maps.Marker({
-    position:{
-      lat:lat,
-      lng: lng
-    },
-    map:map
-  });
-
-
