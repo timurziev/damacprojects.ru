@@ -116,34 +116,26 @@
 					<h4>ОБ АГЕНТСТВЕ</h4>
 					<!-- <li><a href="{{ URL::to('/message') }}">Обращение председателя</a></li> -->
 					<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
-					@foreach ($static_pages as $static_page)
-						@if ($static_page->main_page_id == 1)
-							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
-						@endif
+					@foreach ($static_pages->where('main_page_id', 1)->all() as $static_page)
+						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 				<ul>
 					<h4>Проекты SHEIKH</h4>
-					@foreach ($static_pages as $static_page)
-						@if ($static_page->main_page_id == 2)
-							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
-						@endif
+					@foreach ($static_pages->where('main_page_id', 2)->all() as $static_page)
+						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 				<ul>
 					<h4>Предложения</h4>
-					@foreach ($static_pages as $static_page)
-						@if ($static_page->main_page_id == 3)
-							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
-						@endif
+					@foreach ($static_pages->where('main_page_id', 3)->all() as $static_page)
+						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 				<ul>
 					<h4>Инвесторам</h4>
-					@foreach ($static_pages as $static_page)
-						@if ($static_page->main_page_id == 4)
-							<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
-						@endif
+					@foreach ($static_pages->where('main_page_id', 4)->all() as $static_page)
+						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 			</div>
