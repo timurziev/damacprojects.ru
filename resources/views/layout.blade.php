@@ -183,7 +183,7 @@
 		$('#country').on('change', function(e) { 	
 		    console.log(e);
 		    var coun_id = e.target.value;
-		    $.get('/sheikhhouse/public/ajax-call?coun_id=' + coun_id, function (data) {
+		    $.get('/ajax-call?coun_id=' + coun_id, function (data) {
 		    	$('#city').empty();
 		        $('#city').append('<option value="" disabled selected>'+'Выберите город'+'</option>');
 			        $.each(data, function(index, cityObj){
@@ -195,7 +195,7 @@
 		$('#city').on('change', function(e) {
 		    console.log(e);
 		    var region_id = e.target.value;
-		    $.get('/sheikhhouse/public/ajax-get?region_id=' + region_id, function (data) {
+		    $.get('/ajax-get?region_id=' + region_id, function (data) {
 		    	$('#region').empty();
 		    	$('#region').append('<option value="" disabled selected>'+'Выберите район'+'</option>');
 		        $.each(data, function(index, regionObj){
