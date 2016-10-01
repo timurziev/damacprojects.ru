@@ -88,10 +88,8 @@
 					<a href="{{ URL::to('/investor_relations') }}">Инвестирование</a>
 					<div class="submenu">
 						<ul>
-							@foreach ($static_pages as $static_page)
-						            @if ($static_page->main_page_id == 4)
-							       <li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
-						            @endif
+							@foreach ($static_pages->where('main_page_id', 4)->all() as $static_page)
+								<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					                @endforeach
 						</ul>
 						<div class="menu-desc">
