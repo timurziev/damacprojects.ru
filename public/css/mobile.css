@@ -120,6 +120,10 @@
 	    top: 250px;
 	}
 
+	.item-desc .shadow {
+		min-height: 150px;
+	}
+
 	/* projects search results view */
 	.list-view .item {
 		height: auto;
@@ -209,6 +213,12 @@
 	header .logo {
 		width: 200px;
     	height: 50px;
+	}
+	header .header-nav.nav2 {
+	    margin-top: 0;
+	}
+	.item-desc .shadow {
+		min-height: 100%;
 	}
 
 	/* slider */
