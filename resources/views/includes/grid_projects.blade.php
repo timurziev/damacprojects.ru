@@ -10,7 +10,8 @@
 				<div class="img"><img src="{{ URL::asset('uploads/projects/small') }}/{{ $project->image, 'small' }}"></div>
 				<div class="info-block">
 					<div class="h3-block"><h3>{{ $project->title }}</h3></div>
-					<p>{{ $project->description }}</p>
+					<p>{{ (mb_strlen($project->description) > 64 ? mb_substr($project->description, 0, 64).'...' : $project->description) }}</p>
+					<div class="location">Абу-Даби</div>
 					<a class="more" href="{!! action('MainController@show', $project->slug) !!}">Узнать больше</a>
 				</div>
 			</div>
