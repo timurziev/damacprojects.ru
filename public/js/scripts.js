@@ -1,11 +1,42 @@
 // masonry init in projects search results grid view
 var masonryInit = function() {
 	if($(document).width() > 1199 && $('.grid-view').length) {
-		$('.grid-view').masonry({
-		  columnWidth: 100,
-		  itemSelector: '.grid-item',
-		  transitionDuration: 0
+		setTimeout(function() {
+			$('.grid-view').masonry({
+				columnWidth: 100,
+				itemSelector: '.grid-item',
+				transitionDuration: 0
+			});
+		}, 500);
+	}
+};
+
+// set slider and image height
+var sliderAutoHeight = function() {
+	if($(".slider").length && $(document).width() > 1199) {
+		$(".slider").attr("style", "height: "+$(window).height()+"px!important;");
+		$(".slider img").attr("style", "height: "+$(window).height()+"px");
+	} else if($(".slider").length && $(document).width() < 1199) {
+		$(".slider").removeAttr("style");
+		$(".slider img").removeAttr("style");
+	}
+};
+
+// set info block height in grid view
+var itemGridAutoHeight = function() {
+	if($(".grid-view .info-block").length > 1 && $(document).width() > 1199) {
+
+		var itemMaxHeight = 0;
+
+		$(".grid-view .info-block").each(function(i) {
+			if(itemMaxHeight < $(this).outerHeight()) {
+				itemMaxHeight = $(this).outerHeight();
+			}
 		});
+
+		if(itemMaxHeight > 0) {
+			$(".grid-view .info-block").attr("style", "height: "+itemMaxHeight+"px;");
+		}
 	}
 };
 
@@ -130,11 +161,45 @@ $(document).ready(function() {
 
 	// masonry init in projects search results grid view
 	masonryInit();
+
+	// set slider height
+	sliderAutoHeight();
+
+	// fix for scroll to filter on home page
+    if($(".filter").length && $(document).scrollTop() > $(window).height()+$(".filter").outerHeight()) {
+    	$(".filter").addClass("scrolled");
+    }
+
+    // set item height in grid view
+	itemGridAutoHeight();
 });
 
 $(window).resize(function() {
 	// masonry init in projects search results grid view
 	masonryInit();
+
+	// set slider height
+	sliderAutoHeight(); 
+});
+
+$(window).scroll(function() {
+
+	// scroll to filter on home page (1 wheel from top)
+	if($(".slider").length && $(".filter").length && $(document).width() > 1199) {
+		$(document).on('mousewheel', function(e) {
+	        if(!$(".filter").hasClass("scrolled") && e.originalEvent.wheelDeltaY < 0) {
+	        	$('html, body').animate({
+	        		scrollTop: $(".filter").offset().top-($(window).height()-$(".filter").outerHeight())
+	        	}, 700);
+
+	        	$(".filter").addClass("scrolled");
+	        }
+	    });
+
+	    if($(document).scrollTop() === 0) {
+	    	$(".filter").removeClass("scrolled");
+	    }
+	}
 });
 
 // $('.fotorama').on('fotorama:ready', function (e, fotorama, extra) {

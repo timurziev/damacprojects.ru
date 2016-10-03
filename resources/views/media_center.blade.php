@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url({{ Request::root() }}/img/media_center.jpg);">
 			<div class="wrapper">
-				<h2>Медиа центр</h2>
+				{{-- <h2>Медиа центр</h2> --}}
 			</div>
 		</div>
 		<div class="wrapper">

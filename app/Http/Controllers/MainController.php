@@ -85,7 +85,7 @@ class MainController extends Controller
 			$projects->where('category_id', Request::get('status'));
 		}
 
-		$projects = $projects->paginate(4);
+		$projects = $projects->paginate(6);
 
         return view('projects', compact('projects', 'cities', 'images', 'countries', 'regions'));
 	}

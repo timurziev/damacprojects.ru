@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/offers.jpg);">
 			<div class="wrapper">
-				<h2>Проекты</h2>
+				{{-- <h2>Проекты</h2> --}}
 			</div>
 		</div>
 		@if (Request::is('projects') || Request::is('comp_search'))
@@ -12,13 +12,33 @@
 		<div class="wrapper">
 			<div class="single-page projects">
 				<div class="section-title">
-					<h2>Наши проекты</h2>
+					<h2>Проекты</h2>
 					<div class="line"></div>
 				</div>
-				<div class="cards center">
-					@include('includes/main_projects')
+
+				<div class="cards offers-wrapper projects-search-results">
+
+					<div class="switch-view">
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
+					</div>
+
+					@if(Request::input('view') == 'list')
+						@include ('includes/list_projects')
+					@elseif (Request::input('view') == 'grid')
+						@include ('includes/grid_projects')
+					@elseif (Request::input('view') == 'map')
+						@include ('includes/map_projects')
+					@else 
+						@include ('includes/list_projects')
+					@endif
+
 				</div>
-					@include ('includes/pagination')
+
+				@if(Request::input('view') !== 'map')
+		    		@include ('includes/pagination')
+		    	@endif
 			</div>
 		</div>
 	</div>

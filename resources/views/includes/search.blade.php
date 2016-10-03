@@ -26,6 +26,6 @@
 			</div>
 			<button>Поиск</button>
 		</form>
-		<a href="" class="online-sale">Онлайн продажа</a>
+		{{-- <a href="" class="online-sale">Онлайн продажа</a> --}}
 	</div>
 </div>
