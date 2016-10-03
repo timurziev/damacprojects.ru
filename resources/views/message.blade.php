@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/message.jpg);">
 			<div class="wrapper">
-				<h2>Слово председателя</h2>
+				{{-- <h2>Слово председателя</h2> --}}
 			</div>
 		</div>
 		<div class="wrapper">
