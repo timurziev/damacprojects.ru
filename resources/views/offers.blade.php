@@ -40,7 +40,7 @@
 	<script>
 		  var markers = [
 			@foreach($projects as $project)
-			  [{{$project->lat}}, {{$project->lng}}],
+			  [{{$project->lat}}, {{$project->lng}}, '<img src="{{Request::root()}}/uploads/projects/big/{{$project->image}}"><a href="{!! action('MainController@show', $project->slug) !!}">{{$project->title}}</a>', '{{$project->title}}'],
 			@endforeach
 			];
 	</script>

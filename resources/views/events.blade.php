@@ -38,7 +38,8 @@
 					<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;"><h2>Нет мероприятий</h2></div><br><br><br>
 				@endforelse
 				@include ('includes/pagination')
-				<p class="lid event-text">Вы пропустили интересное мероприятие? Не волнуйтесь, в ближайшее время предстоит еще не одно мероприятие. Укажите свои данные в форму ниже и вы будете получать уведомления о новых акциях и мероприятиях компании.</p>
+				@if(is_null($events))
+				<p class="lid event-text">Вы пропустили интересные мероприятия? Не волнуйтесь, в ближайшее время их будет еще больше. Заполните свои данные и вы будете получать уведомления о новых мероприятиях компаний, с которыми сотрудничает наше агентство.</p>
 				<form class="subscribe-form" action="" method="post">
 					@if (session('status'))
 				        <div class="alert-success">
@@ -50,6 +51,7 @@
 					<input type="text" name="email" placeholder="E-mail" required>
 					<input type="submit" value="Получать уведомления">
 				</form>
+				@endif
 			</div>
 		</div>
 	</div>

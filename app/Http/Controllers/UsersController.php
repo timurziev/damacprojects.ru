@@ -17,17 +17,17 @@ use App\Http\Requests\UserFormRequest;
 
 class UsersController extends Controller
 {
-    public function store(Request $request)
-    {
-    	$user = new User(array(
-    			'name' => Request::input('name'),
-    			'email' => Request::input('email'),
-    		));
+    // public function store(Request $request)
+    // {
+    // 	$user = new User(array(
+    // 			'name' => Request::input('name'),
+    // 			'email' => Request::input('email'),
+    // 		));
 
-    	$user->save();
+    // 	$user->save();
 
-    	return redirect('events')->with('status', 'Вы подписались на рассылку!');
-    }
+    // 	return redirect('events')->with('status', 'Готово, теперь вы будете получать уведомления об акциях и мероприятиях  на свою электронную почту от агентства SHEIKH Real Estate');
+    // }
 
 
     public function change_view()

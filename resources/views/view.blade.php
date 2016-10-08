@@ -41,6 +41,8 @@
 					<script>
 					  var lat = {{$project->lat}};
 					  var lng = {{$project->lng}};
+					  var content = '<img src="{{Request::root()}}/uploads/projects/big/{{$project->image}}">p>{{$project->title}}</p>';
+					  var title = '{{$project->title}}';
 					</script>
 					<div class="project-location">
 						<div class="city">{!! $project->city->name !!}</div>

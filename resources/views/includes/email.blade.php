@@ -6,9 +6,9 @@
         </div>
     @endif
     @if(Request::is('project/*'))
-		<input type="hidden" value="{{ $project->id }}" name="project_id">
+		<input type="hidden" value="{{ $project->title }}" name="project_title">
 	@else
-		<input type="hidden" value="{{ $event->id }}" name="event_id">
+		<input type="hidden" value="{{ $event->title }}" name="event_title">
 	@endif
 	<input type="text" placeholder="Имя" name="name" required>
 	<input type="text" placeholder="E-mail" name="email" required>

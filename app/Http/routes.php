@@ -17,7 +17,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('pages/{slug}', 'MainController@show_page');
     Route::get('/about', 'MainController@about');
     Route::get('/events', 'MainController@events');
-    Route::post('/events', 'UsersController@store');
+    Route::post('/events', 'MainController@event_email');
     Route::get('/event/{slug}', 'MainController@show_event');
     Route::get('/investor_relations', function () { return view('investor_relations'); });
     Route::get('/contacts', function () { return view('contacts'); });

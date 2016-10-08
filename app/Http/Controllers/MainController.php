@@ -148,9 +148,6 @@ class MainController extends Controller
     	$images = Images::where('project_id', $project->id)->get();
     	$plans = Plan::where('project_id', $project->id)->get();
 
-    	//$image= explode("|", $project->image);
-    	//$floor_plans= explode("|", $project->floor_plans);
-
 	    return view('view', compact('project', 'categories', 'cities', 'images', 'plans'));
 	}
 
@@ -224,13 +221,13 @@ class MainController extends Controller
 		$email = Request::get('email');
 		$text = Request::get('text');
 
-		if(Request::get('project_id'))
+		if(Request::get('project_title'))
 		{
-			$id = Request::get('project_id');
+			$title = Request::get('project_title');
 		}
 		else
 		{
-			$id = Request::get('event_id');
+			$title = Request::get('event_title');
 		}
 		
 
@@ -238,24 +235,39 @@ class MainController extends Controller
 			'name' => $name,
 			'email' => $email,
 			'text' => $text,
-			'id' => $id,
+			'title' => $title,
 		];
 
 		if(Request::get('project_id'))
 		{
 			Mail::send( 'mail.email', $data, function ($message){
-	            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
+	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
 	        });
 		}
 		else
 		{
 			Mail::send( 'mail.email_ev', $data, function ($message){
-	            $message->to('storona77@gmail.com')->subject('Запрос на обновления от ' . Request::get('name'));
+	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
 	        });
 		}
 
-	 	
-
         return redirect()->back()->with('status', 'Сообщение успешно отправлено!');
+	}
+
+	public function event_email()
+	{
+		$name = Request::get('name');
+		$email = Request::get('email');
+
+		$data = [
+			'name' => $name,
+			'email' => $email,
+		];
+
+		Mail::send( 'mail.event_email', $data, function ($message){
+            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает получать от вас уведомления на предстоящие мероприятия');
+        });
+
+        return redirect('events')->with('status', 'Готово, теперь вы будете получать уведомления об акциях и мероприятиях  на свою электронную почту от агентства SHEIKH Real Estate');
 	}
 }

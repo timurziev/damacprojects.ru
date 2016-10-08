@@ -3,14 +3,14 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url({{ Request::root() }}/img/media_center.jpg);">
 			<div class="wrapper">
-				<h2>Медиа центр</h2>
+				<h2>Медиа-центр</h2>
 			</div>
 		</div>
 		<div class="wrapper">
 			<div class="single-page">
 				<div class="right-col">
 					<div class="text-header">
-						<h2>Медиа центр</h2>
+						<h2>Медиа-центр</h2>
 					</div>
 					<ul class="right-col-menu">
 						<!-- <li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li> -->

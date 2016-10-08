@@ -210,11 +210,25 @@
 
 		  for (i = 0; i < markers.length; i++) {
 			    var location = new google.maps.LatLng(markers[i][0], markers[i][1]);
+			    var content = markers[i][2];
+			    var title = markers[i][3];
 
-			    var marker = new google.maps.Marker({
+			    var infowindow = new google.maps.InfoWindow({
+				    content: content,
+				});
+				var marker = new google.maps.Marker({
 			        position: location,
 			        map: map_canvas,
+			        title: title,
+			        icon: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Marker-Inside-Chartreuse-icon.png',
+			        
 			    }); 
+				google.maps.event.addListener(marker, 'click', (function(marker, i) {
+					return function() {
+						infowindow.setContent(markers[i][2]);
+					    infowindow.open(map_canvas, marker);
+					}
+				})(marker, i));
 			}
 		}
 		google.maps.event.addDomListener(window, "load", initialize);
@@ -234,7 +248,16 @@
 				lat: lat,
 				lng: lng
 			},
-			map:map
+			map:map,
+			
+	        title: title,
+		});
+
+		var infowindow = new google.maps.InfoWindow({
+		    content: content,
+		  });
+		marker.addListener('click', function() {
+		    infowindow.open(map, marker);
 		});
 	</script>
 </body>
