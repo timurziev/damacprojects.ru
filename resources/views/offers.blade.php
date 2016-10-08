@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/offers.jpg);">
 			<div class="wrapper">
-				<h2>{{ Request::is('offers') ? 'Предложения и акции' : 'Проекты' }}</h2>
+				{{-- <h2>{{ Request::is('offers') ? 'Предложения и акции' : 'Проекты' }}</h2> --}}
 			</div>
 		</div>
 		@if (Request::is('search_pro'))
@@ -20,7 +20,7 @@
 						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
 					</div>
 					
-					 @if(Request::input('view') == 'list')
+					@if(Request::input('view') == 'list')
 						@include ('includes/list_projects')
 					@elseif (Request::input('view') == 'grid')
 						@include ('includes/grid_projects')

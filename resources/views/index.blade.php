@@ -42,7 +42,7 @@
 			<div class="cards center">
 				@include('includes/main_projects')
 			</div>
-			<div class="section-title">
+			<div class="section-title text-center">
 				<h3>Официальные сайты компаний, с которыми сотрудничает агентсво «SHEIKH REAL ESTATE»</h3>
 			</div>
 			<div class="partners">

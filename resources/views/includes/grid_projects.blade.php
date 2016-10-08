@@ -11,6 +11,7 @@
 				<div class="info-block">
 					<div class="h3-block"><h3>{{ $project->title }}</h3></div>
 					<p>{{ str_limit($project->description, 100) }}</p>
+					<div class="location">Абу-Даби</div>
 					<a class="more" href="{!! action('MainController@show', $project->slug) !!}">Узнать больше</a>
 				</div>
 			</div>

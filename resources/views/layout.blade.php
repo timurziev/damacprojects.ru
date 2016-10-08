@@ -22,7 +22,8 @@
 			<a href="{{ Request::root() }}" class="logo"></a>
 			<a class="header-nav nav2" href="{{ URL::to('contacts') }}">Связаться с нами</a>
 			<!-- <a class="header-nav" href="">Онлайн продажа</a> -->
-			<div class="phone">+7 999 123 45 67</div>
+			<div class="phone">+7 (964) 515-11-11</div>
+			<div class="phone">+7 (905) 536-33-35</div>
 		</div>
 	</header>
 	<a href="" class="burger" id="open-nav"><i></i></a>
@@ -41,7 +42,7 @@
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/about-small.jpg" alt="">
-							<h4>О SHEIKH</h4>
+							<h4>О нас</h4>
 							<p>Компания DAMAC была создана в 2002 году как частная организация в сфере строительства жилой и коммерческой недвижимости в Дубае и на ближнем востоке. С тех пор, компания быстро расширяется в Северной Африке, Иордании, Ливане, Катаре и Саудовской Аравии.</p>
 							<a class="look" href="{{ URL::to('/about') }}">Подробнее</a>
 						</div>
@@ -113,7 +114,7 @@
 		<div class="footer-menu1">
 			<div class="wrapper">
 				<ul>
-					<h4>ОБ АГЕНТСТВЕ</h4>
+					<h4><a href="{{ URL::to('/about') }}">Об агентстве</a></h4>
 					<!-- <li><a href="{{ URL::to('/message') }}">Обращение председателя</a></li> -->
 					<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
 					@foreach ($static_pages->where('main_page_id', 1)->all() as $static_page)
@@ -121,19 +122,19 @@
 					@endforeach
 				</ul>
 				<ul>
-					<h4>Проекты SHEIKH</h4>
+					<h4><a href="{{ URL::to('/projects') }}">Проекты</a></h4>
 					@foreach ($static_pages->where('main_page_id', 2)->all() as $static_page)
 						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 				<ul>
-					<h4>Предложения</h4>
+					<h4><a href="{{ URL::to('/offers') }}">Предложения</a></h4>
 					@foreach ($static_pages->where('main_page_id', 3)->all() as $static_page)
 						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
 				</ul>
 				<ul>
-					<h4>Инвесторам</h4>
+					<h4><a href="{{ URL::to('/investor_relations') }}">Инвесторам</a></h4>
 					@foreach ($static_pages->where('main_page_id', 4)->all() as $static_page)
 						<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					@endforeach
@@ -143,7 +144,7 @@
 			<div class="footer-menu2">
 			<div class="wrapper">
 				<span class="copyright">Все права защищены 2016 SHEIKH</span>
-				<a href="" class="footer-links">Контакты</a>
+				<a href="{{ url('/contacts') }}" class="footer-links">Контакты</a>
 				<a href="" class="footer-links">Карта сайта</a>
 				<a href="" class="footer-links">Условия использования</a>
 				<div class="social">
