@@ -207,17 +207,38 @@ $(window).resize(function() {
 	sliderAutoHeight(); 
 });
 
+var isScrolling = false;
+
 $(window).scroll(function() {
 
-	// scroll to filter on home page (1 wheel from top)
 	if($(".slider").length && $(".filter").length && $(document).width() > 1199) {
-		$(document).on('mousewheel', function(e) {
-	        if(!$(".filter").hasClass("scrolled") && e.originalEvent.wheelDeltaY < 0) {
-	        	$('html, body').animate({
-	        		scrollTop: $(".filter").offset().top-($(window).height()-$(".filter").outerHeight())
-	        	}, 700);
 
-	        	$(".filter").addClass("scrolled");
+		$(document).on('mousewheel DOMMouseScroll', function(e) {
+
+			var delta = e.originalEvent.wheelDeltaY;
+
+			// fix fir ff
+            if (e.originalEvent.detail) {
+                delta = (e.originalEvent.detail < 0 ? 1 : -1);
+            }
+
+	        if(!$(".filter").hasClass("scrolled") && delta < 0) {
+
+	        	e.preventDefault();
+		        e.stopPropagation();
+
+		        if(isScrolling) {
+		            return false;
+		        }
+
+		        isScrolling = true;
+
+	        	$('html,body').animate({
+	        		scrollTop: $(".filter").offset().top-($(window).height()-$(".filter").outerHeight())
+	        	}, 500, function(){
+		            isScrolling = false;
+		            $(".filter").addClass("scrolled");
+		        });
 	        }
 	    });
 
