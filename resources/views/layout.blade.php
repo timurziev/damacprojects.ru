@@ -23,7 +23,7 @@
 			<a class="header-nav nav2" href="{{ URL::to('contacts') }}">Связаться с нами</a>
 			<!-- <a class="header-nav" href="">Онлайн продажа</a> -->
 			<div class="phone">+7 (964) 515-11-11</div>
-			<div class="phone">+7 (905) 536-33-35</div>
+			<div class="phone">+7 (905) 536-33-35</div>	
 		</div>
 	</header>
 	<a href="" class="burger" id="open-nav"><i></i></a>
@@ -106,7 +106,9 @@
 			</ul>
 			<div class="search">{{ Request::input('search') }}</div>
 		</div>
+		<!-- Please do not edit this code - http://ru.mconvert.net/exchange-rates-widget starts here --><iframe src="http://mconvert.net/get-exchange-rates-widget?base=usd&amount=1&lang=ru&curr=rub,aed&theme=blue&type=1&font=1&ssl=1" width="300" height="158" frameborder="0" scrolling="no"></iframe><div style="width:300px;font-size:12px;font-family:arial;text-align:right;"></div><!-- http://ru.mconvert.net/exchange-rates-widget ends here -->
 	</div>
+
 
 	@yield('content')
 
@@ -156,6 +158,15 @@
 				</div>
 			</div>
 		</div>
+		<!-- BEGIN JIVOSITE CODE {literal} -->
+		<script type='text/javascript'>
+		(function(){ var widget_id = 'gXd3fPk2YB';var d=document;var w=window;function l(){
+		var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+		<!-- {/literal} END JIVOSITE CODE -->
+
+		<script type="text/javascript"
+            src="//cdn.callbackhunter.com/cbh.js?hunter_code=cc65d82faf6afe1ea6cc1bba94e4b4c7" charset="UTF-8">
+        </script>
 	</footer>
 	<div class="popup">
 		<div class="popup-manager">

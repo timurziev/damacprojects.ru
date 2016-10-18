@@ -91,6 +91,38 @@
         map: map,
         draggable: true
     });
+    var marker2 = new google.maps.Marker({
+        position: {
+            lat: 25.17,
+            lng: 55.27
+        },
+        map: map,
+        draggable: true
+    });
+    var marker3 = new google.maps.Marker({
+        position: {
+            lat: 25.17,
+            lng: 55.27
+        },
+        map: map,
+        draggable: true
+    });
+    var marker4 = new google.maps.Marker({
+        position: {
+            lat: 25.17,
+            lng: 55.27
+        },
+        map: map,
+        draggable: true
+    });
+    var marker5 = new google.maps.Marker({
+        position: {
+            lat: 25.17,
+            lng: 55.27
+        },
+        map: map,
+        draggable: true
+    });
     var searchBox = new google.maps.places.SearchBox(document.getElementById('searchmap'));
     google.maps.event.addListener(searchBox,'places_changed',function(){
         var places = searchBox.getPlaces();
@@ -103,11 +135,83 @@
         map.fitBounds(bounds);
         map.setZoom(10);
     });
+    var searchBox2 = new google.maps.places.SearchBox(document.getElementById('searchmap2'));
+    google.maps.event.addListener(searchBox2,'places_changed',function(){
+        var places = searchBox2.getPlaces();
+        var bounds = new google.maps.LatLngBounds();
+        var i, place;
+        for(i=0; place=places[i];i++){
+            bounds.extend(place.geometry.location);
+            marker2.setPosition(place.geometry.location); //set marker position new...
+        }
+        map.fitBounds(bounds);
+        map.setZoom(10);
+    });
+    var searchBox3 = new google.maps.places.SearchBox(document.getElementById('searchmap3'));
+    google.maps.event.addListener(searchBox3,'places_changed',function(){
+        var places = searchBox3.getPlaces();
+        var bounds = new google.maps.LatLngBounds();
+        var i, place;
+        for(i=0; place=places[i];i++){
+            bounds.extend(place.geometry.location);
+            marker3.setPosition(place.geometry.location); //set marker position new...
+        }
+        map.fitBounds(bounds);
+        map.setZoom(10);
+    });
+    var searchBox4 = new google.maps.places.SearchBox(document.getElementById('searchmap4'));
+    google.maps.event.addListener(searchBox4,'places_changed',function(){
+        var places = searchBox4.getPlaces();
+        var bounds = new google.maps.LatLngBounds();
+        var i, place;
+        for(i=0; place=places[i];i++){
+            bounds.extend(place.geometry.location);
+            marker4.setPosition(place.geometry.location); //set marker position new...
+        }
+        map.fitBounds(bounds);
+        map.setZoom(10);
+    });
+    var searchBox5 = new google.maps.places.SearchBox(document.getElementById('searchmap5'));
+    google.maps.event.addListener(searchBox5,'places_changed',function(){
+        var places = searchBox5.getPlaces();
+        var bounds = new google.maps.LatLngBounds();
+        var i, place;
+        for(i=0; place=places[i];i++){
+            bounds.extend(place.geometry.location);
+            marker5.setPosition(place.geometry.location); //set marker position new...
+        }
+        map.fitBounds(bounds);
+        map.setZoom(10);
+    });
     google.maps.event.addListener(marker,'position_changed',function(){
         var lat = marker.getPosition().lat();
         var lng = marker.getPosition().lng();
         $('#lat').val(lat);
         $('#lng').val(lng);
+    });
+    google.maps.event.addListener(marker2,'position_changed',function(){
+        var lat = marker2.getPosition().lat();
+        var lng = marker2.getPosition().lng();
+        $('#lat2').val(lat);
+        $('#lng2').val(lng);
+    });
+    google.maps.event.addListener(marker3,'position_changed',function(){
+        var lat = marker3.getPosition().lat();
+        var lng = marker3.getPosition().lng();
+        $('#lat3').val(lat);
+        $('#lng3').val(lng);
+    });
+    google.maps.event.addListener(marker4,'position_changed',function(){
+        var lat = marker4.getPosition().lat();
+        var lng = marker4.getPosition().lng();
+        $('#lat4').val(lat);
+        $('#lng4').val(lng);
+    });
+    google.maps.event.addListener(marker5,'position_changed',function(){
+        var lat = marker5.getPosition().lat();
+        var lng = marker5.getPosition().lng();
+        $('#lat5').val(lat);
+        $('#lng5').val(lng);
     });
 </script>
 

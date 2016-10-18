@@ -1,3 +1,7 @@
+var mid = -1;
+var markers = [];
+var current_place = [];
+
 // masonry init in projects search results grid view
 var masonryInit = function() {
 	if($(document).width() > 1199 && $('.grid-view').length) {
@@ -41,6 +45,27 @@ var itemGridAutoHeight = function() {
 };
 
 $(document).ready(function() {
+
+	$('#add-marker-btn').click(function(){
+		var city = $('#marker-input input').val();
+
+		var place = current_place;
+
+		mid++;
+        marker.set("id", mid);
+        marker.setPosition(place.geometry.location); //set marker position new...
+        markers[mid] = {
+            name: city,
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng()
+        };
+
+		$('#marker-input input').val('');
+		var inp = $('#cloned-box').clone();
+		$(inp).find('input').val(city);
+		$(inp).show();
+		$('#marker-inputs').append(inp);
+	});
 
   	$("#owl-example").owlCarousel();
 

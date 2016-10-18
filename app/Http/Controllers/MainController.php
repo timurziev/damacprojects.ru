@@ -86,6 +86,7 @@ class MainController extends Controller
 		}
 
 		$projects = $projects->paginate(6);
+		$projects->appends(Request::except('page'));
 
         return view('projects', compact('projects', 'cities', 'images', 'countries', 'regions'));
 	}

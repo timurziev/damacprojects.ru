@@ -46,22 +46,23 @@
                     <div class="form-group">
                         <label for="" class="col-lg-2 control-label">Карта</label>
                         <div class="col-lg-10">
-                        @if (Request::is('edit_event/*'))
-                            <script>
-                                var lati = {{ $event->lat }};
-                                var lngi = {{ $event->lng }};
-                            </script>
-                        @endif
-                        @if (Request::is('create_event'))
                         <input type="text"  id="searchmap" class="form-control">
+                        <input type="text"  id="searchmap2" class="form-control">
+                        <input type="text"  id="searchmap3" class="form-control">
+                        <input type="text"  id="searchmap4" class="form-control">
+                        <input type="text"  id="searchmap5" class="form-control">
                             <div id="map-canvas" class="col-lg-10"></div>
-                        @else 
-                        <input type="text" id="searchmap_edit" class="form-control">
-                            <div id="map-canvas-edit" class="col-lg-10"></div>
-                        </div>
-                        @endif
+                            
                         <input type="hidden" name="lat" id="lat">
                         <input type="hidden" name="lng" id="lng">
+                        <input type="hidden" name="lat2" id="lat2">
+                        <input type="hidden" name="lng2" id="lng2">
+                        <input type="hidden" name="lat3" id="lat3">
+                        <input type="hidden" name="lng3" id="lng3">
+                        <input type="hidden" name="lat4" id="lat4">
+                        <input type="hidden" name="lng4" id="lng4">
+                        <input type="hidden" name="lat5" id="lat5">
+                        <input type="hidden" name="lng5" id="lng5">
                     </div>
                     <div class="form-group">
                             <label for="content" class="col-lg-2 control-label">Изображение</label>

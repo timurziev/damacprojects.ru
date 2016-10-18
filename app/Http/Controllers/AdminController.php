@@ -9,6 +9,7 @@ use App\Project;
 use App\Press_release;
 use App\Novelty;
 use App\Event;
+use App\Event_locations;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
@@ -477,10 +478,43 @@ class AdminController extends Controller
         $event->time = Request::input('time');
         $event->lat = Request::input('lat');
         $event->lng = Request::input('lng');
-        $event->location = Request::input('location');
+        // $event->location = Request::input('location');
         $event->slug = $slug;
         
         $event->save();
+
+        if(Request::get('lat') !== null) {
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat');
+            $locations->lng = Request::input('lng');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat2');
+            $locations->lng = Request::input('lng2');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat3');
+            $locations->lng = Request::input('lng3');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat4');
+            $locations->lng = Request::input('lng4');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat5');
+            $locations->lng = Request::input('lng5');
+            $locations->save();
+        }
 
         return redirect('/create_event')->with('status', 'Мероприятие создано!');
     }
@@ -488,7 +522,8 @@ class AdminController extends Controller
     public function edit_event($slug)
     {
         $event = Event::whereSlug($slug)->firstOrFail();
-        return view('admin.create_event', compact('event'));
+        $event_locations = Event_locations::where('event_id', $event->id)->get();
+        return view('admin.create_event', compact('event', 'event_locations'));
     }
 
     public function update_event($slug)
@@ -521,13 +556,43 @@ class AdminController extends Controller
         $event->text = Request::input('text');
         $event->time = Request::input('time');
         $event->location = Request::input('location');
-
-        if(Request::get('lat') && Request::get('lng') !== null) {
-            $event->lat = Request::input('lat');
-            $event->lng = Request::input('lng');
-        }
         
         $event->save();
+
+        if(Request::get('lat') !== null) {
+
+            $locs = Event_locations::where('event_id', $event->id)->delete();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat');
+            $locations->lng = Request::input('lng');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat2');
+            $locations->lng = Request::input('lng2');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat3');
+            $locations->lng = Request::input('lng3');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat4');
+            $locations->lng = Request::input('lng4');
+            $locations->save();
+
+            $locations = New Event_locations;
+            $locations->event_id = $event->id;
+            $locations->lat = Request::input('lat5');
+            $locations->lng = Request::input('lng5');
+            $locations->save();
+        }
 
         return redirect(action('AdminController@update_event', $event->slug))->with('status', 'Мероприятие обновлено!');
     }
