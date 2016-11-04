@@ -15,8 +15,8 @@
 					<ul class="right-col-menu">
 						<!-- <li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li> -->
 						<li><a href="{{ URL::to('/news') }}">Новости индустрии</a></li>
-						<li><a href="">Фотогалерея</a></li>
-						<li><a href="">Видеогалерея</a></li>
+						<li><a href="{{ URL::to('/media_center/photo_gallery') }}">Фотогалерея</a></li>
+						<li><a href="{{ URL::to('/media_center/video_gallery') }}">Видеогалерея</a></li>
 					</ul>
 					<div class="text-header">
 						<h2>Фотогалерея</h2>

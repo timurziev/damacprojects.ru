@@ -19,9 +19,9 @@
 				<div class="cards offers-wrapper projects-search-results">
 
 					<div class="switch-view">
-						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif }}"></a>
-						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
-						<a href="?country={{ isset($country) ? $country : '' }}&status={{ isset($status) ? $status : ''  }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
 					</div>
 
 					@if(Request::input('view') == 'list')
@@ -42,4 +42,11 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		  var locations = [
+			@foreach($projects as $project)
+			  [{{$project->lat}}, {{$project->lng}}, '<img src="{{Request::root()}}/uploads/projects/big/{{$project->image}}"><a href="{!! action('MainController@show', $project->slug) !!}">{{$project->title}}</a>', '{{$project->title}}'],
+			@endforeach
+			];
+	</script>
 @endsection

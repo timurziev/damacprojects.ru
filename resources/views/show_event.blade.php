@@ -19,12 +19,15 @@
 			<div class="left-col">
 					<a href=""><img class="event-thumbnail" src="{{ Request::root() }}/uploads/media/big/{{ $event->image }}"></a>
 				<script>
-				  var lat = {{$event->lat}};
-				  var lng = {{$event->lng}};
+				  var locations = [
+					@foreach($event_locations as $location)
+					  [{{$location->lat}}, {{$location->lng}}],
+					@endforeach
+					];
 				</script>
 				<div class="project-location">
 					<div class="city">{{ $event->location }}</div>
-					<a href="#" class="show-map">Показать на карте</a>
+					<a href="#" class="show-map-event">Показать на карте</a>
 				</div>
 				<p>{!! $event->text !!}</p>
 			</div>

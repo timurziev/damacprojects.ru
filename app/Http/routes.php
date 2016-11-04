@@ -24,7 +24,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/message', 'MainController@message');
     Route::get('/offers', 'MainController@offers');
     Route::get('/projects', 'MainController@projects');
-    Route::get('/media_center', 'MainController@releases_and_news');
+
+    Route::group(['prefix' => 'media_center'], function() {
+        Route::get('/', 'MainController@releases_and_news');
+        Route::get('photo_gallery', 'MainController@img_gallery');
+        Route::get('photo_gallery/{slug}', 'MainController@show_img');
+        Route::get('video_gallery', 'MainController@video_gallery');
+    });
+    
     Route::get('/press_releases', 'MainController@releases');
     Route::get('/release/{slug}', 'MainController@show_release');
     Route::get('/news', 'MainController@news');

@@ -476,39 +476,46 @@ class AdminController extends Controller
         $event->title = Request::input('title');
         $event->text = Request::input('text');
         $event->time = Request::input('time');
-        $event->lat = Request::input('lat');
-        $event->lng = Request::input('lng');
-        // $event->location = Request::input('location');
+        //$event->lat = Request::input('lat');
+        //$event->lng = Request::input('lng');
+        $event->location = Request::input('location');
         $event->slug = $slug;
         
         $event->save();
 
-        if(Request::get('lat') !== null) {
-
+        if(!empty(Request::get('lat'))) {
             $locations = New Event_locations;
             $locations->event_id = $event->id;
             $locations->lat = Request::input('lat');
             $locations->lng = Request::input('lng');
             $locations->save();
+        }
 
+        if(!empty(Request::get('lat2'))) {
             $locations = New Event_locations;
             $locations->event_id = $event->id;
             $locations->lat = Request::input('lat2');
             $locations->lng = Request::input('lng2');
             $locations->save();
+        }
 
+        if(!empty(Request::get('lat3'))) {
             $locations = New Event_locations;
             $locations->event_id = $event->id;
             $locations->lat = Request::input('lat3');
             $locations->lng = Request::input('lng3');
             $locations->save();
+        }
 
+        if(!empty(Request::get('lat4'))) {
             $locations = New Event_locations;
             $locations->event_id = $event->id;
             $locations->lat = Request::input('lat4');
             $locations->lng = Request::input('lng4');
             $locations->save();
+        }
 
+        if(!empty(Request::get('lat5'))) {
             $locations = New Event_locations;
             $locations->event_id = $event->id;
             $locations->lat = Request::input('lat5');

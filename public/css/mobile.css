@@ -30,6 +30,9 @@
 	.advanced-filter .select-wrapper .drop-list {
 	    padding: 0 70px 0 20px;
 	}
+	.photo-video-item .images .last {
+		margin-right: 40px!important;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -98,8 +101,11 @@
 	    line-height: 1.5;
 	    margin: 20px 20px 100px;
 	}
-	.cards .location {
+	.cards .location, .cards.center .location {
 		margin: 0 20px 100px 20px;
+	}
+	.cards.center .location {
+		right: auto;
 	}
 	.cards .readmore {
 		margin: 0 20px 20px;
@@ -109,6 +115,10 @@
 	}
 	#map,.popup-manager {
 		max-width: 700px;
+	}
+	.photo-video-list, 
+	.photo-video-item .images ul {
+		text-align: center;
 	}
 }
 

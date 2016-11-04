@@ -15,6 +15,7 @@ use App\StaticPage;
 use App\Images;
 use App\Plan;
 use App\Event;
+use App\Event_locations;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
@@ -101,8 +102,9 @@ class MainController extends Controller
 	public function show_event($slug) 
 	{
 		$event = Event::whereSlug($slug)->firstOrFail();
+		$event_locations = Event_locations::where('event_id', $event->id)->get();
 
-		return view('show_event', compact('event'));
+		return view('show_event', compact('event', 'event_locations'));
 	}
 
 	public function releases_and_news()
@@ -184,8 +186,7 @@ class MainController extends Controller
 			$projects = $projects->get();
 		}
 		
-		
-        return view('offers', compact('projects', 'countries', 'country', 'status'));
+        return view('offers', compact('projects', 'countries', 'country', 'status', 'city', 'region'));
 	}
 
 	public function complex_search()
@@ -194,6 +195,10 @@ class MainController extends Controller
 		$cities = City::all();
 		$countries = Country::all();
 		$regions = Region::all();
+		$country = Request::get('country');
+		$status = Request::get('status');
+		$city = Request::get('city');
+		$region = Request::get('region');
 		
 		if (Request::has('status'))
 		{
@@ -211,9 +216,17 @@ class MainController extends Controller
 		{
 			$projects->where('region_id', Request::get('region'));
 		}
-		$projects = $projects->paginate(6);
-		$projects->appends(Request::except('page'));
-        return view('projects', compact('projects', 'cities', 'countries', 'regions'));
+		if (Request::get('view') !== 'map')
+		{
+			$projects = $projects->paginate(6);
+			$projects->appends(Request::except('page'));
+		}
+		else
+		{
+			$projects = $projects->get();
+		}
+
+        return view('projects', compact('projects', 'countries', 'country', 'status', 'city', 'region'));
 	}
 
     public function email() 
@@ -270,5 +283,28 @@ class MainController extends Controller
         });
 
         return redirect('events')->with('status', 'Готово, теперь вы будете получать уведомления об акциях и мероприятиях  на свою электронную почту от агентства SHEIKH Real Estate');
+	}
+
+	public function img_gallery()
+	{
+		$projects = Project::paginate(6);
+		$images = Images::all();
+
+		return view('photo_video_gallery', compact('projects', 'images'));
+	}
+
+	public function show_img($slug)
+	{
+		$project = Project::whereSlug($slug)->first();
+		$images = Images::where('project_id', $project->id)->get();
+
+		return view('photo_video_gallery', compact('project', 'images'));
+	}
+
+	public function video_gallery()
+	{
+		$projects = Project::paginate(6);
+
+		return view('photo_video_gallery', compact('projects'));
 	}
 }

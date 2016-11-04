@@ -74,8 +74,8 @@
 						<ul>
 							{{-- <li><a href="{{ URL::to('/press_releases') }}">Пресс-релизы</a></li> --}}
 							<li><a href="{{ URL::to('/news') }}">Новости индустрии</a></li>
-							<li><a href="">Фотогалерея</a></li>
-							<li><a href="">Видеогалерея</a></li>
+							<li><a href="{{ URL::to('/media_center/photo_gallery') }}">Фотогалерея</a></li>
+							<li><a href="{{ URL::to('/media_center/video_gallery') }}">Видеогалерея</a></li>
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
@@ -104,7 +104,6 @@
 			</ul>
 			<div class="search">{{ Request::input('search') }}</div>
 		</div>
-		<!-- Please do not edit this code - http://ru.mconvert.net/exchange-rates-widget starts here --><iframe src="http://mconvert.net/get-exchange-rates-widget?base=usd&amount=1&lang=ru&curr=rub,aed&theme=blue&type=1&font=1&ssl=1" width="300" height="158" frameborder="0" scrolling="no"></iframe><div style="width:300px;font-size:12px;font-family:arial;text-align:right;"></div><!-- http://ru.mconvert.net/exchange-rates-widget ends here -->
 	</div>
 
 
@@ -172,6 +171,12 @@
 			<a href="" class="close"></a>
 		</div>
 	</div>
+	<div class="popup-event">
+		<div class="popup-event-manager">
+			<div id="map-event"></div>
+			<a href="" class="close"></a>
+		</div>
+	</div>
 	<script src="{{ URL::asset('js/jquery-2.2.1.min.js') }}"></script>
 	<script src="{{ URL::asset('js/fotorama.js') }}"></script>
 	<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
@@ -207,10 +212,15 @@
 		});
 	</script>
 
-	<!--show map multiple projects -->
+	<!--show map multiple projects and markers on events -->
 	<script>
+		if(location.pathname.indexOf('event')>=0) {
+			var map_holder = 'map-event';
+		} else {
+			map_holder = 'map-canvas';
+		}
 		function initialize() {
-		  var map_canvas = new google.maps.Map(document.getElementById('map-canvas'),{
+		  var map_canvas = new google.maps.Map(document.getElementById(map_holder),{
 		  	center:{
 		  		lat: 25.17,
 	            lng: 55.27
@@ -218,11 +228,11 @@
 		  	zoom:4
 		  });
 
-		  for (i = 0; i < markers.length; i++) {
-			    var location = new google.maps.LatLng(markers[i][0], markers[i][1]);
-			    var content = markers[i][2];
-			    var title = markers[i][3];
-
+		  for (i = 0; i < locations.length; i++) {
+			    var location = new google.maps.LatLng(locations[i][0], locations[i][1]);
+			    var content = locations[i][2];
+			    var title = locations[i][3];
+			    
 			    var infowindow = new google.maps.InfoWindow({
 				    content: content,
 				});
@@ -235,7 +245,7 @@
 			    }); 
 				google.maps.event.addListener(marker, 'click', (function(marker, i) {
 					return function() {
-						infowindow.setContent(markers[i][2]);
+						infowindow.setContent(locations[i][2]);
 					    infowindow.open(map_canvas, marker);
 					}
 				})(marker, i));

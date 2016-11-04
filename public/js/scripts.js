@@ -170,11 +170,27 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$('.show-map-event').on('click', function(e){
+		$('.popup-event').css('visibility','visible');
+		e.preventDefault();
+		e.stopPropagation?e.stopPropagation():e.cancelBubble = true;
+	})
+
+	$('.popup-event-manager').on('click', function(e){
+		e.stopPropagation?e.stopPropagation():e.cancelBubble = true;
+	});
+
+	$('.popup-event-manager .close').on('click', function(e){
+		$('.popup-event').css('visibility','hidden');
+		e.preventDefault();
+	});
+
 	$('body').on('click', function(){
 		$('#search-form').css('display','none');
 		$('.search').removeClass('act-search');
 		$('.menu ul').css('visibility','visible');
 		$('.popup').css('visibility','hidden');
+		$('.popup-event').css('visibility','hidden');
 	});
 
 	$('ul.tab-nav').on('click', 'li:not(.active)', function() {
