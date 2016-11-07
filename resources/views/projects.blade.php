@@ -45,7 +45,7 @@
 	<script>
 		  var locations = [
 			@foreach($projects as $project)
-			  [{{$project->lat}}, {{$project->lng}}, '<img src="{{Request::root()}}/uploads/projects/big/{{$project->image}}"><a href="{!! action('MainController@show', $project->slug) !!}">{{$project->title}}</a>', '{{$project->title}}'],
+			  [{{$project->lat}}, {{$project->lng}}, '<img src="{{Request::root()}}/uploads/projects/big/{{$project->image}}"style="width:250px;height:auto;margin-top:5px;float:none;"><a style="font-weight:500;width:245px;display:block;text-decoration:none;color:#333;" href="{!! action('MainController@show', $project->slug) !!}">{{$project->title}}</a>', '{{$project->title}}'],
 			@endforeach
 			];
 	</script>
