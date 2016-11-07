@@ -48,6 +48,7 @@
 	header .logo {
 		width: 240px;
 		height: 60px;
+		margin-top: 8px;
 	}
 	header .header-nav.nav2, header .phone {
 		margin-top: 10px;
