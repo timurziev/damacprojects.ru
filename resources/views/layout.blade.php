@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/lightbox.min.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/mobile.css') }}">
 	<link rel="icon" href="{{ URL::asset('img/favicon.ico') }}">
 	<title>SHEIKH RE</title>
@@ -181,6 +182,7 @@
 	<script src="{{ URL::asset('js/fotorama.js') }}"></script>
 	<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
 	<script src="{{ URL::asset('js/masonry.pkgd.min.js') }}"></script>
+	<script src="{{ URL::asset('js/lightbox.min.js') }}"></script>
 	<script async="" src="{{ URL::asset('js/scripts.js') }}"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyB6K1CFUQ1RwVJ-nyXxd6W0rfiIBe12Q&libraries=places"
   type="text/javascript"></script>
