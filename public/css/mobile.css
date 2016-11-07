@@ -99,7 +99,11 @@
 	}
 	.cards>div p {
 	    line-height: 1.5;
-	    margin: 20px 20px 100px;
+	    margin: 0 20px 0;
+	    top: 200px;
+	}
+	.carousel .cards>div p {
+	    top: 280px;
 	}
 	.cards .location, .cards.center .location {
 		margin: 0 20px 100px 20px;
@@ -111,7 +115,7 @@
 		margin: 0 20px 20px;
 	}
 	.last-projects-items .h3-block {
-		top: 250px;
+		top: 80px;
 	}
 	#map,.popup-manager {
 		max-width: 700px;
@@ -127,7 +131,10 @@
 		width: 750px;
 	}
 	.last-projects-items .h3-block {
-	    top: 250px;
+	    top: 50px;
+	}
+	.carousel .cards>div p {
+	    top: 320px;
 	}
 
 	.item-desc .shadow {
@@ -238,6 +245,13 @@
 	.item-desc .shadow h2 {
 	    font-size: 1.2rem;
 		margin-bottom: 0;
+	}
+
+	.carousel .last-projects-items .h3-block {
+	    top: 30px;
+	}
+	.carousel .cards>div p {
+	    display: none;
 	}
 
 	/* advanced filter */
