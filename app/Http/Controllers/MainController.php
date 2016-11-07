@@ -303,7 +303,7 @@ class MainController extends Controller
 
 	public function video_gallery()
 	{
-		$projects = Project::paginate(6);
+		$projects = Project::where('media', '<>', '')->paginate(6);
 
 		return view('photo_video_gallery', compact('projects'));
 	}
