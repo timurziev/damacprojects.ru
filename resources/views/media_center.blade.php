@@ -18,7 +18,7 @@
 						<li><a href="{{ URL::to('/media_center/photo_gallery') }}">Фотогалерея</a></li>
 						<li><a href="{{ URL::to('/media_center/video_gallery') }}">Видеогалерея</a></li>
 					</ul>
-					<div class="text-header">
+					<!-- <div class="text-header">
 						<h2>Фотогалерея</h2>
 					</div>
 					<div class="fotorama"  data-width="100%" data-loop="true" data-arrows="true" data-click="true" data-nav="false">
@@ -33,7 +33,7 @@
 						<a href="https://www.youtube.com/watch?v=mmfSKiLEhFU">AYKON London One by Versace Home</a>
 						<a href="https://www.youtube.com/watch?v=Hnn5jQq2SdQ">AYKON City</a>
 					</div>
-					<a class="readmore black" href="">Перейти в галерею</a>
+					<a class="readmore black" href="">Перейти в галерею</a> -->
 					<div class="text-header">
 						<h2>Контакты</h2>
 					</div>

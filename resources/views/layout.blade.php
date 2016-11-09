@@ -23,8 +23,8 @@
 			<a href="{{ Request::root() }}" class="logo"></a>
 			<a class="header-nav nav2" href="{{ URL::to('contacts') }}">Связаться с нами</a>
 			<!-- <a class="header-nav" href="">Онлайн продажа</a> -->
-			<div class="phone">+7 (964) 515-11-11</div>
 			<div class="phone">+7 (905) 536-33-35</div>	
+			<div class="phone">+7 (964) 515-11-11</div>
 		</div>
 	</header>
 	<a href="" class="burger" id="open-nav"><i></i></a>
@@ -242,8 +242,6 @@
 			        position: location,
 			        map: map_canvas,
 			        title: title,
-			        icon: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Marker-Inside-Chartreuse-icon.png',
-			        
 			    }); 
 				google.maps.event.addListener(marker, 'click', (function(marker, i) {
 					return function() {
@@ -274,13 +272,13 @@
 			
 	        title: title,
 		});
-
-		var infowindow = new google.maps.InfoWindow({
-		    content: content,
-		  });
-		marker.addListener('click', function() {
-		    infowindow.open(map, marker);
-		});
+		
+		// var infowindow = new google.maps.InfoWindow({
+		//     content: content,
+		//   });
+		// marker.addListener('click', function() {
+		//     infowindow.open(map, marker);
+		// });
 	</script>
 </body>
 </html>
