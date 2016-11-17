@@ -269,19 +269,19 @@ class MainController extends Controller
 		if(Request::get('project_title'))
 		{
 			Mail::send( 'mail.email', $data, function ($message){
-	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать о проекте' . Request::get('title'));
+	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о проекте' . Request::get('title'));
 	        });
 		}
 		else if(Request::get('offer_title'))
 		{
 			Mail::send( 'mail.email_offer', $data, function ($message){
-	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать об акции' . Request::get('title'));
+	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать об акции' . Request::get('title'));
 	        });
 		}
 		else
 		{
 			Mail::send( 'mail.email_ev', $data, function ($message){
-	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
+	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
 	        });
 		}
 
