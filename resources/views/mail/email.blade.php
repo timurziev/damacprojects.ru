@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Запрос на обновления</title>
+	<title>Запрос на получение уведомлений</title>
 </head>
 <body>
-	<p>Пользователь  {{ $name }} !</p>
-	<p>Почтовый адрес {{ $email }}. Подписка на проект с id <strong>{{ $id }}</strong></p>
+	<p>Пользователь  {{ $name }} желает узнать о проекте {{ $title }}!</p>
+	<p>Почтовый адрес {{ $email }}.
 	<p>{{ $text }}</p>
 </body>
 </html>

@@ -15,7 +15,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ URL::to('/admin') }}">Проекты</a></li>
+                <li class="{{ Request::is('ad_offers') ? 'active' : '' }}"><a href="{{ URL::to('/ad_offers') }}">Предложения</a></li>
                 <li class="{{ Request::is('create') ? 'active' : '' }}"><a href="{{ URL::to('/create') }}">Создать проект <span class="sr-only">(current)</span></a></li>
+                <li class="{{ Request::is('create_offer') ? 'active' : '' }}"><a href="{{ URL::to('/create_offer') }}">Создать предложение <span class="sr-only">(current)</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Медиа центр <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

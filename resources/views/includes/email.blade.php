@@ -7,8 +7,10 @@
     @endif
     @if(Request::is('project/*'))
 		<input type="hidden" value="{{ $project->title }}" name="project_title">
-	@else
+	@elseif(Request::is('event/*'))
 		<input type="hidden" value="{{ $event->title }}" name="event_title">
+	@elseif(Request::is('offer/*'))
+		<input type="hidden" value="{{ $offer->title }}" name="offer_title">
 	@endif
 	<input type="text" placeholder="Имя" name="name" required>
 	<input type="text" placeholder="E-mail" name="email" required>

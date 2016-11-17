@@ -6,6 +6,7 @@ use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Project;
+use App\Offer;
 use App\Press_release;
 use App\Novelty;
 use App\Event;
@@ -13,6 +14,7 @@ use App\Event_locations;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
+use App\Offer_image;
 use App\Plan;
 use App\Http\Requests\ProjectsFromRequest;
 use App\City;
@@ -29,23 +31,6 @@ use Image;
 
 class AdminController extends Controller
 {
-    public function projects()
-    {
-        $projects = Project::orderBy('created_at', 'desc');
-        $projects = $projects->paginate(12);
-
-        return view('admin/projects', compact('projects'));
-    }
-
-    public function create()
-	{
-		$cities = City::all();
-        $countries = Country::all();
-        $regions = Region::all();
-
-    	return view('admin.create', compact('cities', 'countries', 'regions'));
-	}
-
     public function create_city()
     {
         $cities = City::orderBy('created_at', 'desc');
@@ -74,6 +59,83 @@ class AdminController extends Controller
         $city = City::whereSlug($slug)->firstOrFail();
         $city->delete();
         return redirect('/create_city')->with('status', 'Город удален!');
+    }
+
+    public function projects()
+    {
+        $projects = Project::orderBy('created_at', 'desc');
+        $projects = $projects->paginate(12);
+
+        return view('admin/projects', compact('projects'));
+    }
+
+    public function create()
+	{
+		$cities = City::all();
+        $countries = Country::all();
+        $regions = Region::all();
+
+    	return view('admin.create', compact('cities', 'countries', 'regions'));
+	}
+
+
+    public function store(ProjectsFromRequest $request)
+    {
+        $project = New Project;
+        $slug = uniqid();
+        
+        if($request->get('images') !== null) {
+            foreach ($request->get('images') as $key => $image) {
+                if($key == 0) {
+                    $project->image = $image;
+                }
+            }
+        }
+
+        $project->title = $request->get('title');
+        $project->description = $request->get('description');
+        $project->text = $request->get('text');
+        $project->slug = $slug;
+        $project->city_id = $request->get('city');
+        $project->country_id = $request->get('country');
+        $project->region_id = $request->get('region');
+        $project->category_id = $request->get('status');
+        $project->media = $request->get('media');
+        $project->facilities = $request->get('facilities');
+        $project->community_info = $request->get('community_info');
+        $project->update = $request->get('update');
+        $project->view_pdf = $request->get('view_pdf');
+        $project->download_pdf = $request->get('download_pdf');
+        $project->is_slide = $request->get('is_slide');
+        $project->is_popular = $request->get('is_popular');
+        $project->lat = $request->get('lat');
+        $project->lng = $request->get('lng');
+
+        $project->save();
+
+        if($request->get('images') !== null)
+        {
+            foreach ($request->get('images') as $image)
+            {
+                $i = new Images;
+                $i->project_id = $project->id;
+                $i->name = $image;
+                $i->save();
+            }
+        }
+
+        if($request->get('plans') !== null)
+        {
+            foreach ($request->get('plans') as $plan)
+            {
+                $i = new Plan;
+                $i->project_id = $project->id;
+                $i->name = $plan;
+                $i->save();
+            }
+        }
+
+        return redirect('/create')->with('status', 'Проект создан!');
     }
 
     public function edit($slug)
@@ -156,64 +218,116 @@ class AdminController extends Controller
         return redirect('/admin')->with('status', 'Проект удален!');
     }
 
-	public function store(ProjectsFromRequest $request)
-	{
-		$project = New Project;
-	    $slug = uniqid();
-	    
+    public function offers()
+    {
+        $offers = Offer::orderBy('created_at', 'desc');
+        $offers = $offers->paginate(12);
+
+        return view('admin/offers', compact('offers'));
+    }
+
+    public function create_offer()
+    {
+
+        return view('admin.create_offer');
+    }
+
+    public function store_offer(ProjectsFromRequest $request)
+    {
+        $offer = New Offer;
+        $slug = uniqid();
+        
         if($request->get('images') !== null) {
             foreach ($request->get('images') as $key => $image) {
                 if($key == 0) {
-                    $project->image = $image;
+                    $offer->image = $image;
                 }
             }
         }
 
-        $project->title = $request->get('title');
-        $project->description = $request->get('description');
-        $project->text = $request->get('text');
-        $project->slug = $slug;
-        $project->city_id = $request->get('city');
-        $project->country_id = $request->get('country');
-        $project->region_id = $request->get('region');
-        $project->category_id = $request->get('status');
-        $project->media = $request->get('media');
-        $project->facilities = $request->get('facilities');
-        $project->community_info = $request->get('community_info');
-        $project->update = $request->get('update');
-        $project->view_pdf = $request->get('view_pdf');
-        $project->download_pdf = $request->get('download_pdf');
-        $project->is_slide = $request->get('is_slide');
-        $project->is_popular = $request->get('is_popular');
-        $project->lat = $request->get('lat');
-        $project->lng = $request->get('lng');
+        $offer->title = $request->get('title');
+        $offer->description = $request->get('description');
+        $offer->text = $request->get('text');
+        $offer->slug = $slug;
+        $offer->media = $request->get('media');
+        $offer->location = $request->get('location');
+        $offer->view_pdf = $request->get('view_pdf');
+        $offer->download_pdf = $request->get('download_pdf');
+        $offer->lat = $request->get('lat');
+        $offer->lng = $request->get('lng');
 
-	    $project->save();
+        $offer->save();
 
         if($request->get('images') !== null)
         {
             foreach ($request->get('images') as $image)
             {
-                $i = new Images;
-                $i->project_id = $project->id;
+                $i = new Offer_image;
+                $i->offer_id = $offer->id;
                 $i->name = $image;
                 $i->save();
             }
         }
 
-        if($request->get('plans') !== null)
+        return redirect('/create_offer')->with('status', 'Предложение создано!');
+    }
+
+    public function edit_offer($slug)
+    {
+        $offer = Offer::whereSlug($slug)->firstOrFail();
+        $images = Offer_image::all();
+
+        return view('admin.create_offer', compact('offer', 'images'));
+    }
+
+    public function update_offer($slug, ProjectsFromRequest $request)
+    {
+        $offer = Offer::whereSlug($slug)->firstOrFail();
+        $offer->title = $request->get('title');
+        $offer->description = $request->get('description');
+        $offer->text = $request->get('text');
+        $offer->slug = $slug;
+        $offer->media = $request->get('media');
+        $offer->location = $request->get('location');
+        $offer->view_pdf = $request->get('view_pdf');
+        $offer->download_pdf = $request->get('download_pdf');
+
+        if($request->get('lat') && $request->get('lng') !== null) {
+            $offer->lat = $request->get('lat');
+            $offer->lng = $request->get('lng');
+        }
+
+        if($request->get('images') !== null) {
+            foreach ($request->get('images') as $key => $image) {
+                if($key == 0) {
+                    $offer->image = $image;
+                }
+            }
+        }
+        
+        $offer->save();
+
+
+        if($request->get('images') !== null)
         {
-            foreach ($request->get('plans') as $plan)
+            foreach ($request->get('images') as $image)
             {
-                $i = new Plan;
-                $i->project_id = $project->id;
-                $i->name = $plan;
+                $i = new Offer_image;
+                $i->offer_id = $offer->id;
+                $i->name = $image;
                 $i->save();
             }
         }
 
-	    return redirect('/create')->with('status', 'Проект создан!');
-	}
+        return redirect(action('AdminController@update_offer', $offer->slug))->with('status', 'Предложение обновлено!');
+    }
+
+    public function destroy_offer($slug)
+    {
+        $offer = Offer::whereSlug($slug)->firstOrFail();
+        $offer->delete();
+        return redirect('/ad_offers')->with('status', 'Предложение удалено!');
+    }
 
 	public function uploadFiles() 
 	{
@@ -695,6 +809,14 @@ class AdminController extends Controller
     public function destroy_image($id)
     {
         $image = Images::whereId($id)->first();
+        $image->delete();
+
+        return redirect()->back()->with('status', 'Изображение удалено!'); 
+    }
+
+    public function destroy_offer_image($id)
+    {
+        $image = Offer_image::whereId($id)->first();
         $image->delete();
 
         return redirect()->back()->with('status', 'Изображение удалено!'); 

@@ -23,6 +23,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/contacts', function () { return view('contacts'); });
     Route::get('/message', 'MainController@message');
     Route::get('/offers', 'MainController@offers');
+    Route::get('/offer/{slug}', 'MainController@show_offer');
     Route::get('/projects', 'MainController@projects');
 
     Route::group(['prefix' => 'media_center'], function() {
@@ -60,16 +61,22 @@ Route::group(['middleware' => ['web']], function () {
 
 //  Admin panel
     Route::get('/create', ['uses' => 'AdminController@create', 'middleware' => 'auth']);
+    Route::get('/create_offer', ['uses' => 'AdminController@create_offer', 'middleware' => 'auth']);
     Route::post('/create', ['uses' => 'AdminController@store', 'middleware' => 'auth']);
+    Route::post('/create_offer', ['uses' => 'AdminController@store_offer', 'middleware' => 'auth']);
     Route::get('/create_city', ['uses' => 'AdminController@create_city', 'middleware' => 'auth']);
     Route::post('/create_city', ['uses' => 'AdminController@store_city', 'middleware' => 'auth']);
     Route::post('/create_city/{slug}',['uses' => 'AdminController@destroy_city', 'middleware' => 'auth']);
     Route::post('upload', ['uses' => 'AdminController@uploadFiles', 'middleware' => 'auth']);
     Route::post('upload_plans', ['uses' => 'AdminController@uploadPlans', 'middleware' => 'auth']);
     Route::get('/admin', ['uses' => 'AdminController@projects', 'middleware' => 'auth']);
+    Route::get('/ad_offers', ['uses' => 'AdminController@offers', 'middleware' => 'auth']);
     Route::get('/edit/{slug}', ['uses' => 'AdminController@edit', 'middleware' => 'auth']);
+    Route::get('/edit_offer/{slug}', ['uses' => 'AdminController@edit_offer', 'middleware' => 'auth']);
     Route::post('/edit/{slug}',['uses' => 'AdminController@update', 'middleware' => 'auth']);
+    Route::post('/edit_offer/{slug}', ['uses' => 'AdminController@update_offer', 'middleware' => 'auth']);
     Route::post('/admin/{slug}',['uses' => 'AdminController@destroy', 'middleware' => 'auth']);
+    Route::post('/ad_offers/{slug}',['uses' => 'AdminController@destroy_offer', 'middleware' => 'auth']);
 
     Route::get('/create_rel', function () { return view('admin/create_rel_new'); });
     Route::post('/create_rel', ['uses' => 'AdminController@store_rel', 'middleware' => 'auth']);
@@ -107,6 +114,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/email', ['uses' => 'MainController@email', 'middleware' => 'auth']);
     Route::post('/destroy_plan/{slug}',['uses' => 'AdminController@destroy_plan', 'middleware' => 'auth']);
     Route::post('/destroy_image/{slug}',['uses' => 'AdminController@destroy_image', 'middleware' => 'auth']);
+    Route::post('/destroy_offer_image/{slug}',['uses' => 'AdminController@destroy_offer_image', 'middleware' => 'auth']);
+
     Route::auth();
 });
 

@@ -51,7 +51,7 @@
                         <input type="text"  id="searchmap3" class="form-control">
                         <input type="text"  id="searchmap4" class="form-control">
                         <input type="text"  id="searchmap5" class="form-control">
-                            <div id="map-canvas" class="col-lg-10"></div>
+                            <div id="map-canvas-event" class="col-lg-10"></div>
                             
                         <input type="hidden" name="lat" id="lat">
                         <input type="hidden" name="lng" id="lng">

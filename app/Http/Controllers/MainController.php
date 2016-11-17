@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\Http\Requests;
 use App\Project;
+use App\Offer;
 use App\Press_release;
 use App\Novelty;
 use App\Category;
@@ -13,6 +14,7 @@ use App\Region;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
+use App\Offer_image;
 use App\Plan;
 use App\Event;
 use App\Event_locations;
@@ -62,15 +64,23 @@ class MainController extends Controller
 	{
 		if(Request::get('view') == 'map')
 		{
-			$projects = Project::orderBy('created_at', 'desc')->get();
+			$offers = Offer::orderBy('created_at', 'desc')->get();
 		}
 		else
 		{
-			$projects = Project::orderBy('created_at', 'desc')->paginate(6);
-			$projects->appends(Request::except('page'));
+			$offers = Offer::orderBy('created_at', 'desc')->paginate(6);
+			$offers->appends(Request::except('page'));
 		}
 		
-        return view('offers', compact('projects'));
+        return view('offers', compact('offers'));
+	}
+
+	public function show_offer($slug)
+	{
+    	$offer = Offer::whereSlug($slug)->first();
+    	$images = Offer_image::where('offer_id', $offer->id)->get();
+
+	    return view('view_offer', compact('offer', 'images'));
 	}
 
 	public function projects()
@@ -239,9 +249,13 @@ class MainController extends Controller
 		{
 			$title = Request::get('project_title');
 		}
-		else
+		else if(Request::get('event_title'))
 		{
 			$title = Request::get('event_title');
+		}
+		else
+		{
+			$title = Request::get('offer_title');
 		}
 		
 
@@ -252,16 +266,22 @@ class MainController extends Controller
 			'title' => $title,
 		];
 
-		if(Request::get('project_id'))
+		if(Request::get('project_title'))
 		{
 			Mail::send( 'mail.email', $data, function ($message){
-	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
+	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать о проекте' . Request::get('title'));
+	        });
+		}
+		else if(Request::get('offer_title'))
+		{
+			Mail::send( 'mail.email_offer', $data, function ($message){
+	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать об акции' . Request::get('title'));
 	        });
 		}
 		else
 		{
 			Mail::send( 'mail.email_ev', $data, function ($message){
-	            $message->to('sheikhhouse@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
+	            $message->to('one_day1@mail.ru')->subject(Request::get('name') . ' желает узнать о мероприятии' . Request::get('title'));
 	        });
 		}
 

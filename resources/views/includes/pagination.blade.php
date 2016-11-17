@@ -8,6 +8,8 @@
     <?php $projects = $emails ?>
 @elseif (Request::is('event') || Request::is('events'))
     <?php $projects = $events ?>
+@elseif (Request::is('ad_offers'))
+    <?php $projects = $offers ?>
 @endif
 
 @if ($projects->lastPage() > 1)

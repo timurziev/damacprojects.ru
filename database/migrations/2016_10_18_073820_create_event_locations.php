@@ -27,6 +27,6 @@ class CreateEventLocations extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('event_locations');
     }
 }
