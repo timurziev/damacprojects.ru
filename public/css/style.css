@@ -569,7 +569,10 @@ button {
 	width: 100%;
 }
 
-.cards .cards-big:hover img, .cards .cards-small:hover img {
+.cards .cards-big:hover img,
+.cards .cards-small:hover img,
+.cards .cards-small:hover .h3-block,
+.cards .cards-small:hover p {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=20);
 	-moz-opacity: 0.2;
@@ -1916,12 +1919,11 @@ button {
 }
 .last-projects-items .h3-block {
 	position: absolute;
-	top: 300px;
+	top: 40px;
 }
 .last-projects-items .h3-block h3 {
 	margin: 0;
-	padding: 20px;
-	background: rgba(0,0,0,0.5);
+	padding: 0 40px;
 }
 
 .single-page.projects .offers-wrapper {

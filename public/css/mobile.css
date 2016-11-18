@@ -115,9 +115,6 @@
 	.cards .readmore {
 		margin: 0 20px 20px;
 	}
-	.last-projects-items .h3-block {
-		top: 80px;
-	}
 	#map,.popup-manager {
 		max-width: 700px;
 	}
@@ -135,7 +132,7 @@
 	    top: 50px;
 	}
 	.carousel .cards>div p {
-	    top: 320px;
+	    top: 60%;
 	}
 
 	.item-desc .shadow {
