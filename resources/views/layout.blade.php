@@ -38,10 +38,10 @@
 				<li class="{{ Request::is('about') ? 'active' : '' }}">
 					<a href="{{ URL::to('/about') }}">ОБ АГЕНТСТВЕ</a>
 					<div class="submenu">
-						<ul>
+						{{-- <ul> --}}
 							<!-- <li><a href="{{ URL::to('/message') }}">Слово председателя</a></li> -->
 							<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
-						</ul>
+						{{-- </ul> --}}
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/about-small.jpg" alt="">
 							<h4>О нас</h4>
@@ -90,11 +90,13 @@
 				<li class="{{ Request::is('investor_relations') ? 'active' : '' }}">
 					<a href="{{ URL::to('/investor_relations') }}">Инвестирование</a>
 					<div class="submenu">
+						@if($main_page_id_4 = $static_pages->where('main_page_id', 4)->all())
 						<ul>
-							@foreach ($static_pages->where('main_page_id', 4)->all() as $static_page)
+							@foreach ($main_page_id_4 as $static_page)
 								<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					                @endforeach
 						</ul>
+						@endif
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
 							<h4>Инвестирование</h4>

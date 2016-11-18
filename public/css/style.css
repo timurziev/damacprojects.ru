@@ -231,6 +231,9 @@ header .phone {
 	padding: 0;
 	width: 250px;
 	float: left;
+	border-right: 2px solid #fff;
+    margin-right: 50px;
+    min-height: 150px;
 }
 
 .submenu ul li {
@@ -249,11 +252,9 @@ header .phone {
 }
 
 .submenu .menu-desc {
-	padding-left: 250px;
 	padding-right: 300px;
 	overflow: hidden;
-	border-left: 2px solid #fff;
-	padding-left: 50px;
+    padding-left: 0;
 }
 
 .submenu .menu-desc .look {
