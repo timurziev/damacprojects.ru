@@ -224,6 +224,8 @@ header .phone {
 	left: 0;
 	background: #262626;
 	padding: 40px;
+	box-sizing: border-box;
+	height: 240px;
 }
 
 .submenu ul {
@@ -1497,11 +1499,11 @@ button {
 }
 
 .footer-menu2 .copyright {
-	margin-right: 20px;
+	margin: 0 10px;
 }
 
 .footer-menu2 .social {
-	margin: 40px 0;
+	margin: 40px 0 0 0;
 }
 
 .footer-menu2 .social a {
