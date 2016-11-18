@@ -156,7 +156,7 @@
 					{{-- <a class="ok" href=""></a> --}}
 					<a class="in" href="https://www.instagram.com/sheikhhouse"></a>
 				</div>				
-				<span class="copyright">Все права защищены 2016 SHEIKH</span>
+				<span class="copyright">&copy; Все права защищены 2016 SHEIKH</span>
 			</div>
 		</div>
 		<!-- BEGIN JIVOSITE CODE {literal} -->

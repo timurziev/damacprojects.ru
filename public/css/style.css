@@ -1487,7 +1487,7 @@ button {
 }
 
 .footer-menu2 .footer-links {
-	margin-left: 20px;
+	margin: 0 10px;
 	color: #6b6b6b;
 	text-decoration: none;
 }
