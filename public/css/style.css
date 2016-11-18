@@ -379,48 +379,50 @@ button {
 
 .drop-list {
 	padding: 0 100px 0 40px;
-	height: 58px;
-	font-size: 0.813rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	background: #000;
-	cursor: pointer;
-	color: #fff;
-	position: relative;
-	outline: none;
-	border: 1px solid #3c3c3c;
-	-webkit-appearance: none;
+    height: 58px;
+    font-size: 0.813rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #000;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    outline: none;
+    border: 1px solid #3c3c3c;
+    -webkit-appearance: none;
     -moz-appearance: none;
-	appearance: none;
-	border-radius: 0;
+    appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .select-wrapper:after {
-	content: '';
-	display: block;
-	position: absolute;
-	width: 60px;
-	top: 1px;
-	bottom: 1px;
-	right: 0;
-	pointer-events: none;
-	border-left: 1px solid #3c3c3c;
-	border-right: 1px solid #3c3c3c;
-	z-index: 30;
-	background: #262626;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 60px;
+    top: 1px;
+    bottom: 1px;
+    right: 0;
+    pointer-events: none;
+    border-left: 1px solid #3c3c3c;
+    border-right: 1px solid #3c3c3c;
+    z-index: 30;
+    background: #262626;
 }
 
 .select-wrapper:before {
-	content: '';
-	display: block;
-	pointer-events: none;
-	position: absolute;
-	right: 24px;
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    right: 24px;
     top: 26px;
-	z-index: 40;
-	background: url('../img/sprite.png') no-repeat -138px -21px;
-	width: 12px;
-	height: 7px;
+    z-index: 40;
+    background: url(../img/sprite.png) no-repeat -138px -21px;
+    width: 12px;
+    height: 7px;
 }
 
 .drop-list:focus {
@@ -470,6 +472,7 @@ button {
 
 .filter .select-wrapper, .filter button {
 	margin-left: 16px;
+    width: 290px;
 }
 
 .section-title {

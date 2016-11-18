@@ -190,6 +190,16 @@
 		top: 18px;
 	}
 
+	.content-home .filter h4 {
+		text-align: center;
+	}
+
+	.content-home .filter .select-wrapper, .content-home .filter button {
+	    margin: 0 auto 20px!important;
+	    float: none;
+	    display: block;
+	}
+
 	/* single page */
 	.single-page .right-col, .single-page .left-col, .content-left-block {
 		display: block;
