@@ -146,7 +146,6 @@
 		</div>
 			<div class="footer-menu2">
 			<div class="wrapper">
-				<span class="copyright">Все права защищены 2016 SHEIKH</span>
 				<a href="{{ url('/contacts') }}" class="footer-links">Контакты</a>
 				<a href="" class="footer-links">Карта сайта</a>
 				<a href="" class="footer-links">Условия использования</a>
@@ -156,7 +155,8 @@
 					{{-- <a class="tw" href=""></a> --}}
 					{{-- <a class="ok" href=""></a> --}}
 					<a class="in" href="https://www.instagram.com/sheikhhouse"></a>
-				</div>
+				</div>				
+				<span class="copyright">Все права защищены 2016 SHEIKH</span>
 			</div>
 		</div>
 		<!-- BEGIN JIVOSITE CODE {literal} -->
