@@ -222,7 +222,6 @@ header .phone {
 	display: none;
 	position: absolute;
 	left: 0;
-	border-top: 2px solid #fff;
 	background: #262626;
 	padding: 40px;
 }
