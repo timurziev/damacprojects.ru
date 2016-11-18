@@ -33,6 +33,7 @@
 			<form action="{{ action('MainController@simple_search') }}" method="get" id="search-form">
 				<input name="search" autofocus></input>
 			</form>
+			<a href="{{ Request::root() }}" class="logo-fixed"></a>
 			<ul>
 				<li class="{{ Request::is('about') ? 'active' : '' }}">
 					<a href="{{ URL::to('/about') }}">ОБ АГЕНТСТВЕ</a>
