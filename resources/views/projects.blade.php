@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/offers.jpg);">
 			<div class="wrapper">
-				{{-- <h2>Проекты</h2> --}}
+				<h2>Проекты</h2>
 			</div>
 		</div>
 		@if (Request::is('projects') || Request::is('comp_search'))

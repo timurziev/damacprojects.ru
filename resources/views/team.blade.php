@@ -3,7 +3,7 @@
 <div class="content">
 		<div class="title-banner" style="background-image: url(img/team.jpg);">
 			<div class="wrapper">
-				{{-- <h2>Управляющая команда</h2> --}}
+				<h2>Управляющая команда</h2>
 			</div>
 		</div>
 		<div class="wrapper">

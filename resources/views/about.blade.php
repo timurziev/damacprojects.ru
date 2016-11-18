@@ -3,7 +3,7 @@
 	<div class="content">
 		<div class="title-banner" style="background-image: url(img/about.jpg);">
 			<div class="wrapper">
-				{{-- <h2>О SHEIKH</h2> --}}
+				<h2>О SHEIKH</h2>
 			</div>
 		</div>
 		<div class="wrapper">
