@@ -14,15 +14,16 @@
 				<div class="section-title">
 					<h2>Проекты</h2>
 					<div class="line"></div>
+					<div class="switch-view">
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
+						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
+					</div>
 				</div>
 
 				<div class="cards offers-wrapper projects-search-results">
 
-					<div class="switch-view">
-						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=list" class="list @if(Request::input('view') !== 'map' && Request::input('view') !== 'grid') active @endif }}"></a>
-						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=grid" class="grid {{ Request::input('view') == 'grid' ? 'active' : '' }}"></a>
-						<a href="?country={{ isset($country) ? $country : '' }}&city={{ isset($city) ? $city : '' }}&status={{ isset($status) ? $status : '' }}&region={{ isset($region) ? $region : '' }}&view=map" class="map {{ Request::input('view') == 'map' ? 'active' : '' }}"></a>
-					</div>
+					
 
 					@if(Request::input('view') == 'list')
 						@include ('includes/list_projects')
