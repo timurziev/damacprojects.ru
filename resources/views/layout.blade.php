@@ -59,7 +59,7 @@
 							<li><a href="{{ URL::to('/completed_projects') }}?status=2">Завершенные</a></li>
 						</ul>
 						<div class="menu-desc">
-							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
+							<img src="{{ Request::root() }}/img/projects-small.jpg" alt="">
 							<h4>Проекты</h4>
 							<p>Хотите узнать больше о наших проектах? Высотные, мода резиденции, фирменные квартиры, розничные или коммерческих разработок - от плана собственности и готовые к въезду.</p>
 							<a class="look" href="{{ URL::to('/projects') }}">Подробнее</a>
@@ -80,7 +80,7 @@
 							<li><a href="{{ URL::to('/media_center/video_gallery') }}">Видеогалерея</a></li>
 						</ul>
 						<div class="menu-desc">
-							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
+							<img src="{{ Request::root() }}/img/media-small.jpg" alt="">
 							<h4>Медиа-центр</h4>
 							<p>Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</p>
 							<a class="look" href="{{ URL::to('/media_center') }}">Подробнее</a>
