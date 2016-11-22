@@ -214,7 +214,7 @@ header .phone {
 	background: #000;
     position: absolute;
     top: 104px;
-    z-index: 999;
+    z-index: 9999;
     width: 100%;
 }
 
@@ -303,6 +303,7 @@ header .phone {
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
+	background-position: 50% 50%;
 }
 
 .title-banner h2 {
