@@ -33,14 +33,15 @@
 			<form action="{{ action('MainController@simple_search') }}" method="get" id="search-form">
 				<input name="search" autofocus></input>
 			</form>
+			<a href="{{ Request::root() }}" class="logo-fixed"></a>
 			<ul>
 				<li class="{{ Request::is('about') ? 'active' : '' }}">
 					<a href="{{ URL::to('/about') }}">ОБ АГЕНТСТВЕ</a>
 					<div class="submenu">
-						<ul>
+						{{-- <ul> --}}
 							<!-- <li><a href="{{ URL::to('/message') }}">Слово председателя</a></li> -->
 							<!-- <li><a href="{{ URL::to('/team') }}">Управляющая компания</a></li> -->
-						</ul>
+						{{-- </ul> --}}
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/about-small.jpg" alt="">
 							<h4>О нас</h4>
@@ -58,7 +59,7 @@
 							<li><a href="{{ URL::to('/completed_projects') }}?status=2">Завершенные</a></li>
 						</ul>
 						<div class="menu-desc">
-							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
+							<img src="{{ Request::root() }}/img/projects-small.jpg" alt="">
 							<h4>Проекты</h4>
 							<p>Хотите узнать больше о наших проектах? Высотные, мода резиденции, фирменные квартиры, розничные или коммерческих разработок - от плана собственности и готовые к въезду.</p>
 							<a class="look" href="{{ URL::to('/projects') }}">Подробнее</a>
@@ -79,7 +80,7 @@
 							<li><a href="{{ URL::to('/media_center/video_gallery') }}">Видеогалерея</a></li>
 						</ul>
 						<div class="menu-desc">
-							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
+							<img src="{{ Request::root() }}/img/media-small.jpg" alt="">
 							<h4>Медиа-центр</h4>
 							<p>Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</p>
 							<a class="look" href="{{ URL::to('/media_center') }}">Подробнее</a>
@@ -89,11 +90,13 @@
 				<li class="{{ Request::is('investor_relations') ? 'active' : '' }}">
 					<a href="{{ URL::to('/investor_relations') }}">Инвестирование</a>
 					<div class="submenu">
+						@if($main_page_id_4 = $static_pages->where('main_page_id', 4)->all())
 						<ul>
-							@foreach ($static_pages->where('main_page_id', 4)->all() as $static_page)
+							@foreach ($main_page_id_4 as $static_page)
 								<li><a href="{!! action('MainController@show_page', $static_page->slug) !!}">{!! $static_page->title !!}</a></li>
 					                @endforeach
 						</ul>
+						@endif
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/offers-small.jpg" alt="">
 							<h4>Инвестирование</h4>
@@ -143,7 +146,7 @@
 		</div>
 			<div class="footer-menu2">
 			<div class="wrapper">
-				<span class="copyright">Все права защищены 2016 SHEIKH</span>
+				<span class="copyright">&copy; Sheikh 2016 Все права защищены</span>
 				<a href="{{ url('/contacts') }}" class="footer-links">Контакты</a>
 				<a href="" class="footer-links">Карта сайта</a>
 				<a href="" class="footer-links">Условия использования</a>

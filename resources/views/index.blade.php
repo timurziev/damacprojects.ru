@@ -47,7 +47,7 @@
 			</div>
 			<div class="partners">
 				<a href="https://www.damacproperties.com"><img src="img/damac-logo.jpg"></a>
-				<a href="http://www.palace-emerald.com"><img src="img/palace-logo.jpg"></a>
+				<a href="http://www.palace-emerald.com"><img src="img/palace-logo.png"></a>
 			</div>
 		</div>
 	</div>
