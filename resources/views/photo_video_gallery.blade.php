@@ -2,7 +2,9 @@
 @section('content')
 <div class="content">
 		<div class="title-banner" style="background-image: url({{ Request::root() }}/img/photo_gallery.jpg);">
-			<div class="wrapper"></div>
+			<div class="wrapper">
+				<h2>{{ Request::is('media_center/video_gallery') ? 'Видеогалерея' : 'Фотогалерея' }}</h2>
+			</div>
 		</div>
 		<div class="wrapper">
 			<div class="single-page">

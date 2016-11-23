@@ -4,8 +4,9 @@
 			<div class="img"><img src="{{ URL::asset('uploads/projects/small') }}/{{ $project->image, 'small' }}"></div>
 			<div class="info-block">
 				<h3>{{ $project->title }}</h3>
+				<div class="location">Dubai, UAE</div>
 				<p>{{ $project->description }}</p>
-				<a class="more" href="{!! action('MainController@show', $project->slug) !!}">Узнать больше</a>
+				<a class="readmore" href="{!! action('MainController@show', $project->slug) !!}">Подробнее</a>
 			</div>
 		</div>
 	@empty
