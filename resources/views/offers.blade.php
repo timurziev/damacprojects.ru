@@ -9,7 +9,11 @@
 		<div class="wrapper">
 			<div class="single-page offers">
 				<div class="cards offers-wrapper projects-search-results">
-						@include ('includes/grid_offers')
+				@if(Request::is('offers'))
+					@include ('includes/grid_offers')
+				@else
+					@include ('includes/grid_projects')
+				@endif
 				</div>
 			</div>
 		</div>
