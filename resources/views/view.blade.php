@@ -16,7 +16,7 @@
 						<h2>Документация</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="{{ $project->view_pdf }}">Посмотреть брошюру</a></li>
+						<li><a href="{{ $project->view_pdf }}">Скачать документ проекта</a></li>
 						<li><a href="{{ $project->download_pdf }}">Скачать брошюру</a></li>
 					</ul>
 					<div class="text-header">
@@ -54,10 +54,10 @@
 					@endif
 					<div class="tab-info">
 						<ul class="tab-nav">
-							<li class="active" id="tab1">Сооружение</li>
-							<li id="tab2" >Планировка этажей</li>
+							<li class="active" id="tab1">Удобства</li>
+							<li id="tab2">Планировка этажей</li>
 							<li id="tab3">Дополнительная информация</li>
-							<li id="tab4">Обновления</li>
+							<li id="tab4">Ход строительства</li>
 						</ul>
 						<div id="tbi1" class="tab-inner active">
 							{!! $project->facilities !!}

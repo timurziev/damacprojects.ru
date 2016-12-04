@@ -15,5 +15,5 @@
 	<input type="text" placeholder="Имя" name="name" required>
 	<input type="text" placeholder="E-mail" name="email" required>
 	<textarea placeholder="Текст запроса" name="text"></textarea>
-	<input type="submit" value="Получать уведомления">
+	<input type="submit" value="Получить информацию">
 </form>
