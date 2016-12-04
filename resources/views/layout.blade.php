@@ -56,7 +56,7 @@
 						<ul>
 							<li><a href="{{ URL::to('/all_projects') }}">Все проекты</a></li>
 							<li><a href="{{ URL::to('/in_progress_projects') }}?status=1">В процессе</a></li>
-							<li><a href="{{ URL::to('/completed_projects') }}?status=2">Завершенные</a></li>
+							<li><a href="{{ URL::to('/completed_projects') }}?status=2">Завершено</a></li>
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/projects-small.jpg" alt="">
@@ -82,7 +82,7 @@
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/media-small.jpg" alt="">
 							<h4>Медиа-центр</h4>
-							<p>Узнавайте самые последние новости компании, мнения экспертов и информацию о наших проектах, и разработках. Кроме того, обзор исследований отрасли и анализ от сторонних компаний на рынке недвижимости ближнего востока.</p>
+							<p>В данном разделе вы сможете узнать свежие новости индустрии недвижимости Ближнего Востока, а также просмотреть фотогалерею и видеогалерею проектов недвижимости.</p>
 							<a class="look" href="{{ URL::to('/media_center') }}">Подробнее</a>
 						</div>
 					</div>
