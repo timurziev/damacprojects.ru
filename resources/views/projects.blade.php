@@ -23,8 +23,6 @@
 
 				<div class="cards offers-wrapper projects-search-results">
 
-					
-
 					@if(Request::input('view') == 'list')
 						@include ('includes/list_projects')
 					@elseif (Request::input('view') == 'grid')

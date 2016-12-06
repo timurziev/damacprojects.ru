@@ -308,7 +308,7 @@
 		text-align: center;
 		padding: 20px 0;
 	}
-	.filter .select-wrapper, .filter .online-sale, .filter button {
+	.filter .select-wrapper, .filter .online-sale, .filter button, .content-home .filter button, .content-home .filter .select-wrapper {
 		float: none;
 		display: block;
 		margin: 0 auto 15px !important;
