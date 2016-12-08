@@ -23,7 +23,6 @@
 			<a href="{{ Request::root() }}" class="logo"></a>
 			<a class="header-nav nav2" href="{{ URL::to('contacts') }}">Связаться с нами</a>
 			<!-- <a class="header-nav" href="">Онлайн продажа</a> -->
-			<div class="phone">+7 (905) 536-33-35</div>	
 			<div class="phone">+7 (964) 515-11-11</div>
 		</div>
 	</header>
