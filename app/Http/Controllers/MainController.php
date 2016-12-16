@@ -168,7 +168,7 @@ class MainController extends Controller
 	{
 		$projects = Project::where('title', 'like', '%'.Request::get('search').'%')->paginate(6);
 		
-		return view('offers', compact('projects'));
+		return view('projects', compact('projects'));
 	}
 
 	public function search()
@@ -196,7 +196,7 @@ class MainController extends Controller
 			$projects = $projects->get();
 		}
 		
-        return view('offers', compact('projects', 'countries', 'country', 'status', 'city', 'region'));
+        return view('projects', compact('projects', 'countries', 'country', 'status', 'city', 'region'));
 	}
 
 	public function complex_search()
