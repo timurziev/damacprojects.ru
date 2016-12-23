@@ -48,7 +48,6 @@
 	header .logo {
 		width: 240px;
 		height: 60px;
-		margin-top: 8px;
 	}
 	header .header-nav.nav2, header .phone {
 		margin-top: 10px;
@@ -405,7 +404,7 @@
 		font-size: 2rem;
 	}
 	.title-banner h2 {
-	     line-height: 1.5;
+	     line-height: 5.7;
 		 padding-top: 50px;
 	}
 	.footer-menu2 .wrapper {
