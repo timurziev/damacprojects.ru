@@ -4,7 +4,7 @@
 			<img src="{{ URL::asset('uploads/projects/small') }}/{{ $offer->image, 'small' }}">
 			<div class="h3-block"><h3>{{ $offer->title }}</h3></div>
 			<p>{{ $offer->description }}</p>
-			<a class="look" href="{!! action('MainController@show', $offer->slug) !!}">Узнать больше</a>
+			<a class="look" href="{!! action('MainController@show_offer', $offer->slug) !!}">Узнать больше</a>
 		</div>
 	@empty
 		<div class="cards" style="background: #fff; color: #d4d1d1; text-align: center;"><h2>Нет проектов</h2></div>
