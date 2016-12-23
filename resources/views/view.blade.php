@@ -66,7 +66,7 @@
 							</div>
 						@endif
 						@if ($plans->count())
-							<div id="tbi2" class="tab-inner">
+							<div id="tbi2" class="tab-inner {{!$project->facilities ? 'active' : ''}}">
 								<div class="fotorama" data-width="100%" data-navposition="top">
 									@foreach ($plans as $plan)
 											<a href=""><img class="plans" src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"></a>
@@ -75,12 +75,12 @@
 							</div>
 						@endif
 						@if ($project->community_info)
-							<div id="tbi3" class="tab-inner">
+							<div id="tbi3" class="tab-inner {{!$project->facilities && !$plans->count() ? 'active' : ''}}">
 								{!! $project->community_info !!}
 							</div>
 						@endif
 						@if ($updates->count())
-							<div id="tbi4" class="tab-inner">
+							<div id="tbi4" class="tab-inner {{!$plans->count() && !$project->facilities && !$project->community_info ? 'active' : ''}}">
 								<div class="fotorama" data-width="100%" data-navposition="top">
 									@foreach ($updates as $update)
 											<a href=""><img class="plans" src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"></a>

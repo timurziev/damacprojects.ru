@@ -172,52 +172,52 @@
                         </div>
                     </div>
                     </form> 
-                    <div class="form-group">
-                        @if ($images->count())
-                            <label for="content" class="col-lg-2 control-label">Изображения</label>
-                        @endif
-                        <div class="col-lg-10">
-                            @foreach ($images as $image)
-                                <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
-                                    @if($project->id == $image->project_id)
-                                        <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    @endif 
-                                </form>
-                            @endforeach
+                    @if ($images->count())
+                        <div class="form-group">
+                                <label for="content" class="col-lg-2 control-label">Изображения</label>
+                            <div class="col-lg-10">
+                                @foreach ($images as $image)
+                                    <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
+                                        @if($project->id == $image->project_id)
+                                            <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        @endif 
+                                    </form>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     </br>
-                    <div class="form-group">
-                        @if ($plans->count())
-                            <label for="content" class="col-lg-2 control-label">Планы этажей</label>
-                        @endif
-                        <div class="col-lg-10">
-                            @foreach ($plans as $plan)
-                                <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
-                                    @if($project->id == $plan->project_id)
-                                        <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    @endif 
-                                </form>
-                            @endforeach
+                    @if ($plans->count())
+                        <div class="form-group">
+                                <label for="content" class="col-lg-2 control-label">Планы этажей</label>
+                            <div class="col-lg-10">
+                                @foreach ($plans as $plan)
+                                    <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
+                                        @if($project->id == $plan->project_id)
+                                            <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        @endif 
+                                    </form>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        @if ($updates->count())
-                            <label for="content" class="col-lg-2 control-label">Ход строительства</label>
-                        @endif
-                        <div class="col-lg-10">
-                            @foreach ($updates as $update)
-                                <form method="post" action="{!! action('AdminController@destroy_update', $update->id) !!}" class="pull-left"> 
-                                    @if($project->id == $update->project_id)
-                                        <a href=""><img src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    @endif 
-                                </form>
-                            @endforeach
+                    @endif
+                    @if ($updates->count())
+                        <div class="form-group">
+                                <label for="content" class="col-lg-2 control-label">Ход строительства</label>
+                            <div class="col-lg-10">
+                                @foreach ($updates as $update)
+                                    <form method="post" action="{!! action('AdminController@destroy_update', $update->id) !!}" class="pull-left"> 
+                                        @if($project->id == $update->project_id)
+                                            <a href=""><img src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        @endif 
+                                    </form>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </fieldset>
         </div>
     </div>
