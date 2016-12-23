@@ -16,6 +16,7 @@ use App\StaticPage;
 use App\Images;
 use App\Offer_image;
 use App\Plan;
+use App\Update;
 use App\Http\Requests\ProjectsFromRequest;
 use App\City;
 use App\Country;
@@ -135,6 +136,17 @@ class AdminController extends Controller
             }
         }
 
+        if($request->get('updates') !== null)
+        {
+            foreach ($request->get('updates') as $update)
+            {
+                $i = new Update;
+                $i->project_id = $project->id;
+                $i->name = $update;
+                $i->save();
+            }
+        }
+
         return redirect('/create')->with('status', 'Проект создан!');
     }
 
@@ -146,8 +158,9 @@ class AdminController extends Controller
         $project = Project::whereSlug($slug)->firstOrFail();
         $plans = Plan::all();
         $images = Images::all();
+        $updates = Update::all();
 
-        return view('admin.edit', compact('project', 'cities', 'plans', 'images', 'countries', 'regions'));
+        return view('admin.edit', compact('project', 'cities', 'plans', 'images', 'countries', 'regions', 'updates'));
     }
 
     public function update($slug, ProjectsFromRequest $request)
@@ -206,6 +219,17 @@ class AdminController extends Controller
                 $i->save();
             }
         }
+
+        if($request->get('updates') !== null)
+        {
+            foreach ($request->get('updates') as $update)
+            {
+                $i = new Update;
+                $i->project_id = $project->id;
+                $i->name = $update;
+                $i->save();
+            }
+        }   
 
         return redirect(action('AdminController@update', $project->slug))->with('status', 'Проект обновлен!');
 
@@ -362,6 +386,26 @@ class AdminController extends Controller
         $planName = rand(11111, 99999) . '.' . $extension;
 
         $destinationPath = public_path('uploads/plans/' . $planName);
+
+        $upload = Image::make($input)->resize(622, 623)->save($destinationPath);
+
+ 
+        if ($upload) {
+            return Response::json($planName, 200);
+        } else {
+            return Response::json('error', 400);
+        }
+    }
+
+    public function uploadUpdates() 
+    {
+        $input = Input::file('file');
+
+        $extension = $input->getClientOriginalExtension();
+        
+        $planName = rand(11111, 99999) . '.' . $extension;
+
+        $destinationPath = public_path('uploads/updates/' . $planName);
 
         $upload = Image::make($input)->resize(622, 623)->save($destinationPath);
 
@@ -818,6 +862,14 @@ class AdminController extends Controller
     {
         $image = Offer_image::whereId($id)->first();
         $image->delete();
+
+        return redirect()->back()->with('status', 'Изображение удалено!'); 
+    }
+
+    public function destroy_update($id)
+    {
+        $update = Update::whereId($id)->first();
+        $update->delete();
 
         return redirect()->back()->with('status', 'Изображение удалено!'); 
     }

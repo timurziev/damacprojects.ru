@@ -52,30 +52,44 @@
 					@if (empty($project->media) == false)
 						<p><iframe width="815" height="611" src="{!! $project->media !!}" frameborder="0" allowfullscreen></iframe></p>
 					@endif
+					@if ($project->facilities || $project->community_info || $plans->count() || $updates->count())
 					<div class="tab-info">
 						<ul class="tab-nav">
-							<li class="active" id="tab1">Удобства</li>
-							<li id="tab2">Планировка этажей</li>
-							<li id="tab3">Дополнительная информация</li>
-							<li id="tab4">Ход строительства</li>
+						    @if ($project->facilities) <li class="active" id="tab1">Удобства</li>  @endif
+							@if ($plans->count()) <li class="{{!$project->facilities ? 'active' : ''}}" id="tab2">Планировка этажей</li> @endif
+							@if ($project->community_info) <li class="{{!$project->facilities && !$plans->count() ? 'active' : ''}}" id="tab3">Дополнительная информация</li> @endif
+							@if ($updates->count()) <li class="{{!$plans->count() && !$project->facilities && !$project->community_info ? 'active' : ''}}" id="tab4">Ход строительства</li> @endif
 						</ul>
-						<div id="tbi1" class="tab-inner active">
-							{!! $project->facilities !!}
-						</div>
-						<div id="tbi2" class="tab-inner">
-							<div class="fotorama" data-width="100%" data-navposition="top">
-								@foreach ($plans as $plan)
-										<a href=""><img class="plans" src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"></a>
-								@endforeach
+						@if ($project->facilities)
+							<div id="tbi1" class="tab-inner active">
+								{!! $project->facilities !!}
 							</div>
-						</div>
-						<div id="tbi3" class="tab-inner">
-							{!! $project->community_info !!}
-						</div>
-						<div id="tbi4" class="tab-inner">
-							{!! $project->update !!}
-						</div>
+						@endif
+						@if ($plans->count())
+							<div id="tbi2" class="tab-inner">
+								<div class="fotorama" data-width="100%" data-navposition="top">
+									@foreach ($plans as $plan)
+											<a href=""><img class="plans" src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"></a>
+									@endforeach
+								</div>
+							</div>
+						@endif
+						@if ($project->community_info)
+							<div id="tbi3" class="tab-inner">
+								{!! $project->community_info !!}
+							</div>
+						@endif
+						@if ($updates->count())
+							<div id="tbi4" class="tab-inner">
+								<div class="fotorama" data-width="100%" data-navposition="top">
+									@foreach ($updates as $update)
+											<a href=""><img class="plans" src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"></a>
+									@endforeach
+								</div>
+							</div>
+						@endif
 					</div>
+					@endif
 				</div>
 			</div>
 		</div>

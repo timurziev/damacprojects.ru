@@ -16,6 +16,7 @@ use App\StaticPage;
 use App\Images;
 use App\Offer_image;
 use App\Plan;
+use App\Update;
 use App\Event;
 use App\Event_locations;
 use DB;
@@ -28,9 +29,10 @@ class MainController extends Controller
 	{
 		$projects = Project::take(4)->where('is_popular', 1)->orderBy('created_at')->get();
 		$countries = Country::all();
+		$offers = Offer::all();
         $posts = Project::all();
 
-        return view('index', compact('projects', 'countries', 'posts'));
+        return view('index', compact('projects', 'countries', 'posts', 'offers'));
 	}
 
 	public function show_page($slug)
@@ -50,13 +52,13 @@ class MainController extends Controller
 
     public function team()
 	{
-	$static_pages = StaticPage::all();
+		$static_pages = StaticPage::all();
         return view('team', compact('static_pages'));
 	}
 
     public function message()
 	{
-	$static_pages = StaticPage::all();
+		$static_pages = StaticPage::all();
         return view('message', compact('static_pages'));
 	}
 
@@ -160,8 +162,9 @@ class MainController extends Controller
     	$cities = City::all();
     	$images = Images::where('project_id', $project->id)->get();
     	$plans = Plan::where('project_id', $project->id)->get();
+    	$updates = Update::where('project_id', $project->id)->get();
 
-	    return view('view', compact('project', 'categories', 'cities', 'images', 'plans'));
+	    return view('view', compact('project', 'categories', 'cities', 'images', 'plans', 'updates'));
 	}
 
 	public function simple_search()

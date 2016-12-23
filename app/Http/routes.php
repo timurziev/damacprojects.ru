@@ -69,6 +69,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/create_city/{slug}',['uses' => 'AdminController@destroy_city', 'middleware' => 'auth']);
     Route::post('upload', ['uses' => 'AdminController@uploadFiles', 'middleware' => 'auth']);
     Route::post('upload_plans', ['uses' => 'AdminController@uploadPlans', 'middleware' => 'auth']);
+    Route::post('upload_updates', ['uses' => 'AdminController@uploadUpdates', 'middleware' => 'auth']);
     Route::get('/admin', ['uses' => 'AdminController@projects', 'middleware' => 'auth']);
     Route::get('/ad_offers', ['uses' => 'AdminController@offers', 'middleware' => 'auth']);
     Route::get('/edit/{slug}', ['uses' => 'AdminController@edit', 'middleware' => 'auth']);
@@ -115,6 +116,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/destroy_plan/{slug}',['uses' => 'AdminController@destroy_plan', 'middleware' => 'auth']);
     Route::post('/destroy_image/{slug}',['uses' => 'AdminController@destroy_image', 'middleware' => 'auth']);
     Route::post('/destroy_offer_image/{slug}',['uses' => 'AdminController@destroy_offer_image', 'middleware' => 'auth']);
+    Route::post('/destroy_update/{slug}',['uses' => 'AdminController@destroy_update', 'middleware' => 'auth']);
+
 
     Route::auth();
 });

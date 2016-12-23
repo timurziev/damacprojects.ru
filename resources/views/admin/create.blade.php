@@ -108,9 +108,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Сооружение</label>
+                        <label for="title" class="col-lg-2 control-label">Удобства</label>
                         <div class="col-lg-10">
-                            <textarea class="form-control" rows="5" name="facilities"></textarea>
+                            <input id="x" type="hidden" name="facilities">
+                            <trix-editor input="x"></trix-editor>
                         </div>
                     </div>
                     <div class="form-group">
@@ -120,9 +121,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Обновления</label>
+                        <label for="title" class="col-lg-2 control-label">Ход строительства</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="update">
+                            <div action="{{ Request::root() }}/upload_updates" class="dropzone" id="my-update-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

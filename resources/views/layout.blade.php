@@ -105,7 +105,7 @@
 					</div>
 				</li>
 			</ul>
-			<div class="search">{{ Request::input('search') }}</div>
+			<div class="search"></div>
 		</div>
 	</div>
 

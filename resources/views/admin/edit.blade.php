@@ -117,9 +117,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Сооружение</label>
+                        <label for="title" class="col-lg-2 control-label">Удобства</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="facilities" value="{!! $project->facilities !!}">
+                            <input id="x" value="{!! $project->facilities !!}" type="hidden" name="facilities">
+                            <trix-editor input="x"></trix-editor>
                         </div>
                     </div>
                     <div class="form-group">
@@ -129,9 +130,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Обновления</label>
+                        <label for="title" class="col-lg-2 control-label">Ход строительства</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="update" value="{!! $project->update !!}">
+                            <div action="{{ Request::root() }}/upload_updates" class="dropzone" id="my-update-dropzone">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -170,7 +173,7 @@
                     </div>
                     </form> 
                     <div class="form-group">
-                        @if (empty($images[0]) === false )
+                        @if ($images->count())
                             <label for="content" class="col-lg-2 control-label">Изображения</label>
                         @endif
                         <div class="col-lg-10">
@@ -184,9 +187,9 @@
                             @endforeach
                         </div>
                     </div>
-                    <br>
+                    </br>
                     <div class="form-group">
-                        @if (empty($plans[0]) === false )
+                        @if ($plans->count())
                             <label for="content" class="col-lg-2 control-label">Планы этажей</label>
                         @endif
                         <div class="col-lg-10">
@@ -194,6 +197,21 @@
                                 <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
                                     @if($project->id == $plan->project_id)
                                         <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @endif 
+                                </form>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @if ($updates->count())
+                            <label for="content" class="col-lg-2 control-label">Ход строительства</label>
+                        @endif
+                        <div class="col-lg-10">
+                            @foreach ($updates as $update)
+                                <form method="post" action="{!! action('AdminController@destroy_update', $update->id) !!}" class="pull-left"> 
+                                    @if($project->id == $update->project_id)
+                                        <a href=""><img src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"><button type="submit" class="button button-warning">x</button></a>
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     @endif 
                                 </form>
