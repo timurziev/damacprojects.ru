@@ -1,6 +1,7 @@
 <div class="owl-carousel cards offers last-projects-items" id="owl-demo">
 	@forelse($offers as $offer)
 		<div class="cards-small">
+			<a href="{{ action('MainController@show_offer', $offer->slug) }}" class="overlay"></a>
 			<img src="{{ URL::asset('uploads/projects/small') }}/{{ $offer->image, 'small' }}">
 			<div class="h3-block"><h3>{{ $offer->title }}</h3></div>
 			<p>{{ $offer->description }}</p>

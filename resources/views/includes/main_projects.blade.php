@@ -1,5 +1,6 @@
 @forelse ($projects as $key => $project)
 	<div class="{{ round($key/2) % 2 ? 'cards-big' : 'cards-small' }}">
+		<a href="{{ action('MainController@show', $project->slug) }}" class="overlay"></a>
 			<img src="{{ URL::asset('uploads/projects') }}/{{ round($key/2) % 2 ? 'big' : 'small' }}/{{ $project->image }}">
 		<h3>{{ $project->title }}</h3>
 		<p class="spotlight-preview">{{ $project->description }}</p>
