@@ -196,8 +196,7 @@ header .phone {
 	margin-left: 40px;
 	font-size: 0.813rem;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-
+	letter-spacing: 0.8px;
 }
 
 .menu .wrapper>ul>li:hover, .menu ul li.active {
