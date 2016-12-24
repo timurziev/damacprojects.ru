@@ -305,10 +305,19 @@ header .phone {
 	background-size: cover;
 	text-align: center;
 	background-position: 50% 50%;
+	position: relative;
+}
+.title-banner > .wrapper {
+	position: absolute;
+    width: 100%;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
 }
 
 .title-banner h2 {
-	line-height: 320px;
 	color: #fff;
 	margin: 0;
 	font-size: 3.75rem;
