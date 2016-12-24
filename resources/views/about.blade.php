@@ -53,7 +53,8 @@
 				<div class="section-title">
 					<h2>Наши проекты</h2>
 					<div class="line"></div>
-				</div> -->
+				</div>
+				@include('includes/last_projects') -->
 			</div>
 		</div>
 		</div>
