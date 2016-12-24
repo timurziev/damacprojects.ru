@@ -52,6 +52,9 @@
 	header .header-nav.nav2, header .phone {
 		margin-top: 10px;
 	}
+	.slider {
+		margin-top: 105px;
+	}
 	.burger {
 		margin-top: 30px;
 	}
@@ -141,11 +144,9 @@
 	.carousel .cards>div p {
 	    top: 60%;
 	}
-
 	.item-desc .shadow {
 		min-height: 150px;
 	}
-
 	/* projects search results view */
 	.list-view .item {
 		height: auto;
@@ -271,6 +272,9 @@
 	}
 
 	/* slider */
+	.slider {
+		margin-top: 80px;
+	}
 	.shadow .info-block p {
 		display: none;
 	}
