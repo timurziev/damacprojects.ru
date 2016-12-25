@@ -152,12 +152,29 @@
 		height: auto;
 	    padding: 20px;
 	}
+	.list-view .item:hover {
+		border-color: transparent;
+	}
 	.list-view .info-block h3 {
-		margin-top: 0;
+		margin: 0 0 20px;
+	}
+	.list-view .info-block p {
+		margin: 0 0 30px 0;
 	}
 	.list-view .item img {
 		width: 100%;
 	    margin-top: 0;
+	}
+	.list-view .item .readmore {
+		margin: 0;
+	}
+	.list-view .info-block .location:before {
+		width: 10px;
+		margin: 0 10px 0 0;
+		background-position: -394px -14px;
+	}
+	.switch-view {
+		margin: 0;
 	}
 	.grid-view .big-item, .grid-view .small-item {
 		width: 100%;
@@ -251,7 +268,7 @@
 		width: 100%;
 	}
 	.content {
-		margin-top: 70px;
+		margin-top: 80px;
 	}
 	header {
 		padding: 15px 0 10px;
@@ -427,8 +444,7 @@
 		font-size: 2rem;
 	}
 	.title-banner h2 {
-	     line-height: 5.7;
-		 padding-top: 50px;
+	    line-height: 1.5;
 	}
 	.footer-menu2 .wrapper {
 		padding: 0 0 0 0;
