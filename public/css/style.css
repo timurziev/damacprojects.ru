@@ -732,7 +732,7 @@ button {
 	text-align: center;
 }
 
-.single-page .lid {
+.about-page .lid {
 	font-size: 1.25rem;
 	text-align: center;
 	margin-top: 100px;
@@ -787,20 +787,25 @@ button {
 	border-bottom: 2px solid #262626;
 }
 
-.single-page ul {
+.about-page p {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.about-page ul {
 	padding: 0 185px;
     font-size: 1.2rem;
 }
 
-.single-page ul li {
+.about-page ul li {
 	line-height: 190%;
 }
 
-.single-page .image {
+.about-page .image {
 	margin: 0 auto; 
 }
 
-.single-page .team_img {
+.about-page .team_img {
 	width: 50%;
 	margin: 0 auto; 
 }
@@ -812,8 +817,8 @@ button {
 }
 
 .single-page p {
-	text-align: center;
-	font-size: 1.2rem;
+	padding: 0 185px;
+ 	font-size: 1rem;
 	margin: 0 0 20px 0;
 }
 
@@ -1836,7 +1841,7 @@ button {
 	}
 }
 
-@media only screen and (max-width: 1160px) {
+@media screen and (max-width: 1160px) {
 	.filter h4 {
 		float: none;
 		width: 100%;
