@@ -178,10 +178,8 @@
                             <div class="col-lg-10">
                                 @foreach ($images as $image)
                                     <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
-                                        @if($project->id == $image->project_id)
                                             <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        @endif 
                                     </form>
                                 @endforeach
                             </div>
@@ -194,10 +192,8 @@
                             <div class="col-lg-10">
                                 @foreach ($plans as $plan)
                                     <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
-                                        @if($project->id == $plan->project_id)
                                             <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        @endif 
                                     </form>
                                 @endforeach
                             </div>
@@ -209,10 +205,8 @@
                             <div class="col-lg-10">
                                 @foreach ($updates as $update)
                                     <form method="post" action="{!! action('AdminController@destroy_update', $update->id) !!}" class="pull-left"> 
-                                        @if($project->id == $update->project_id)
                                             <a href=""><img src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"><button type="submit" class="button button-warning">x</button></a>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        @endif 
                                     </form>
                                 @endforeach
                             </div>

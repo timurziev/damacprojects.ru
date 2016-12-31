@@ -71,13 +71,13 @@ class AdminController extends Controller
     }
 
     public function create()
-	{
-		$cities = City::all();
+    {
+        $cities = City::all();
         $countries = Country::all();
         $regions = Region::all();
 
-    	return view('admin.create', compact('cities', 'countries', 'regions'));
-	}
+        return view('admin.create', compact('cities', 'countries', 'regions'));
+    }
 
 
     public function store(ProjectsFromRequest $request)
@@ -156,9 +156,9 @@ class AdminController extends Controller
         $countries = Country::all();
         $regions = Region::all();
         $project = Project::whereSlug($slug)->firstOrFail();
-        $plans = Plan::all();
-        $images = Images::all();
-        $updates = Update::all();
+        $plans = Plan::where('project_id', $project->id)->get();
+        $images = Images::where('project_id', $project->id)->get();
+        $updates = Update::where('project_id', $project->id)->get();
 
         return view('admin.edit', compact('project', 'cities', 'plans', 'images', 'countries', 'regions', 'updates'));
     }
@@ -353,8 +353,8 @@ class AdminController extends Controller
         return redirect('/ad_offers')->with('status', 'Предложение удалено!');
     }
 
-	public function uploadFiles() 
-	{
+    public function uploadFiles() 
+    {
         $input = Input::file('file');
 
         $extension = $input->getClientOriginalExtension();
@@ -387,7 +387,7 @@ class AdminController extends Controller
 
         $destinationPath = public_path('uploads/plans/' . $planName);
 
-        $upload = Image::make($input)->resize(622, 623)->save($destinationPath);
+        $upload = Image::make($input)->save($destinationPath);
 
  
         if ($upload) {
@@ -407,7 +407,7 @@ class AdminController extends Controller
 
         $destinationPath = public_path('uploads/updates/' . $planName);
 
-        $upload = Image::make($input)->resize(622, 623)->save($destinationPath);
+        $upload = Image::make($input)->save($destinationPath);
 
  
         if ($upload) {

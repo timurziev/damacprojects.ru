@@ -29,7 +29,7 @@
 						<div class="fotorama" 
 							data-nav="thumbs" 
 							data-thumbmargin="25"
-							data-fit="cover"
+							data-width="100%"
 							data-thumbwidth="185"
 							data-thumbheight="100"
 						>
