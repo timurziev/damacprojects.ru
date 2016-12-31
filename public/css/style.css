@@ -732,7 +732,7 @@ button {
 	text-align: center;
 }
 
-.about-page .lid {
+.about-page .lid, .single-page .lid {
 	font-size: 1.25rem;
 	text-align: center;
 	margin-top: 100px;
