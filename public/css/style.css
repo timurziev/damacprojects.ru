@@ -822,6 +822,10 @@ button {
 	margin: 0 0 20px 0;
 }
 
+.single-page ul li, .single-page ol li {
+ 	font-size: 1rem;	
+}
+
 .single-page .quote {
 	background-image: url('../img/quote.jpg');
 	background-repeat: no-repeat;
