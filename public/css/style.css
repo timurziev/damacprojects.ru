@@ -2278,3 +2278,13 @@ button {
 	width: 100%;
 	height: auto;
 }
+.col-image {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 10px;
+	width: 40%;
+}
+.col-image img {
+	width: 100%;
+	height: auto;
+}
