@@ -16,8 +16,8 @@
 						<h2>Документация</h2>
 					</div>
 					<ul class="right-col-menu">
-						<li><a href="{{ $offer->view_pdf }}">Скачать документ проекта</a></li>
-						<li><a href="{{ $offer->download_pdf }}">Скачать брошюру</a></li>
+						<li><a href="{{ $offer->view_pdf }}" target="_blank">Скачать документ проекта</a></li>
+						<li><a href="{{ $offer->download_pdf }}" target="_blank">Скачать брошюру</a></li>
 					</ul>
 					<div class="text-header">
 						<h2>Узнать о проекте</h2>
