@@ -16,7 +16,6 @@ use App\StaticPage;
 use App\Images;
 use App\Offer_image;
 use App\Plan;
-use App\Update;
 use App\Event;
 use App\Event_locations;
 use DB;

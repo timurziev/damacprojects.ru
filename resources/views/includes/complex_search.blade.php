@@ -13,7 +13,7 @@
 							<select class="drop-list" name="country" id="country">
 								<option value="" selected>Выберите страну</option>
 								@foreach ($countries as $country)
-									<option value="{{ $country->id }}"
+									<option
 									@if ($country->id == Request::input('country') )
 										selected
 									@endif

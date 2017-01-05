@@ -46,13 +46,13 @@
                     <div class="form-group">
                         <label for="" class="col-lg-2 control-label">Карта</label>
                         <div class="col-lg-10">
-                        <input type="text"  id="searchmap" class="form-control">
-                        <input type="text"  id="searchmap2" class="form-control">
-                        <input type="text"  id="searchmap3" class="form-control">
-                        <input type="text"  id="searchmap4" class="form-control">
-                        <input type="text"  id="searchmap5" class="form-control">
-                            <div id="map-canvas-event" class="col-lg-10"></div>
-                            
+                            <input type="text"  id="searchmap" class="form-control">
+                            <input type="text"  id="searchmap2" class="form-control">
+                            <input type="text"  id="searchmap3" class="form-control">
+                            <input type="text"  id="searchmap4" class="form-control">
+                            <input type="text"  id="searchmap5" class="form-control">
+                                <div id="map-canvas-event" class="col-lg-10" style="width:100%; height:50%"></div>
+                        </div>
                         <input type="hidden" name="lat" id="lat">
                         <input type="hidden" name="lng" id="lng">
                         <input type="hidden" name="lat2" id="lat2">
