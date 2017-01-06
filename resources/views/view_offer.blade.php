@@ -29,12 +29,12 @@
 						<div class="fotorama" 
 							data-nav="thumbs" 
 							data-thumbmargin="25"
-							data-fit="cover"
+							data-width="100%"
 							data-thumbwidth="185"
 							data-thumbheight="100"
 						>
 							@foreach ($images as $item)
-									<a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $item->name }}"></a>
+									<a href=""><img src="{{ Request::root() }}/uploads/projects/source/{{ $item->name }}"></a>
 							@endforeach
 						</div>
 					</div>

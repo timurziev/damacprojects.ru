@@ -34,7 +34,7 @@
 							data-thumbheight="100"
 						>
 							@foreach ($images as $item)
-									<a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $item->name }}"></a>
+									<a href=""><img src="{{ Request::root() }}/uploads/projects/source/{{ $item->name }}"></a>
 							@endforeach
 						</div>
 					</div>

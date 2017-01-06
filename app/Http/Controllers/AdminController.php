@@ -364,10 +364,12 @@ class AdminController extends Controller
         $destinationPath = public_path('uploads/projects/large/' . $fileName);
         $destinationPath2 = public_path('uploads/projects/big/' . $fileName);
         $destinationPath3 = public_path('uploads/projects/small/' . $fileName);
+        $destinationPath4 = public_path('uploads/projects/source/' . $fileName);
 
         $upload = Image::make($input)->fit(1750, 967)->save($destinationPath);
-        $upload2 = Image::make($input)->save($destinationPath2);
+        $upload2 = Image::make($input)->fit(802, 580)->save($destinationPath2);
         $upload3 = Image::make($input)->fit(401, 580)->save($destinationPath3);
+        $upload4 = Image::make($input)->save($destinationPath4);
         
  
         if ($upload && $upload2 && $upload3) {

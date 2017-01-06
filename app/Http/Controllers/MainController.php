@@ -14,6 +14,7 @@ use App\Region;
 use App\MainPage;
 use App\StaticPage;
 use App\Images;
+use App\Update;
 use App\Offer_image;
 use App\Plan;
 use App\Event;
