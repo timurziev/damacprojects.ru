@@ -822,6 +822,10 @@ button {
 	margin: 0 0 20px 0;
 }
 
+.single-page ul li, .single-page ol li {
+ 	font-size: 1rem;	
+}
+
 .single-page .quote {
 	background-image: url('../img/quote.jpg');
 	background-repeat: no-repeat;
@@ -2271,6 +2275,16 @@ button {
 	margin-right: 0!important;
 }
 .photo-video-item .images ul li img {
+	width: 100%;
+	height: auto;
+}
+.col-image {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 10px;
+	width: 40%;
+}
+.col-image img {
 	width: 100%;
 	height: auto;
 }

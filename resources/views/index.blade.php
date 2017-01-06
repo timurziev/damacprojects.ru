@@ -46,8 +46,8 @@
 				<h3>Официальные сайты компаний, с которыми сотрудничает агентсво «SHEIKH REAL ESTATE»</h3>
 			</div>
 			<div class="partners">
-				<a href="https://www.damacproperties.com"><img src="img/damac-logo.jpg"></a>
-				<a href="http://www.palace-emerald.com"><img src="img/palace-logo.png"></a>
+				<a href="https://www.damacproperties.com" target="_blank"><img src="img/damac-logo.jpg"></a>
+				<a href="http://www.palace-emerald.com" target="_blank"><img src="img/palace-logo.png"></a>
 			</div>
 		</div>
 	</div>
