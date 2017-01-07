@@ -8,33 +8,33 @@ AWSTATS DATA FILE 7.0 (build 1.971)
 # update).
 BEGIN_MAP 27
 POS_GENERAL 1994                
-POS_TIME 2678                
-POS_VISITOR 7556                
-POS_DAY 9058                
-POS_DOMAIN 3418                
-POS_LOGIN 3650                
-POS_ROBOT 3805                
-POS_WORMS 4244                
-POS_EMAILSENDER 4375                
-POS_EMAILRECEIVER 4518                
-POS_SESSION 9268                
-POS_SIDER 9463                
-POS_FILETYPES 4653                
-POS_DOWNLOADS 4914                
-POS_OS 4983                
-POS_BROWSER 5121                
-POS_SCREENSIZE 5547                
-POS_UNKNOWNREFERER 5621                
-POS_UNKNOWNREFERERBROWSER 5735                
-POS_ORIGIN 5817                
-POS_SEREFERRALS 5956                
-POS_PAGEREFS 6111                
-POS_SEARCHWORDS 6313                
-POS_KEYWORDS 6465                
-POS_MISC 2341                
-POS_ERRORS 6524                
-POS_CLUSTER 3506                
-POS_SIDER_404 6648                
+POS_TIME 2670                
+POS_VISITOR 8387                
+POS_DAY 10007               
+POS_DOMAIN 3445                
+POS_LOGIN 3678                
+POS_ROBOT 3833                
+POS_WORMS 4275                
+POS_EMAILSENDER 4406                
+POS_EMAILRECEIVER 4549                
+POS_SESSION 10242               
+POS_SIDER 10448               
+POS_FILETYPES 4684                
+POS_DOWNLOADS 4964                
+POS_OS 5033                
+POS_BROWSER 5172                
+POS_SCREENSIZE 5624                
+POS_UNKNOWNREFERER 5698                
+POS_UNKNOWNREFERERBROWSER 5852                
+POS_ORIGIN 5934                
+POS_SEREFERRALS 6073                
+POS_PAGEREFS 6228                
+POS_SEARCHWORDS 6455                
+POS_KEYWORDS 6607                
+POS_MISC 2333                
+POS_ERRORS 6666                
+POS_CLUSTER 3534                
+POS_SIDER_404 6796                
 END_MAP
 
 # LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
@@ -46,14 +46,14 @@ END_MAP
 # MonthHostsKnown   = Number of hosts known
 # MonthHostsUnKnown = Number of hosts unknown
 BEGIN_GENERAL 8
-LastLine 20170106140333 455 116108 14036620061061
+LastLine 20170107043022 14 2645 9911262106250
 FirstTime 20170101092345
-LastTime 20170106140333
-LastUpdate 20170106140335 212 0 212 0 0
-TotalVisits 48                  
-TotalUnique 33                  
+LastTime 20170107011246
+LastUpdate 20170107070340 0 0 0 0 0
+TotalVisits 59                  
+TotalUnique 38                  
 MonthHostsKnown 0                   
-MonthHostsUnknown 33                  
+MonthHostsUnknown 38                  
 END_GENERAL
 
 # Misc ID - Pages - Hits - Bandwidth
@@ -63,7 +63,7 @@ JavaEnabled 0 0 0
 JavascriptDisabled 0 0 0
 PDFSupport 0 0 0
 WindowsMediaPlayerSupport 0 0 0
-AddToFavourites 0 23 0
+AddToFavourites 0 69 0
 RealPlayerSupport 0 0 0
 TotalMisc 0 0 0
 DirectorSupport 0 0 0
@@ -72,11 +72,11 @@ END_MISC
 
 # Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
 BEGIN_TIME 24
-0 11 17 353471 1 2 19315
-1 3 3 57945 0 0 0
+0 11 17 353471 2 3 38594
+1 5 8 489051 2 3 38208
 2 2 2 38630 1 5 23075
-3 4 4 77260 1 1 19324
-4 5 43 2584450 1 2 19339
+3 4 4 77260 2 4 46484
+4 5 43 2584450 2 4 57340
 5 1 26 146673 0 2 0
 6 2 40 2526487 1 4 18422
 7 2 40 2526487 0 3 24
@@ -86,22 +86,22 @@ BEGIN_TIME 24
 11 26 120 4790225 25 28 342236
 12 12 58 3392756 6 13 136479
 13 27 155 8388145 12 51 880694
-14 7 46 3008962 5 10 95744
-15 1 1 19315 0 1 0
-16 4 47 2596732 0 1 24672
-17 9 103 5820478 4 13 141522
-18 55 202 11907872 4 19 190619
-19 8 33 3406911 4 8 71764
-20 38 105 2319722 10 17 152024
-21 39 137 2195375 7 16 175580
-22 3 41 284917 2 6 67071
-23 3 34 1187747 3 9 75848
+14 160 370 20119892 30 67 731040
+15 2 2 38555 2 4 48150
+16 60 159 6327193 3 10 160420
+17 12 107 5878706 4 13 141522
+18 107 280 13853575 15 36 312914
+19 91 673 31628295 77 111 2346255
+20 92 341 10131151 27 44 596332
+21 42 141 2278156 8 19 236156
+22 3 41 284917 26 30 445727
+23 18 69 3881140 3 9 75848
 END_TIME
 
 # Domain - Pages - Hits - Bandwidth
 # The 10 first Pages must be first (order not required for others)
 BEGIN_DOMAIN 1
-ip 309 1454 71570785
+ip 731 2893 133675440
 END_DOMAIN
 
 # Cluster ID - Pages - Hits - Bandwidth
@@ -116,12 +116,12 @@ END_LOGIN
 # Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
 # The 10 first Hits must be first (order not required for others)
 BEGIN_ROBOT 8
-yandex 46 552149 20170106021000 7
-googlebot 19 180657 20170105231632 3
+yandex 56 586774 20170107041558 10
+bot[\s_+:,\.\;\/\\-] 31 480563 20170106223441 3
+googlebot 20 180681 20170107013713 4
 mj12bot 14 154348 20170105173841 5
-bot[\s_+:,\.\;\/\\-] 6 81181 20170105224952 2
-no_user_agent 4 38994 20170104210025 2
-favicon 4 21156 20170106111841 0
+no_user_agent 5 58273 20170107004321 2
+favicon 5 26445 20170106192533 0
 java\/[0-9] 4 77269 20170106030310 0
 [\s_+:,\.\;\/\\-]bot 2 19348 20170105232708 1
 END_ROBOT
@@ -142,54 +142,57 @@ BEGIN_EMAILRECEIVER 0
 END_EMAILRECEIVER
 
 # Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
-BEGIN_FILETYPES 10
-css 201 2631621 0 0
-png 113 1705395 0 0
-otf 20 2051488 0 0
+BEGIN_FILETYPES 11
+css 464 5638827 0 0
+png 236 2899375 0 0
+woff 1 42696 0 0
+otf 75 7767260 0 0
 map 2 108832 0 0
-html 54 1042695 0 0
-js 124 5894748 0 0
-jpg 663 53768078 0 0
-Unknown 233 4116362 0 0
-svg 25 115950 0 0
-gif 19 135616 0 0
+html 91 1755396 0 0
+js 283 11627411 0 0
+jpg 1079 93877017 0 0
+Unknown 562 9352182 0 0
+gif 46 355992 0 0
+svg 54 250452 0 0
 END_FILETYPES
 
 # Downloads - Hits - Bandwidth
 BEGIN_DOWNLOADS 1
-/robots.txt 20 0 480
+/robots.txt 25 0 600
 END_DOWNLOADS
 
 # OS ID - Hits
 BEGIN_OS 9
-macosx 199
-linuxandroid 118
+macosx 273
+linuxandroid 123
 winlong 117
 winxp 118
-winnt 258
-Unknown 1
+winnt 1435
+Unknown 2
+linux 11
 winvista 4
-linux 10
-win7 629
+win7 810
 END_OS
 
 # Browser ID - Hits
-BEGIN_BROWSER 20
+BEGIN_BROWSER 22
 firefox28.0 2
 firefox50.0 148
-chrome55.0.2883.87 706
+safari9.0.3 1
+chrome55.0.2883.87 2064
+chrome55.0.2883.91 76
 chrome48.0.2564.116 2
-chrome55.0.2883.91 71
-safari10.0 112
+safari10.0 130
 chrome28.0.1500.95 28
 firefox4.0 1
 firefox29.0 1
 chrome43.0.2357.132 1
 opera9.80 234
 chrome15.0.874.121 1
+mozilla 1
 netscape5.0 1
-chrome37.0.2062.120 10
-chrome55.0.2883.95 86
+chrome37.0.2062.120 11
+chrome55.0.2883.95 141
 chrome43.0.2357.93 1
 chrome48.0.2564.103 1
 safari8.0 1
@@ -202,8 +205,9 @@ BEGIN_SCREENSIZE 0
 END_SCREENSIZE
 
 # Unknown referer OS - Last visit date
-BEGIN_UNKNOWNREFERER 1
+BEGIN_UNKNOWNREFERER 2
 Mozilla/5.0 20170105012732
+Mozilla/5.0_(compatible) 20170106145504
 END_UNKNOWNREFERER
 
 # Unknown referer Browser - Last visit date
@@ -212,11 +216,11 @@ END_UNKNOWNREFERERBROWSER
 
 # Origin - Pages - Hits 
 BEGIN_ORIGIN 6
-From0 32 32
+From0 42 42
 From1 0 0
 From2 7 7
-From3 11 11
-From4 259 1404
+From3 14 14
+From4 668 2830
 From5 0 0
 END_ORIGIN
 
@@ -227,9 +231,10 @@ END_SEREFERRALS
 
 # External page referers - Pages - Hits
 # The 10 first Pages must be first (order not required for others)
-BEGIN_PAGEREFS 2
+BEGIN_PAGEREFS 3
 http://burger-imperia.com 10 10
-http://kolxoz.net 1 1
+http://kolxoz.net 3 3
+http://hvd-store.com 1 1
 END_PAGEREFS
 
 # Search keyphrases - Number of search
@@ -244,47 +249,60 @@ END_KEYWORDS
 
 # Errors - Hits - Bandwidth
 BEGIN_ERRORS 4
-302 25 9692
-500 7 189519
-301 2 627
-404 61 685152
+302 48 18540
+500 93 2246785
+404 111 1246752
+301 5 1570
 END_ERRORS
 
 # URL with 404 errors - Hits - Last URL referer
-BEGIN_SIDER_404 13
-/js/lightbox.min.map 21 -
+BEGIN_SIDER_404 22
 /uploads/projects/source/78836.jpg 12 http://sheikhhouse.ru/offer/58344002209c0
-/mobile 1 -
+/mobile 4 -
+/uploads/projects/source/79788.jpg 2 http://sheikhhouse.ru/project/583454f2f3714
 /apple-touch-icon.png 4 -
 /bitrix/admin/index.php 2 -
+/m 2 -
+/uploads/projects/source/63026.jpg 2 http://sheikhhouse.ru/project/5846f5b21cd4c
+/img/oxygen2.jpg 7 http://sheikhhouse.ru/investor_relations
+/apple-touch-icon-120x120.png 2 -
+/uploads/projects/small/ 2 http://sheikhhouse.ru/projects
+/img/oxygen.jpg 6 http://sheikhhouse.ru/investor_relations
+/uploads/projects/source/75574.jpg 2 http://sheikhhouse.ru/project/583448e791286
+/js/lightbox.min.map 38 -
+/uploads/projects/source/39497.jpg 2 http://sheikhhouse.ru/project/586e84c64911f
 /uploads/projects/source/72817.jpg 1 http://sheikhhouse.ru/project/583448e791286
 /apple-touch-icon-120x120-precomposed.png 2 -
-/m 1 -
-/img/oxygen2.jpg 6 http://sheikhhouse.ru/investor_relations
-/uploads/projects/small/ 2 http://sheikhhouse.ru/projects
-/apple-touch-icon-120x120.png 2 -
-/img/oxygen.jpg 5 http://sheikhhouse.ru/investor_relations
-/uploads/projects/source/75574.jpg 2 http://sheikhhouse.ru/project/583448e791286
+/uploads/offers/big/29332.jpg 1 -
+/uploads/projects/source/87414.jpg 10 http://sheikhhouse.ru/project/586e84c64911f
+/uploads/projects/source/64533.jpg 1 http://sheikhhouse.ru/project/585d7408c1ced
+/uploads/projects/source/47787.jpg 2 http://sheikhhouse.ru/project/586e84c64911f
+/uploads/projects/source/99635.jpg 4 http://sheikhhouse.ru/project/585ab8b8159bf
+/uploads/projects/source/47329.jpg 3 http://sheikhhouse.ru/project/5834653acfb00
 END_SIDER_404
 
 # Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
 # [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
 # The 10 first Hits must be first (order not required for others)
-BEGIN_VISITOR 33
-81.89.75.10 141 561 20579407 20170105235633
-212.94.26.153 63 253 11296760 20170106140333 20170106133821 /upload
+BEGIN_VISITOR 38
+81.89.75.10 223 760 26663675 20170106205338
+212.94.26.153 205 521 24206182 20170106145044
+212.94.20.50 152 838 33955407 20170106213810
 185.35.128.19 38 148 10481387 20170101104950
-95.153.134.236 15 71 6401031 20170106135711 20170106135045 /investor_relations
+77.87.101.155 18 141 10126945 20170106141103
+95.153.129.20 17 40 3124499 20170107011246
+95.153.134.236 15 71 6401031 20170106135711
+95.153.128.39 14 34 1752522 20170106165259
 95.153.129.142 13 49 574556 20170106004010
-77.87.101.155 8 86 5939554 20170106140225 20170106140205 /investor_relations
-83.149.25.67 3 3 57945 20170103181733
-185.38.14.171 2 2 38630 20170105060839
-91.77.22.245 2 2 38648 20170106045034
+46.48.13.161 3 3 57864 20170106213838
 95.221.205.112 1 28 791480 20170101175419
 188.165.28.233 1 1 19315 20170104023010
+185.38.14.171 2 2 38630 20170105060839
 37.204.56.120 1 39 2507172 20170105065837
+91.77.22.245 2 2 38648 20170106045034
 188.17.157.238 1 1 19315 20170101211621
 37.187.129.166 1 1 19315 20170105080500
+176.126.252.11 1 1 19240 20170106162902
 37.110.109.88 1 39 2507172 20170103110552
 88.85.95.125 1 1 19315 20170102103903
 185.34.60.114 1 1 19315 20170105030441
@@ -294,11 +312,12 @@ BEGIN_VISITOR 33
 46.147.99.134 1 39 2507172 20170104184619
 94.242.246.23 1 1 19315 20170105034500
 93.80.255.251 1 1 19315 20170101154837
-46.48.13.161 1 1 19315 20170102021400
 178.17.170.27 1 1 19315 20170105040745
-91.189.112.7 1 1 19315 20170101141754
+91.189.112.7 2 2 38555 20170106150859
 5.228.21.14 1 39 2507172 20170105070554
 94.23.75.242 1 1 19315 20170104043535
+52.5.98.73 1 1 14117 20170106145504
+83.149.25.67 3 3 57945 20170103181733
 37.110.66.106 1 39 2507172 20170103042024
 176.126.252.12 1 1 19315 20170105014356
 46.147.104.170 1 39 2507172 20170101161440
@@ -307,70 +326,97 @@ BEGIN_VISITOR 33
 END_VISITOR
 
 # Date - Pages - Hits - Bandwidth - Visits
-BEGIN_DAY 6
+BEGIN_DAY 7
 20170101 56 310 21985882 9
 20170102 2 2 38630 2
 20170103 61 263 14530059 8
 20170104 4 50 2609634 4
 20170105 99 444 11644754 18
-20170106 87 385 20761826 7
+20170106 507 1819 82435375 17
+20170107 2 5 431106 1
 END_DAY
 
 # Session range - Number of visits
-BEGIN_SESSION 6
-1h+ 3
-15mn-30mn 4
-2mn-5mn 2
+BEGIN_SESSION 7
+1h+ 6
+5mn-15mn 2
+15mn-30mn 5
+2mn-5mn 4
 30s-2mn 1
-0s-30s 34
+0s-30s 40
 30mn-1h 1
 END_SESSION
 
 # URL - Pages - Bandwidth - Entry - Exit
 # The 10 first Pages must be first (order not required for others)
-BEGIN_SIDER 44
-/ 54 1042695 37 31
-/projects 38 776656 0 1
-/project/586e84c64911f 21 406088 0 1
-/investor_relations 20 331660 2 5
-/about 19 368104 4 2
-/edit/586e84c64911f 18 706600 0 0
-/upload 12 132 0 0
-/offers 11 157535 0 1
-/offer/58344002209c0 10 141319 1 0
-/css/fonts/FuturaPTCond-Bold.otf 8 907584 0 1
-/upload_plans 8 88 0 0
-/create_offer 2 39718 0 0
-/project/585d7408c1ced 1 15167 0 0
-/contacts 2 25696 0 0
-/project/585ab8b8159bf 1 18742 0 0
-/project/583454f2f3714 1 14963 0 0
-/create_event 1 19496 0 0
+BEGIN_SIDER 69
+/ 91 1755396 45 37
+/projects 63 1286901 1 1
+/ajax-call 36 2247 0 0
+/css/fonts/FuturaPTCond-Bold.otf 35 3970680 0 1
+/css/fonts/ProximaNova-Regular.otf 35 3313380 0 0
+/investor_relations 34 666350 2 8
+/about 30 580098 4 2
+/project/586e84c64911f 27 522860 0 1
+/edit/586e84c64911f 23 912053 0 0
+/upload 23 253 0 0
+/css/fonts/FuturaPTCond-Bold.woff 1 42696 0 0
+/upload_plans 9 99 0 0
+/media_center/video_gallery 1 13869 0 0
+/project/585ab8b8159bf 3 56070 0 0
+/change_log 3 50425 0 0
+/contacts 5 63922 0 0
 /edit/586f5c2c22aab 2 63415 0 0
 /offer/5833065b081d4 5 77000 0 0
-/project/5834653acfb00 1 15117 0 0
-/ad_offers 1 17480 0 0
-/project/583448e791286 1 16833 0 0
+/ad_offers 4 70673 0 0
+/project/58345364ca7ce 1 14625 0 0
+/edit/586f7ef70477b 6 193345 0 0
+/media_center/photo_gallery/585d7408c1ced 1 13343 0 0
 /css/bootstrap.min.css.map 2 108832 0 0
+/offer/58344002209c0 11 155436 2 1
 /edit/58596b721eefe 1 33528 1 0
-/project/586f5c2c22aab 1 13605 0 0
-/ajax-get 2 5896 0 0
-/create 5 153199 0 0
-/search 1 17623 0 0
+/in_progress_projects 19 287351 0 0
+/create 12 367662 0 0
+/search 6 96649 0 1
+/map 17 224514 0 0
+/site_map 10 132270 0 1
+/create_novel 2 34636 0 0
 /event 1 18502 0 0
-/create_novel 1 17318 0 0
-/comp_search 4 62212 0 0
-/events 6 94530 0 0
-/css/fonts/ProximaNova-Regular.otf 8 757344 0 0
-/media_center 7 114163 0 0
-/new/57d95ea7a2de6 1 15247 0 0
-/project/5846f5b21cd4c 1 13864 0 0
-/admin 5 111641 0 0
-/css/fonts/ProximaNova-Bold.otf 4 386560 0 0
-/all_projects 6 108196 0 0
+/completed_projects 15 255192 0 0
+/media_center/photo_gallery 8 128548 0 0
+/media_center 12 195158 0 0
+/css/fonts/ProximaNova-Bold.otf 5 483200 0 0
+/upload_updates 1 11 0 1
+/all_projects 10 179563 0 0
 /edit_event/57d953d590f31 1 19821 0 0
-/ajax-call 5 1094 0 0
 /event/57d1b9e2664a2 2 26018 1 2
-/conditions 2 45822 0 0
-/login 6 32274 2 1
+/search_pro 9 143576 0 0
+/login 7 37563 3 1
+/create_offer 4 79580 0 0
+/media_center/photo_gallery/586e84c64911f 2 28238 0 0
+/project/585d7408c1ced 3 45339 0 0
+/project/583454f2f3714 2 29926 0 0
+/create_event 2 39049 0 0
+/project/5834653acfb00 6 90327 0 0
+/news 1 15014 0 0
+/project/58596b721eefe 2 29860 0 0
+/project/583448e791286 3 50529 0 0
+/project/586f5c2c22aab 1 13605 0 0
+/media_center/photo_gallery/585ab8b8159bf 1 13536 0 0
+/ajax-get 8 6658 0 0
+/offers 20 286856 0 1
+/comp_search 21 336051 0 0
+/events 10 157116 0 0
+/new/57d95ea7a2de6 1 15247 0 0
+/edit/586fd5b5d2146 3 110187 0 0
+/project/586fd5b5d2146 7 125513 0 1
+/project/5846f5b21cd4c 4 55213 0 0
+/admin 18 406870 0 0
+/create_page 1 18067 0 0
+/edit/585ab8b8159bf 2 75560 0 0
+/project/586f7ef70477b 3 40962 0 0
+/conditions 7 160427 0 0
+/edit/585d7408c1ced 3 101351 0 0
+/offer/586f7988f15d9 6 81759 0 0
+/emails 1 15796 0 0
 END_SIDER

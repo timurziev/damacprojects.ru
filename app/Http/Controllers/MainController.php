@@ -310,7 +310,7 @@ class MainController extends Controller
 
 	public function img_gallery()
 	{
-		$projects = Project::paginate(6);
+		$projects = Project::orderBy('created_at', 'desc')->paginate(6);
 		$images = Images::all();
 
 		return view('photo_video_gallery', compact('projects', 'images'));
@@ -326,7 +326,7 @@ class MainController extends Controller
 
 	public function video_gallery()
 	{
-		$projects = Project::where('media', '<>', '')->paginate(6);
+		$projects = Project::where('media', '<>', '')->orderBy('created_at', 'desc')->paginate(6);
 
 		return view('photo_video_gallery', compact('projects'));
 	}

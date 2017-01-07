@@ -54,8 +54,8 @@
 					<div class="submenu">
 						<ul>
 							<li><a href="{{ URL::to('/all_projects') }}">Все проекты</a></li>
-							<li><a href="{{ URL::to('/in_progress_projects') }}?status=1">В процессе</a></li>
-							<li><a href="{{ URL::to('/completed_projects') }}?status=2">Завершено</a></li>
+							<li><a href="{{ URL::to('/in_progress_projects') }}?status=1">Завершено</a></li>
+							<li><a href="{{ URL::to('/completed_projects') }}?status=2">В процессе</a></li>
 						</ul>
 						<div class="menu-desc">
 							<img src="{{ Request::root() }}/img/projects-small.jpg" alt="">
@@ -147,7 +147,7 @@
 			<div class="wrapper">
 				<span class="copyright">&copy; Sheikh 2016 Все права защищены</span>
 				<a href="{{ url('/contacts') }}" class="footer-links">Контакты</a>
-				<a href="" class="footer-links">Карта сайта</a>
+				<a href="{{ url('/site_map') }}" class="footer-links">Карта сайта</a>
 				<a href="{{ url('/conditions')}}" class="footer-links">Условия использования</a>
 				<div class="social">
 					<a class="vk" href="https://vk.com/sheikhhouse"></a>
