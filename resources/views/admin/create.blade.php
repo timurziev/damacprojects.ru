@@ -117,7 +117,9 @@
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Дополнительная информация</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" name="community_info">
+                            <!-- <input type="text" class="form-control" name="community_info"> -->
+                            <input id="y" type="hidden" name="community_info">
+                            <trix-editor input="y"></trix-editor>
                         </div>
                     </div>
                     <div class="form-group">

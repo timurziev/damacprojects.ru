@@ -1,0 +1,866 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201706 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.sheikhhouse.ru.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1994                
+POS_TIME 2666                
+POS_VISITOR 12993               
+POS_DAY 16818               
+POS_DOMAIN 3593                
+POS_LOGIN 3827                
+POS_ROBOT 3982                
+POS_WORMS 4624                
+POS_EMAILSENDER 4755                
+POS_EMAILRECEIVER 4898                
+POS_SESSION 17633               
+POS_SIDER 17830               
+POS_FILETYPES 5033                
+POS_DOWNLOADS 5351                
+POS_OS 5422                
+POS_BROWSER 5635                
+POS_SCREENSIZE 6998                
+POS_UNKNOWNREFERER 7072                
+POS_UNKNOWNREFERERBROWSER 7309                
+POS_ORIGIN 7512                
+POS_SEREFERRALS 7657                
+POS_PAGEREFS 7823                
+POS_SEARCHWORDS 10833               
+POS_KEYWORDS 10985               
+POS_MISC 2329                
+POS_ERRORS 11044               
+POS_CLUSTER 3683                
+POS_SIDER_404 11201               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170701000823 1 0 9201881947358
+FirstTime 20170601004503
+LastTime 20170630185503
+LastUpdate 20170701010341 1 0 0 0 0
+TotalVisits 243                 
+TotalUnique 77                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 103                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 59 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 174 681 76206180 109 191 10314245
+1 17 34 1338233 92 322 15232410
+2 11 12 425832 152 260 8665956
+3 29 118 14950214 51 177 9360999
+4 8 8 162318 49 162 12341618
+5 10 10 202920 49 73 2325506
+6 9 9 182619 63 79 2001515
+7 20 57 4118784 82 225 6521441
+8 17 17 345272 69 180 6747105
+9 13 14 380733 103 226 19376242
+10 18 35 1219949 129 293 22950455
+11 15 16 377724 88 336 20863188
+12 23 165 20612429 52 207 8354692
+13 27 152 12987504 76 282 20516137
+14 25 58 3453558 134 244 9852973
+15 36 147 8558286 330 397 9704856
+16 108 391 33791247 309 435 12643064
+17 48 253 27277553 103 274 11225915
+18 191 540 48348798 111 285 15390126
+19 78 146 10137104 199 300 11410217
+20 172 355 15198564 181 273 10995786
+21 41 89 5330152 69 205 14848706
+22 37 190 15812862 105 183 7433401
+23 166 789 116415975 86 186 12401097
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1293 4286 417834810
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 13
+yandex 4017 247472031 20170630230848 178
+mj12bot 614 11341374 20170628094225 50
+crawl 406 7396024 20170626190716 4
+googlebot 249 7846081 20170630201123 18
+bot[\s_+:,\.\;\/\\-] 105 1891841 20170624023031 1
+[\s_+:,\.\;\/\\-]bot 25 433698 20170606090947 1
+no_user_agent 12 226615 20170629181216 1
+unknown 9 216 20170627215519 9
+powermarks 4 81168 20170606041100 0
+surveybot 4 41239 20170630010149 2
+archive\.org_bot 1 24 20170613053000 1
+msiecrawler 3 60876 20170606114004 0
+baiduspider 1 13347 20170609025018 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 13
+eot 6 739512 0 0
+css 260 3498884 0 0
+png 183 36527218 0 0
+woff 1 52280 0 0
+otf 51 4420596 0 0
+php 2 42682 0 0
+html 362 7348993 0 0
+js 192 11583493 0 0
+jpg 2307 333919430 0 0
+jpeg 7 951586 0 0
+Unknown 871 18477780 0 0
+svg 24 111312 0 0
+gif 20 161044 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/robots.txt 265 0 6360
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 17
+linuxandroid 1
+winxp 170
+winlong 16
+win2000 574
+winvista 27
+winunknown 5
+win95 2
+wince 2
+win2003 21
+unix 1
+winnt 612
+win98 7
+linux 9
+win7 2697
+macosx 124
+winme 4
+Unknown 14
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 79
+firefox28.0 1
+msie6.0 142
+chrome40.0.2214.115 1
+webcapture 1
+chrome34.0.1847.137 1
+chrome49.0.2623.110 1
+firefox26.0 3
+msie4.01 2
+firefox54.0 1
+chrome31.0.1650.57 1
+chrome58.0.3029.110 2558
+msie8.0 21
+opera7.60 1
+netscape3.0 3
+msie7.0 17
+chrome37.0.2062.120 2
+chrome49.0.2623.112 1
+opera9.0 2
+firefox50.0 2
+firefox48.0 3
+firefox53.0 4
+chrome33.0.1750.152 5
+chrome55.0.2883.87 4
+firefox3.0 1
+firefox7.0.1 6
+netscape0.6 4
+firefox33.0 2
+mozilla 582
+netscape5.0 1
+chrome32.0.1700.76 19
+chrome57.0.2987.133 2
+chrome10.0.648.151 1
+firefox3.6.3 1
+chrome41.0.2228.0 4
+chrome53.7.3098.8360 1
+firefox5.0 1
+firefox4.0.1 1
+chrome59.0.3071.86 8
+chrome12.0.742.91 2
+chrome48.0.2564.116 1
+firefox52.0 3
+chrome56.0.2924.87 6
+opera9.00 6
+chrome28.0.1468.0 1
+msie3.02 2
+opera9.80 3
+netscape4.76 2
+chrome55.0.2883.95 1
+msie5.0 5
+msie9.0 4
+chrome16.0.912.63 2
+Unknown 3
+opera7.54 3
+chrome14.0.835.202 4
+chrome57.0.2987.137 1
+chrome59.0.3071.115 597
+firefox3.6.7 1
+chrome11.0.696.68 2
+safari9.0.3 1
+netscape4.61 1
+safari10.0.2 1
+chrome30.0.1599.17 1
+chrome53.0.2785.143 1
+safari10.0 109
+chrome54.0.2840.99 1
+opera8.01 2
+msie5.5 20
+firefox30.0 1
+chrome51.0.2704.79 1
+netscape4.79 2
+chrome45.0.2454.94 1
+chrome48.0.2564.109 1
+firefox22.0 40
+msie10.0 34
+firefox51.0 2
+firefox3.6.18 1
+chrome31.0.1650.16 1
+firefox3.6.8 4
+firefox3.6.13 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 4
+Mozilla/5.0 20170618114056
+Mozilla/5.0_(compatible;_Dataprovider.com;) 20170614142832
+Go-http-client/1.1 20170623223913
+}__test|O:21:\ 20170629044459
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Needle/1.6.0_(Node.js_v6.10.3;_linux_x64) 20170623125559
+Go-http-client/1.1 20170623223913
+}__test|O:21:\ 20170629044459
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 265 690
+From1 1 1
+From2 11 11
+From3 247 247
+From4 769 3337
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 8 8
+yandex 3 3
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 93
+http://777-club.ru 8 8
+http://www.z-master.ru 6 6
+http://naberezhnyechelny.zrus.org 6 6
+http://kozhniebolezni.com 5 5
+http://videochat.cafe 5 5
+http://samara.zrus.org 5 5
+http://life-instyle.com/architectural-design.html 5 5
+http://penza.zrus.org 5 5
+http://murmansk.xrus.org 5 5
+http://topkarkas.com 5 5
+http://european-torches.ru 2 2
+http://hostx.ru 3 3
+http://www.wttavern.com 4 4
+http://video-chat.in 3 3
+http://omsk.zrus.org 2 2
+http://coolwallpapers-hd.com 3 3
+https://paydayloanslocal.com 2 2
+https://axelname.ru/diag/ 1 1
+http://ufa.zrus.org 2 2
+http://payeer.com/ru/merchants_api/ 1 1
+https://dellalimov.com 1 1
+http://sheikhhouse.ssve.ru/SEO 2 2
+http://murmansk.zrus.org 1 1
+http://burger-imperia.com 1 1
+http://chery-tiggo.ru/profile.php 1 1
+http://novgorod.zrus.org 3 3
+http://nizhnevartovsk.zrus.org 1 1
+http://tomsk.zrus.org 2 2
+http://kemerovo.zrus.org 3 3
+http://craftinsta.ru 2 2
+http://ivanstroi.ru 3 3
+https://essayservicewriting.org 3 3
+http://hdwallpapers-free.com 3 3
+http://kirov.zrus.org 1 1
+http://mebel-vstroika.ru 3 3
+https://coindirect.io 3 3
+http://tyumen.zrus.org 2 2
+http://orenburg.zrus.org 4 4
+https://maslenka.kz 1 1
+http://anapa.zrus.org 3 3
+http://sheikhhouse.ssve.ru 1 1
+http://reklamx.ru/c/dXRtX3NvdXJjZT1yZWtsYW14JnV0bV9tZWRpdW09cmVmJnV0bV9jYW1wYWlnbj0xY2FtcCZ1dG1fY29udGVudD0xY2xpY2smdXRtX3Rlcm09c2hlaWtoaG91c2UucnU%3D/ 1 1
+http://astrakhan.zrus.org 3 3
+http://kursk.zrus.org 2 2
+http://perm-profnastil.ru 2 2
+https://ohmyrings.com 3 3
+http://videochat.tv.br 4 4
+http://vologda.zrus.org 1 1
+http://moscow.zrus.org 2 2
+http://volgograd.zrus.org 2 2
+http://exmo.me 1 1
+http://stavropol.zrus.org 2 2
+http://krasnoyarsk.zrus.org 3 3
+http://chatroulette.si 3 3
+http://chatroulette.online 3 3
+http://chatroulette.world 1 1
+http://ivanovo.zrus.org 3 3
+http://belgorod.zrus.org 2 2
+http://yaroslavl.zrus.org 2 2
+http://videochat.world 2 2
+http://tolyatti.zrus.org 1 1
+http://tuapse.zrus.org 2 2
+https://payeer.com/ru/merchants_api/ 1 1
+http://cheboksary.zrus.org 3 3
+http://bestdraws.com 2 2
+http://minegate.ru/forum/showthread.php 3 3
+https://buydissertation.net 3 3
+http://voronezh.zrus.org 4 4
+http://novosibirsk.zrus.org 3 3
+http://yoshkarola.zrus.org 1 1
+http://ulyanovsk.zrus.org 2 2
+https://landscaping.center 2 2
+http://pizza-imperia.com 1 1
+http://kostroma.zrus.org 3 3
+http://demian.kz 5 5
+http://elvel.com.ua/girobordy 2 2
+https://bio-optomarket.ru 3 3
+http://ulanude.zrus.org 3 3
+http://free-gluten.ru 1 1
+https://vk.com/vps_vds_dedicated_server 3 3
+http://ping-admin.ru 2 2
+http://kinoplen.ru 2 2
+http://perm.zrus.org 2 2
+http://magnitogorsk.zrus.org 2 2
+http://gelendzhik.zrus.org 5 5
+http://coinsspb.com 3 3
+http://sochi.zrus.org 3 3
+http://irkutsk.zrus.org 2 2
+http://your-bearings.com 4 4
+http://anonymizeme.pro/go/hide.cgi 1 1
+http://simferopol.zrus.org 4 4
+http://izhevsk.zrus.org 1 1
+http://vzglyadriv.kg 4 4
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+302 65 25948
+206 10 295170
+500 56 1695191
+405 2 24104
+404 105 1168153
+301 28 8902
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 41
+/blog/wp-includes/wlwmanifest.xml 1 -
+/sitemap.xml 1 -
+/class=%22close 1 -
+/cms 2 http://sheikhhouse.ru/cms
+/user 1 http://sheikhhouse.ru/user
+/admin.php 2 -
+/oneskyssa 2 http://sheikhhouse.ru/oneskyssa
+/site/wp-includes/wlwmanifest.xml 1 -
+/shop 1 sheikhhouse.ru/shop
+/media/system/js/core.js 2 http://sheikhhouse.ru/media/system/js/core.js
+/media/system/js/caption.js 2 http://sheikhhouse.ru/media/system/js/caption.js
+/wp-includes/wlwmanifest.xml 1 -
+/js/lightbox.min.map 3 -
+/joomla/robots.txt 1 -
+/media_center/class=%22close 1 -
+/uploads/projects/big/ 1 http://sheikhhouse.ru/projects
+/offer 1 -
+/netcat 2 http://sheikhhouse.ru/netcat
+/xmlrpc.php 2 -
+/blog 1 http://sheikhhouse.ru/blog/
+/adminzone 2 http://sheikhhouse.ru/adminzone
+/index.php/admin123 1 http://sheikhhouse.ru/index.php/admin123/
+/new 1 -
+/blog/administrator/index.php 1 -
+/media_center/class=%22burger 1 -
+/vam_rss2_info.php 2 http://sheikhhouse.ru/vam_rss2_info.php
+/blog/robots.txt 2 -
+/bitrix/admin/index.php 2 http://sheikhhouse.ru/bitrix/admin/index.php
+/wp/wp-includes/wlwmanifest.xml 1 -
+/class=%22burger 1 -
+/administrator/index.php 3 -
+/user/register 1 -
+/wordpress/wp-includes/wlwmanifest.xml 1 -
+/uploads/projects/small/ 41 http://sheikhhouse.ru/projects
+/administrator 2 http://sheikhhouse.ru/administrator
+/mscms 2 http://sheikhhouse.ru/mscms
+/joomla/administrator/index.php 1 -
+/project 1 -
+/manager 3 http://sheikhhouse.ru/manager
+/wp-login.php 5 -
+/cms/admin 2 http://sheikhhouse.ru/cms/admin
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 103
+81.89.75.10 707 2656 273295069 20170630163636
+89.169.199.228 153 547 61106940 20170601005011
+37.115.187.118 49 49 994308 20170611201514
+46.118.158.86 46 46 933432 20170611163514
+46.118.123.232 46 46 933432 20170611103156
+46.118.117.131 44 44 892848 20170610204408
+212.94.22.183 38 374 39967444 20170628105606
+109.162.67.12 27 27 547884 20170611215603
+37.229.253.71 15 15 304380 20170626012143
+95.213.143.160 14 14 245043 20170626223912
+94.25.228.3 0 1 233720 
+95.163.107.74 1 1 19718 20170619175257
+188.170.72.109 0 1 144442 
+213.202.254.136 2 2 40575 20170630183732
+146.148.52.203 1 1 20292 20170614163941
+46.175.72.64 2 2 40584 20170619093041
+195.191.250.33 1 1 20292 20170626142623
+208.80.194.121 2 2 40584 20170628180722
+93.79.148.21 1 1 20292 20170617121322
+54.159.7.81 1 1 20292 20170623035110
+95.26.196.215 0 1 73344 
+188.213.134.148 2 2 40584 20170610083014
+188.255.20.147 5 20 818765 20170624011857
+46.118.156.191 2 2 40584 20170626200744
+217.118.81.30 0 1 68343 
+35.192.33.18 1 1 20292 20170616170031
+95.153.131.245 3 40 3773512 20170626222815
+91.211.144.14 0 1 202620 
+208.80.194.123 4 4 81168 20170620170411
+5.18.201.215 3 3 60876 20170623030756
+5.8.176.50 0 1 73344 
+54.234.32.187 1 1 20292 20170626182045
+198.211.105.233 1 1 20292 20170623223913
+208.80.194.124 5 5 101460 20170627172425
+52.87.86.158 1 1 20600 20170621203210
+46.147.132.14 0 1 320932 
+178.66.64.236 0 1 116937 
+188.186.91.226 1 1 20292 20170627115645
+46.0.228.44 0 1 68343 
+5.8.88.91 1 1 20292 20170628035935
+23.22.132.254 3 19 531115 20170626184150
+176.10.104.243 3 3 61925 20170612003623
+95.25.171.254 0 1 202620 
+208.80.192.33 5 5 101451 20170630185503
+185.41.168.21 1 1 20292 20170609151043
+5.9.11.122 1 1 20292 20170619071832
+178.33.54.161 1 1 20292 20170626072029
+188.162.132.69 0 1 202620 
+163.172.4.153 5 5 101460 20170623075849
+2.92.176.186 0 1 202620 
+178.33.39.197 1 1 20292 20170607214714
+118.89.163.202 1 1 20600 20170612203853
+95.28.165.185 5 20 703677 20170621100821
+35.192.10.202 1 1 20292 20170615193655
+77.123.2.4 1 1 20292 20170612074748
+77.243.183.120 1 1 20292 20170606035315
+192.187.98.86 2 2 40566 20170629044459
+188.170.74.202 0 1 286671 
+79.137.85.189 1 1 20292 20170624172121
+35.188.82.29 1 1 20292 20170616130906
+95.153.135.56 6 50 4649097 20170623225838
+118.89.113.57 1 1 20600 20170613202426
+178.62.4.246 1 1 20292 20170618114056
+208.80.194.120 5 5 101451 20170629180143
+79.139.154.205 0 1 202620 
+208.80.194.126 2 2 40584 20170622165315
+2.132.233.171 0 3 467934 
+185.100.86.100 1 1 20292 20170607001523
+107.167.108.185 0 1 73344 
+88.99.141.3 1 1 20292 20170624051539
+92.63.91.53 1 1 21341 20170614205602
+208.80.194.122 4 4 81168 20170616171147
+94.29.124.186 0 1 73344 
+77.247.239.209 0 1 162386 
+213.21.41.194 1 1 19718 20170626133458
+86.110.225.246 1 1 20600 20170622203158
+178.207.116.57 0 1 73344 
+88.99.194.48 1 1 19718 20170619180354
+54.184.103.194 1 1 20292 20170605075351
+31.44.63.50 0 1 286671 
+212.12.4.203 0 1 196730 
+91.223.82.156 2 2 40584 20170612003618
+188.165.2.183 1 1 20292 20170617102446
+185.63.189.83 3 40 3773512 20170607075343
+104.154.152.251 1 1 20292 20170614200430
+46.188.121.139 0 1 202620 
+46.48.13.161 11 11 223203 20170629064712
+213.87.152.159 0 1 184133 
+91.189.112.7 3 3 60876 20170628195617
+158.69.225.36 12 12 242128 20170614142833
+31.207.219.139 0 1 73344 
+146.185.163.44 1 1 20292 20170623135545
+144.76.110.236 2 2 40584 20170608200153
+95.26.93.254 0 1 202620 
+208.80.194.125 1 1 20292 20170606163545
+79.137.223.57 3 3 61800 20170622075849
+194.135.83.53 1 1 20292 20170624220221
+31.31.203.77 1 1 20292 20170623125559
+95.27.185.35 1 34 2897507 20170621220929
+95.37.168.240 2 2 40584 20170603050804
+93.171.243.146 0 1 110975 
+107.22.58.209 1 1 20292 20170604085749
+95.153.134.228 8 97 14524082 20170612033131
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 30
+20170601 175 569 61553672 13
+20170602 25 25 507300 15
+20170603 17 17 344964 11
+20170604 19 19 385548 11
+20170605 257 1077 133584788 18
+20170606 39 53 4500861 12
+20170607 28 178 18689318 12
+20170608 31 34 1096986 14
+20170609 27 30 1252635 15
+20170610 16 16 324672 10
+20170611 25 25 507300 12
+20170612 16 106 14890395 6
+20170613 2 2 40892 2
+20170614 17 19 620601 6
+20170615 3 4 562568 3
+20170616 33 287 29194956 12
+20170617 4 7 501031 4
+20170618 13 168 20928205 4
+20170619 32 259 31657253 6
+20170620 2 6 1050758 2
+20170621 79 366 34840718 6
+20170622 91 161 9235977 8
+20170623 17 61 4872309 10
+20170624 13 65 4694045 7
+20170625 1 1 20292 1
+20170626 30 84 4820359 10
+20170627 2 2 40584 2
+20170628 223 549 29620466 5
+20170629 4 4 81132 3
+20170630 52 92 7414225 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+1h+ 8
+5mn-15mn 3
+0s-30s 221
+15mn-30mn 4
+30s-2mn 4
+30mn-1h 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 237
+/ 362 7348993 222 209
+/all_projects 138 2668531 2 1
+/admin 95 2325458 1 1
+/projects 81 1775505 2 0
+/in_progress_projects 33 621836 0 1
+/css/fonts/ProximaNova-Regular.otf 22 1798692 0 2
+/css/fonts/FuturaPTCond-Bold.otf 21 2042064 0 6
+/project/58fb87a91f1a5 20 457417 0 0
+/ajax-call 17 1958 0 1
+/media_center/photo_gallery 17 302179 0 0
+/media_center/photo_gallery/58b04d8fc2cc4 1 14046 0 0
+/media_center/photo_gallery/589f868434596 1 15015 0 0
+/project/58ea5b924ef35 1 17609 0 0
+/media_center/photo_gallery/58f103acb9ebe 1 14046 0 0
+/media_center/photo_gallery/58af0a9f7e044 1 15405 0 0
+/media_center/photo_gallery/58efd45a6c3a1 1 14046 0 0
+/project/58af0a9f7e044 1 20827 0 0
+/media_center/photo_gallery/58ebc004e776c 1 14239 0 0
+/media_center/photo_gallery/5888b6cc8b354 1 14239 0 0
+/project/58ebc004e776c 1 18917 0 0
+/media_center/photo_gallery/5894913b086b2 1 13656 0 0
+/project/58b2be9fca730 3 51612 0 1
+/project/58bc0d4ebf3b7 2 38634 0 0
+/media_center/photo_gallery/58eb9296615a5 1 15795 0 0
+/project/58b08d2f6d33e 1 18317 0 0
+/media_center/photo_gallery/58efbad841555 1 15015 0 0
+/media_center/photo_gallery/589370d8223c1 1 14432 0 0
+/media_center/photo_gallery/58811e8d86666 1 14239 0 0
+/project/58fb8a4eea90a 2 36562 0 0
+/project/5894857bae42d 1 17666 0 0
+/media_center/photo_gallery/58fbaeae674fa 1 19293 0 0
+/media_center/photo_gallery/58fcc955585c8 1 14046 0 0
+/media_center/photo_gallery/5873cfd7c08de 1 14046 0 0
+/project/5890f7cc1f3e3 1 17733 0 0
+/project/58ecccaef1e11 1 18436 0 0
+/media_center/photo_gallery/58fb9108a9d02 1 14046 0 0
+/event/57d1b8a99b30e 1 13417 0 0
+/search 4 75888 0 0
+/project/58ef963755e21 1 20902 0 0
+/site_map 1 13686 0 0
+/edit/58b04d8fc2cc4 2 79109 0 0
+/media_center/photo_gallery/58bdb66e9104a 1 13656 0 0
+/media_center/photo_gallery/58f119326522f 1 13849 0 0
+/media_center/photo_gallery/58729a087f9c2 1 13656 0 0
+/project/58b1bb70276f0 1 18917 0 0
+/media_center/photo_gallery/58b2aa95082bd 1 14432 0 0
+/project/587fab54ee84b 1 17068 0 0
+/media_center/photo_gallery/58d816e01b8ec 1 13656 0 0
+/message 1 15594 0 0
+/media_center/photo_gallery/58ecccaef1e11 1 13849 0 0
+/project/5880b2bb37523 2 34173 0 0
+/media_center/photo_gallery/58a21bfd65975 1 14239 0 0
+/media_center/photo_gallery/58fb87a91f1a5 1 13849 0 0
+/css/fonts/ProximaNova-Bold.otf 8 579840 0 0
+/media_center/photo_gallery/58b157b8c99ef 1 14432 0 0
+/project/58ece09a6860c 1 19946 0 0
+/media_center/photo_gallery/58f1387d9d612 1 13656 0 0
+/media_center/photo_gallery/58e7d940a8398 1 14822 0 0
+/project/58bdb66e9104a 1 17317 0 0
+/media_center/photo_gallery/58c7f0de3b8b3 1 14822 0 0
+/project/58d6c64d93421 3 59055 0 0
+/css/fonts/ProximaNova-Regular.woff 1 52280 0 1
+/media_center/photo_gallery/5876bd3b0212e 1 14046 0 0
+/event/57d1b9e2664a2 1 13347 0 0
+/media_center/photo_gallery/58f0fbf2b799a 1 14046 0 0
+/media_center/photo_gallery/58b08d2f6d33e 1 14629 0 0
+/login 1 5289 0 0
+/project/58f0fbf2b799a 3 60582 0 0
+/edit/587e6bbfa17f3 2 76926 0 0
+/media_center/photo_gallery/58e3f4ec7fe70 1 14822 0 0
+/media_center/photo_gallery/587fdb697ce02 1 13849 0 0
+/media_center/photo_gallery/58b195e900e7b 1 14822 0 0
+/media_center/photo_gallery/58b1bb70276f0 1 14629 0 0
+/media_center/photo_gallery/587e6bbfa17f3 1 14048 0 0
+/media_center/photo_gallery/586fd5b5d2146 1 14432 0 0
+/media_center/photo_gallery/590a23786b887 1 13463 0 0
+/project/58fb9339103f6 2 36008 0 0
+/project/587133d19db54 5 79709 0 0
+/edit/587133d19db54 4 141135 0 0
+/edit/587fbabbace3a 2 75168 0 0
+/project/58c2bb8618f27 1 16731 0 0
+/project/58b5e180136af 1 19625 0 0
+/media_center/photo_gallery/58a08d7e208ff 1 14239 0 0
+/media_center/photo_gallery/58d557dd8e1d3 1 14629 0 0
+/project/58b157b8c99ef 1 17540 0 0
+/media_center/photo_gallery/58b2be9fca730 1 14629 0 0
+/media_center/photo_gallery/588a6afa4bff2 1 14432 0 0
+/media_center/photo_gallery/58927ed8574ab 1 14432 0 0
+/new/58909bda31d98 2 32234 0 0
+/project/58811e8d86666 2 35834 0 0
+/media_center/photo_gallery/587133d19db54 1 13656 0 0
+/media_center/photo_gallery/58bc3dc6096f2 1 15795 0 0
+/project/58f103acb9ebe 4 95871 0 0
+/project/58b2b2d88069c 1 18977 0 0
+/project/58b04d8fc2cc4 3 57488 0 0
+/offer/58fcd71fef25f 1 15581 0 0
+/news 2 30106 0 0
+/project/58f0e1f90df68 4 80832 0 1
+/edit/587120249ced0 2 82406 0 0
+/project/58d816e01b8ec 3 59595 0 0
+/project/58b03e7b0caaf 1 18252 0 0
+/project/58e6b59cef12a 2 40854 0 0
+/project/58d2dbffb5c14 3 66231 0 0
+/project/587120249ced0 3 53813 0 0
+/project/58b1d5c634201 1 18347 0 0
+/edit/58f1387d9d612 4 170284 0 0
+/css/fonts/FuturaPTCond-Bold.eot 2 215824 0 0
+/media_center/photo_gallery/58fb8e090d1aa 1 13849 0 0
+/project/58b2aa95082bd 1 17247 0 0
+/offers 11 160850 0 0
+/project/586e84c64911f 2 39199 0 0
+/events 3 48279 0 0
+/media_center/photo_gallery/587cfb623f0d7 1 13656 0 0
+/media_center/photo_gallery/58c67ad396bad 1 14239 0 0
+/edit/586fd5b5d2146 2 76890 1 0
+/project/586fd5b5d2146 2 35102 0 0
+/media_center/photo_gallery/58aec77d49134 1 14822 0 0
+/project/58fb8e090d1aa 2 35734 0 0
+/about 9 178074 6 5
+/project/58f119326522f 4 83088 0 0
+/media_center/photo_gallery/58be9031ce47f 1 13849 0 0
+/media_center/photo_gallery/58d2dbffb5c14 1 14822 0 0
+/media_center/photo_gallery/58d6c64d93421 1 13656 0 0
+/project/58aec77d49134 1 18085 0 0
+/project/58ee4b7d8a17b 1 20101 0 0
+/project/5891f33748650 1 18775 0 0
+/media_center/photo_gallery/58fb9339103f6 1 14239 0 0
+/project/589370d8223c1 1 17683 0 0
+/project/58c67ad396bad 1 17387 0 0
+/edit/58ee4b7d8a17b 7 302716 0 0
+/project/5888b6cc8b354 2 40032 0 0
+/upload_plans 16 176 0 0
+/media_center/photo_gallery/5894857bae42d 1 13849 0 0
+/media_center/video_gallery 5 80133 0 0
+/contacts 2 26576 0 1
+/css/fonts/ProximaNova-Light.eot 1 132298 0 1
+/media_center/photo_gallery/5894bca2ef77c 1 13656 0 0
+/project/588a6afa4bff2 2 38298 0 0
+/project/58e7d940a8398 3 91428 0 0
+/media_center/photo_gallery/58e6b59cef12a 1 15405 0 0
+/project/589f868434596 1 18237 0 0
+/project/58927ed8574ab 1 18883 0 0
+/admin/index.php 1 21341 1 1
+/project/5894bca2ef77c 1 17773 0 0
+/edit/586e84c64911f 3 127334 1 0
+/project/58729a087f9c2 1 17164 0 0
+/project/58d54655250ff 3 54246 0 0
+/project/58b195e900e7b 1 19104 0 0
+/project/587fbabbace3a 1 17334 0 0
+/media_center/photo_gallery/58d83de042c2d 1 13849 0 0
+/css/fonts/ProximaNova-Regular.eot 2 261652 0 0
+/media_center/photo_gallery/587e91fc75916 1 13656 0 0
+/project/58bc3dc6096f2 1 19114 0 0
+/media_center/photo_gallery/58fb8a4eea90a 1 13849 0 0
+/media_center/photo_gallery/5890f7cc1f3e3 1 14239 0 0
+/media_center/photo_gallery/58ee4b7d8a17b 1 14046 0 0
+/create 1 30741 0 0
+/edit/5876bd3b0212e 2 78656 0 0
+/media_center/photo_gallery/58c58849a70b7 1 14046 0 0
+/edit/58fbaeae674fa 16 943196 2 2
+/password/reset 1 4409 0 0
+/edit/58f0fbf2b799a 7 279271 0 0
+/edit/58efd45a6c3a1 8 319815 0 0
+/completed_projects 6 114465 0 0
+/media_center 3 48696 0 0
+/project/58d83de042c2d 6 121014 0 0
+/project/58eb9296615a5 1 21759 0 0
+/media_center/photo_gallery/58ece09a6860c 1 13656 0 0
+/css/fonts/ProximaNova-Bold.eot 1 129738 0 0
+/media_center/photo_gallery/58e95467eca16 1 14822 0 0
+/edit/58fb87a91f1a5 12 533888 0 0
+/edit/58d816e01b8ec 4 157905 0 0
+/media_center/photo_gallery/58a05aee496ff 1 14629 0 0
+/search_pro 2 38600 0 1
+/project/58efd45a6c3a1 2 40258 0 0
+/edit/58c58849a70b7 2 73025 0 0
+/project/58f1387d9d612 6 138809 0 0
+/project/58d557dd8e1d3 3 56670 0 0
+/edit/58b2be9fca730 2 78323 0 0
+/media_center/photo_gallery/58ea5b924ef35 1 14239 0 0
+/offer/58fcd2b10d25e 2 31950 0 0
+/project/587cfb623f0d7 1 17855 0 0
+/media_center/photo_gallery/586e84c64911f 1 14629 0 0
+/media_center/photo_gallery/58c2bb8618f27 1 13656 0 0
+/investor_relations 3 73266 0 0
+/project/58efbad841555 1 20696 0 0
+/media_center/photo_gallery/58fca4357fd00 1 14432 0 0
+/project/58c69af21224f 1 17527 0 0
+/project/5894913b086b2 1 16648 0 0
+/media_center/photo_gallery/587fab54ee84b 1 13656 0 0
+/event/57cff2008f004 1 13483 0 0
+/project/5885246265650 1 18169 0 0
+/edit/58f119326522f 5 202429 0 0
+/edit/58d83de042c2d 4 174874 0 0
+/project/58e3f4ec7fe70 2 40696 0 0
+/project/58fbaeae674fa 14 355460 3 1
+/project/58a05aee496ff 2 36298 0 1
+/media_center/photo_gallery/587fbabbace3a 1 13656 0 0
+/project/58a08d7e208ff 1 19524 0 0
+/media_center/photo_gallery/58bc0d4ebf3b7 1 15405 0 0
+/press_releases 1 14564 0 0
+/media_center/photo_gallery/5880b2bb37523 1 13849 0 0
+/media_center/photo_gallery/58f0e1f90df68 1 15015 0 0
+/project/587fdb697ce02 1 16994 0 0
+/edit/58f103acb9ebe 6 272680 0 0
+/project/58be9031ce47f 1 17974 0 0
+/project/58e95467eca16 2 52618 0 0
+/media_center/photo_gallery/58d54655250ff 1 14432 0 0
+/media_center/photo_gallery/5891f33748650 1 14432 0 0
+/media_center/photo_gallery/58b5e180136af 1 15015 0 0
+/media_center/photo_gallery/58c0107b589c7 1 14432 0 0
+/ajax-get 17 12582 0 0
+/project/587e6bbfa17f3 2 35700 0 0
+/project/58a21bfd65975 2 36670 0 0
+/team 2 33898 0 0
+/media_center/photo_gallery/58b2b2d88069c 1 15598 0 0
+/comp_search 5 88636 1 1
+/project/58c7f0de3b8b3 2 40602 0 0
+/project/58fca4357fd00 2 36206 0 0
+/project/587e91fc75916 1 17376 0 0
+/upload 7 77 0 0
+/edit/5880b2bb37523 2 74625 0 0
+/event/57d953d590f31 1 13690 0 0
+/media_center/photo_gallery/58c69af21224f 1 13656 0 0
+/project/58c58849a70b7 2 33951 0 0
+/media_center/photo_gallery/5885246265650 1 14046 0 0
+/project/58fb9108a9d02 3 55752 0 0
+/media_center/photo_gallery/58ef963755e21 1 14822 0 0
+/conditions 2 46934 0 0
+/index.php 1 21341 0 0
+/edit/58d6c64d93421 4 157203 0 0
+/project/58c0107b589c7 3 48672 0 1
+/media_center/photo_gallery/58b03e7b0caaf 1 14432 0 0
+/media_center/photo_gallery/587120249ced0 1 14631 0 0
+/project/58fcc955585c8 6 109014 1 4
+/project/5876bd3b0212e 3 54492 0 0
+/media_center/photo_gallery/58b1d5c634201 1 14432 0 0
+END_SIDER

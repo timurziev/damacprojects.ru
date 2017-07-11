@@ -155,7 +155,6 @@ header .phone {
 	.menu.menu-fixed .search {
 		bottom: 4px;
 	}
-
 }
 
 .menu .search {
@@ -1771,6 +1770,12 @@ button {
 	background-color: #000;
 }
 
+@media screen and (max-width: 4280px) {
+        .text-center {
+	        text-align: center;
+        }
+}
+
 @media screen and (max-width: 1280px) {
 	.burger {
 		display: block;
@@ -1909,6 +1914,22 @@ button {
 	.left_img, .right_img {
 		width: 100%;
 	}
+  
+        .about-page .lid, .single-page .lid {
+	        padding: 0px;
+        }
+
+        .about-page ul {
+	        padding: 0px;
+        }
+
+        .about-page .team_img {
+                width: 80%;
+        }
+
+        .left_box, .right_box, .left_img, .right_img {
+                margin-bottom: 50px;
+        }
 }
 
 @media screen and (max-width: 400px) {
@@ -1916,6 +1937,14 @@ button {
 	.section-title h2 {
 		font-size: 2rem;
 	}
+
+        .project-location .show-map, .show-map-event {
+                margin-left: 0px;
+        }
+
+        .text-center {
+                text-align: left;
+        }
 }
 
 #owl-demo .item{
@@ -2174,9 +2203,6 @@ button {
     margin: 0 auto;
 }
 
-.text-center {
-	text-align: center;
-}
 
 /* photo video gallery */
 .photo-video-list {

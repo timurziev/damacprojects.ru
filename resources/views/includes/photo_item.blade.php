@@ -1,5 +1,4 @@
 <div class="photo-video-item">
-	<p>Наслаждайтесь прекрасными фотографиями наших проектов</p>
 		<div class="images">
 			<ul>
 				@foreach($images as $key => $image)

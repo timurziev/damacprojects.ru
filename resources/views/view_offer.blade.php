@@ -3,7 +3,7 @@
 
 
 <div class="content">
-		<div class="title-banner" style="background-image: url(../img/investor_relations.jpg);">
+		<div class="title-banner" style="background-image: url(../img/offers.jpg);">
 			<div class="wrapper">
 				 <h2>{{ $offer->title}}</h2>
 			</div>

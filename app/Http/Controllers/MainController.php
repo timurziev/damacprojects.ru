@@ -98,8 +98,15 @@ class MainController extends Controller
 			$projects->where('category_id', Request::get('status'));
 		}
 
-		$projects = $projects->paginate(6);
-		$projects->appends(Request::except('page'));
+		if (Request::get('view') !== 'map')
+		{
+			$projects = $projects->paginate(6);
+			$projects->appends(Request::except('page'));
+		}
+		else
+		{
+			$projects = $projects->get();
+		}
 
         return view('projects', compact('projects', 'cities', 'images', 'countries', 'regions'));
 	}
@@ -176,7 +183,7 @@ class MainController extends Controller
 
 	public function search()
 	{
-		$projects = Project::orderBy('created_at');
+		$projects = Project::orderBy('created_at', 'desc');
 		$countries = Country::all();
 		$country = Request::get('country');
 		$status = Request::get('status');
@@ -204,7 +211,7 @@ class MainController extends Controller
 
 	public function complex_search()
 	{
-		$projects = Project::where('title', 'like', '%'.Request::get('search').'%');
+		$projects = Project::where('title', 'like', '%'.Request::get('search').'%')->orderBy('created_at', 'desc');
 		$cities = City::all();
 		$countries = Country::all();
 		$regions = Region::all();

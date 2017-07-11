@@ -187,29 +187,50 @@
   
   	<!--ajax search-->
 	<script>
-		$('#country').on('change', function(e) { 	
-		    console.log(e);
-		    var coun_id = e.target.value;
-		    $.get('/ajax-call?coun_id=' + coun_id, function (data) {
+
+		function getRegions(id){
+			$.get('/ajax-call?coun_id=' + id, function (data) {
 		    	$('#city').empty();
 		        $('#city').append('<option value="" disabled selected>'+'Выберите город'+'</option>');
 			        $.each(data, function(index, cityObj){
 			            $('#city').append('<option value="'+cityObj.id+'">'+cityObj.name+'</option>');
 			        });
-			    });
-			});
+		    });
+		}
 
-		$('#city').on('change', function(e) {
-		    console.log(e);
-		    var region_id = e.target.value;
-		    $.get('/ajax-get?region_id=' + region_id, function (data) {
+		function getCities(id){
+			$.get('/ajax-get?region_id=' + id, function (data) {
 		    	$('#region').empty();
 		    	$('#region').append('<option value="" disabled selected>'+'Выберите район'+'</option>');
 		        $.each(data, function(index, regionObj){
 		            $('#region').append('<option value="'+regionObj.id+'">'+regionObj.name+'</option>');
 		        });
 		    });
+		}
+
+		$('#country').on('change', function(e) { 	
+		    console.log(e);
+		    var coun_id = e.target.value;
+		    getRegions(coun_id);
 		});
+
+		$('#city').on('change', function(e) {
+		    console.log(e);
+		    var region_id = e.target.value;
+		    getCities(region_id);
+		});
+
+		$(document).ready(function(){
+			var search = location.search.substr(1,location.search.length).split('&');
+			search.forEach(function(elem){
+				if (elem.indexOf('country')>=0) getRegions(search[1].split('=')[1]);
+				if (elem.indexOf('city')>=0) getCities(search[2].split('=')[1]);
+			});
+		});
+
+		console.log('test');
+
+
 	</script>
 
 	<!--show map multiple projects and markers on events -->

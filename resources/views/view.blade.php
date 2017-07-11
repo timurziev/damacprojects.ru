@@ -3,7 +3,7 @@
 
 
 <div class="content">
-		<div class="title-banner" style="background-image: url(../img/investor_relations.jpg);">
+		<div class="title-banner" style="background-image: url(../img/projects_background.jpg);">
 			<div class="wrapper">
 				<h2>{{ $project->title}}</h2>
 			</div>
@@ -56,7 +56,7 @@
 					<div class="tab-info">
 						<ul class="tab-nav">
 						    @if ($project->facilities) <li class="active" id="tab1">Удобства</li>  @endif
-							@if ($plans->count()) <li class="{{!$project->facilities ? 'active' : ''}}" id="tab2">Планировка этажей</li> @endif
+							@if ($plans->count()) <li class="{{!$project->facilities ? 'active' : ''}}" id="tab2">Планировка</li> @endif
 							@if ($project->community_info) <li class="{{!$project->facilities && !$plans->count() ? 'active' : ''}}" id="tab3">Дополнительная информация</li> @endif
 							@if ($updates->count()) <li class="{{!$plans->count() && !$project->facilities && !$project->community_info ? 'active' : ''}}" id="tab4">Ход строительства</li> @endif
 						</ul>
