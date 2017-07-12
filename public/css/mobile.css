@@ -262,6 +262,9 @@
 	.center .cards-small:nth-child(2n) {
 		margin-bottom: 65px;
 	}
+	.cards>div img {
+		max-height: 100%;
+	}
 	.media-center .list-item .item-wrapper {
 		padding: 0;
 	}
