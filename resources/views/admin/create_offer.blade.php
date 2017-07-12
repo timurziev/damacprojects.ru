@@ -32,6 +32,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="content" class="col-lg-2 control-label">Цена</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" rows="1" id="text" name="price">@if(Request::is('edit_offer/*')){!! $offer->price !!}@endif</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Расположение</label>
                         <div class="col-lg-10">
                             <textarea class="form-control" rows="1" id="text" name="location">@if(Request::is('edit_offer/*')){!! $offer->location !!}@endif</textarea>

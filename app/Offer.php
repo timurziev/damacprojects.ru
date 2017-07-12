@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
-    protected $fillable = ['title', 'description', 'text', 'slug', 'location', 'image', 'media', 'view_pdf', 'download_pdf', 'lat', 'lng'];
+    protected $fillable = ['title', 'description', 'text', 'price', 'slug', 'location', 'image', 'media', 'view_pdf', 'download_pdf', 'lat', 'lng'];
 
     public function offer_images()
     {

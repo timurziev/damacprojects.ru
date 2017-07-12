@@ -272,6 +272,7 @@ class AdminController extends Controller
         $offer->title = $request->get('title');
         $offer->description = $request->get('description');
         $offer->text = $request->get('text');
+        $offer->price = $request->get('price');
         $offer->slug = $slug;
         $offer->media = $request->get('media');
         $offer->location = $request->get('location');
@@ -310,6 +311,7 @@ class AdminController extends Controller
         $offer->title = $request->get('title');
         $offer->description = $request->get('description');
         $offer->text = $request->get('text');
+        $offer->price = $request->get('price');
         $offer->slug = $slug;
         $offer->media = $request->get('media');
         $offer->location = $request->get('location');
@@ -368,7 +370,7 @@ class AdminController extends Controller
 
         $upload = Image::make($input)->fit(1750, 967)->save($destinationPath);
         $upload2 = Image::make($input)->fit(802, 580)->save($destinationPath2);
-        $upload3 = Image::make($input)->fit(401, 580)->save($destinationPath3);
+        $upload3 = Image::make($input)->fit(360, 240)->save($destinationPath3);
         $upload4 = Image::make($input)->save($destinationPath4);
         
  

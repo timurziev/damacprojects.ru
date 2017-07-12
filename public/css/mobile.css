@@ -98,19 +98,18 @@
 	}
 	.cards>div h3 {
 	    font-size: 1.475rem;
-		margin: 20px;
 	}
 	.cards>div p {
 	    line-height: 1.5;
-	    margin: 0 20px 0;
+	    margin: 0 30px 0;
 	    top: 200px;
 	}
 	.carousel .cards>div p {
 	    top: 280px;
 	}
-	.cards .location, .cards.center .location {
+	/*.cards .location, .cards.center .location {
 		margin: 0 20px 100px 20px;
-	}
+	}*/
 	.cards.center .location {
 		right: auto;
 	}
@@ -135,6 +134,16 @@
 }
 
 @media (max-width: 992px) {
+	.center .cards-small {
+		width: 45%;
+		margin: 0 9% 65px 0;
+	}
+	.center .cards-small:nth-child(3n) {
+		margin: 0 9% 65px 0;
+	}
+	.center .cards-small:nth-child(2n) {
+		margin: 0;
+	}
 	.container {
 		width: 750px;
 	}
@@ -189,9 +198,9 @@
 	.grid-view .info-block {
 		height: auto;
 	}
-	.cards .spotlight-preview {
+	/*.cards .spotlight-preview {
 		display: none;
-	}
+	}*/
 	.item-desc .shadow {
 		padding: 15px;
 	}
@@ -201,10 +210,10 @@
 	.info-block p {
 		font-size: 16px;
 	}
-	.cards .location {
+	/*.cards .location {
 		margin: 0 20px 80px 20px;
 		padding: 10px;
-	}
+	}*/
 	.readmore {
 	    padding: 15px 80px 15px 20px;
 	}
@@ -250,6 +259,9 @@
 }
 
 @media (max-width: 767px) {
+	.center .cards-small:nth-child(2n) {
+		margin-bottom: 65px;
+	}
 	.media-center .list-item .item-wrapper {
 		padding: 0;
 	}
@@ -303,9 +315,9 @@
 	.carousel .last-projects-items .h3-block {
 	    top: 30px;
 	}
-	.carousel .cards>div p {
+	/*.carousel .cards>div p {
 	    display: none;
-	}
+	}*/
 
 	/* advanced filter */
 	.advanced-filter {
@@ -369,10 +381,10 @@
 		margin-top: 50px;
 		margin-bottom: 50px;
 	}
-	.cards .location {
+	/*.cards .location {
 		margin: 0 20px 80px 20px;
 		padding: 10px;
-	}
+	}*/
 	.cards .readmore {
 	    padding: 15px 80px 15px 20px;
 	}
@@ -386,8 +398,7 @@
 		display: none;
 	}
 	.center .cards-small, .cards .cards-big {
-		width: 100%;
-		float: none;
+		width: 45%;
 	}
 	.cards>div h3 {
 		font-size: 1.275rem;
@@ -470,5 +481,11 @@
 	}
 	#map,.popup-manager {
 		max-width: 300px;
+	}
+}
+
+@media (max-width: 473px) {
+	.center .cards-small {
+		width: 99%;
 	}
 }

@@ -1,11 +1,11 @@
 <div class="cards center">
 @forelse ($projects as $key => $project)
-	<div class="{{ round($key/2) % 2 ? 'cards-big' : 'cards-small' }}">
+	<div class="cards-small">
 			<a href="{{ action('MainController@show', $project->slug) }}" class="overlay"></a>
-			<img src="{{ URL::asset('uploads/projects') }}/{{ round($key/2) % 2 ? 'big' : 'small' }}/{{ $project->image }}">
-		<h3>{{ $project->title }}</h3>
-		<p class="spotlight-preview">{{ $project->description }}</p>
-				<div class="location">{{ $project->country->name . ", " . $project->city->name . ", " . $project->region->name }}</div>
+			<img src="{{ URL::asset('uploads/projects') }}/small/{{ $project->image }}">
+		<h3>{{ Str::words($project->title, $words = 4, $end = '...') }}</h3>
+		<div class="location">{{ $project->country->name . ", " . $project->city->name . ", " . $project->region->name }}</div>
+		<p class="spotlight-preview">{{ Str::words($project->description, $words = 10, $end = '...') }}</p>
 		<a class="readmore" href="{{ action('MainController@show', $project->slug) }}">Подробнее</a>
 	</div>
 @empty

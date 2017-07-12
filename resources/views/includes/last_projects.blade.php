@@ -3,8 +3,18 @@
 		<div class="cards-small">
 			<a href="{{ action('MainController@show_offer', $offer->slug) }}" class="overlay"></a>
 			<img src="{{ URL::asset('uploads/projects/small') }}/{{ $offer->image, 'small' }}">
-			<div class="h3-block"><h3>{{ $offer->title }}</h3></div>
-			<p>{{ $offer->description }}</p>
+			<div class="h3-block"><h3>{{ Str::words($offer->title, $words = 4, $end = '...') }}</h3></div>
+			<p class="loc">{{ $offer->location }}</p>
+			@if(null == $offer->price)
+				<p>{{ Str::words($offer->description, $words = 15, $end = '...') }}</p>
+			@else
+				<p>{{ Str::words($offer->description, $words = 9, $end = '...') }}</p>
+			@endif
+
+			@if(null !== $offer->price)
+				<p class="price">от {{ number_format($offer->price, 0, ',', ' ') }} руб.</p>
+			@endif
+			 
 			<a class="look" href="{!! action('MainController@show_offer', $offer->slug) !!}">Узнать больше</a>
 		</div>
 	@empty

@@ -536,7 +536,6 @@ button {
 
 .cards {
 	overflow: hidden;
-	background: #000;
 }
 
 .carousel {
@@ -552,7 +551,7 @@ button {
 	display: block;
 	margin-top: -14px;
 	z-index: 999;
-	top: 50%;
+	top: 52%;
 	left: 30px;
 	width: 17px;
     height: 29px;
@@ -565,7 +564,7 @@ button {
 	display: block;
 	margin-top: -14px;
 	z-index: 999;
-	top: 50%;
+	top: 52%;
 	right: 30px;
 	width: 17px;
     height: 29px;
@@ -573,10 +572,25 @@ button {
     cursor: pointer;
 }
 
+.carousel .cards-small {
+	max-width: 320px;
+	border: 1px solid #ddd;
+    height: 490px;
+    background: #fff;
+    margin: 0 auto;
+}
+
 .center .cards-small {
- 	width: 33.333334%;
+ 	width: 30%;
+ 	border: 1px solid #ddd;
+    height: 455px;
+    margin: 0 4% 65px 0;
  	float: left;
  	position: relative;
+}
+
+.center .cards-small:nth-child(3n) {
+	margin: 0;
 }
 
 .cards .cards-big {
@@ -587,15 +601,11 @@ button {
 
 .cards>div img {
 	display: block;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-	filter: alpha(opacity=60);
-	-moz-opacity: 0.6;
-	-khtml-opacity: 0.6;
-	opacity: 0.6;
 	width: 100%;
+	max-height: 240px;
 }
 
-.cards .cards-big:hover img,
+/*.cards .cards-big:hover img,
 .cards .cards-small:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
@@ -607,11 +617,11 @@ button {
         -ms-transition: opacity .15s ease-in-out;
         -o-transition: opacity .15s ease-in-out;
         transition: opacity .15s ease-in-out;
-}
+}*/
 
-.cards>div h3, .cards>div p, .cards .look, .cards .readmore {
+/*.cards>div h3, .cards>div p, .cards .look, .cards .readmore {
 	position: absolute;
-}
+}*/
 
 .cards .cards-big .overlay,
 .cards .cards-small .overlay {
@@ -631,17 +641,15 @@ button {
 }
 
 .cards>div h3 {
-	margin: 40px;
+	margin: 15px 30px;
 	top: 0;
-	color: #fff;
 }
 
 .cards>div p {
-	margin: 0 40px 0;
+	margin: 0 30px 0;
 	top: 350px;
 	padding: 0;
 	font-size: 0.875rem;
-	color: #fff;
 	line-height: 1.7;
 }
 .carousel .cards>div p {
@@ -651,6 +659,13 @@ button {
 .cards .look {
 	margin: 0 40px 40px 40px;
 	bottom: 0;
+}
+
+.cards .price {
+	font-size: 22px;
+	padding-top: 10px;
+	text-align: center;
+	color: #af8130;
 }
 
 .look {
@@ -683,15 +698,11 @@ button {
 }
 
 .cards .location {
-	margin: 0 40px 120px 40px;
-	bottom: 0;
-	position: absolute;
-	padding: 15px;
+	margin: 0 10px 10px;
 	border: 1px solid #fff;
 }
 
 .cards.center .location {
-	margin: 0 0 100px 30px;
 	border: 0;
 }
 
@@ -704,7 +715,7 @@ button {
 }
 
 .location {
-	color: #fff;
+	color: #888;
 	padding-left: 20px;
 	font-size: 0.75rem;
 	text-transform: uppercase;
@@ -716,7 +727,23 @@ button {
 	display: inline-block;
 	position: relative;
 	margin-right: 5px;
-	background: url('../img/sprite.png') no-repeat -197px -17px;
+	background: url('../img/sprite.png') no-repeat -367px -15px;
+	width: 9px;
+	height: 15px;
+}
+
+.loc {
+	color: #888;
+	text-transform: uppercase;
+	padding-bottom: 10px !important;
+}
+
+.loc:before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	margin-right: 5px;
+	background: url('../img/sprite.png') no-repeat -367px -15px;
 	width: 9px;
 	height: 15px;
 }
@@ -1892,6 +1919,10 @@ button {
 	}*/
 }
 
+@media screen and (max-width: 966px) {
+	
+}
+
 @media screen and (max-width: 870px) {
 	header .phone {
 		display: none;
@@ -1966,6 +1997,11 @@ button {
     display: block;
     width: 100%;
     height: auto;
+}
+
+#owl-demo {
+	max-width: 1040px;
+	margin: 0 auto;
 }
 
 /*
@@ -2113,13 +2149,16 @@ button {
 	position: relative!important;
 	word-wrap: break-word;
 }
-.last-projects-items .h3-block {
+/*.last-projects-items .h3-block {
 	position: absolute;
-	top: 40px;
-}
+}*/
 .last-projects-items .h3-block h3 {
 	margin: 0;
-	padding: 0 40px;
+	padding: 15px 30px;
+}
+
+.cards .cards-small:hover h3 {
+	color: #888;
 }
 
 .single-page.projects .offers-wrapper {
