@@ -173,6 +173,7 @@
 	.list-view .item img {
 		width: 100%;
 	    margin-top: 0;
+	    max-height: 100%;
 	}
 	.list-view .item .readmore {
 		margin: 0;
@@ -261,9 +262,6 @@
 @media (max-width: 767px) {
 	.center .cards-small:nth-child(2n) {
 		margin-bottom: 65px;
-	}
-	.cards>div img {
-		max-height: 100%;
 	}
 	.media-center .list-item .item-wrapper {
 		padding: 0;
