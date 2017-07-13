@@ -2,7 +2,7 @@
 	@forelse($offers as $offer)
 		<div class="cards-small">
 			<a href="{{ action('MainController@show_offer', $offer->slug) }}" class="overlay"></a>
-			<img src="{{ URL::asset('uploads/projects/small') }}/{{ $offer->image, 'small' }}">
+			<img src="{{ URL::asset('uploads/projects/big') }}/{{ $offer->image, 'small' }}">
 			<div class="h3-block"><h3>{{ Str::words($offer->title, $words = 4, $end = '...') }}</h3></div>
 			<p class="loc">{{ $offer->location }}</p>
 			@if(null == $offer->price)

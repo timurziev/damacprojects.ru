@@ -1,7 +1,7 @@
 <div class="list-view">
 	@forelse($offers as $offer)
 		<div class="item">
-			<div class="img"><img src="{{ URL::asset('uploads/projects/small') }}/{{ $offer->image, 'small' }}"></div>
+			<div class="img"><img src="{{ URL::asset('uploads/projects/big') }}/{{ $offer->image, 'small' }}"></div>
 			<div class="info-block">
 				<h3>{{ $offer->title }}</h3>
 				@if(!empty($offer->location))<div class="location">{{ $offer->location }}</div>@endif

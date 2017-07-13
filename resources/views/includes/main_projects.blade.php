@@ -2,7 +2,7 @@
 	<div class="cards-small">
 	<!-- <div class="{{ round($key/2) % 2 ? 'cards-big' : 'cards-small' }}"> -->
 		<a href="{{ action('MainController@show', $project->slug) }}" class="overlay"></a>
-			<img src="{{ URL::asset('uploads/projects') }}/small/{{ $project->image }}">
+			<img src="{{ URL::asset('uploads/projects') }}/big/{{ $project->image }}">
 			<!-- <img src="{{ URL::asset('uploads/projects') }}/{{ round($key/2) % 2 ? 'big' : 'small' }}/{{ $project->image }}"> -->
 		<h3>{{ Str::words($project->title, $words = 4, $end = '...') }}</h3>
 		<div class="location">{{ $project->city->name }}</div>
