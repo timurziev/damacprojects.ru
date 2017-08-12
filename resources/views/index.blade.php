@@ -8,13 +8,9 @@
 					<div class="item">
 						<img src="{{ URL::asset('uploads/projects/large') }}/{{ $post->image }}" alt="">
 						<div class="wrapper item-desc">
-							<div class="container">
-								<div class="shadow">
-									<h2><a href="{{ action('MainController@show', $post->slug) }}">{{ $post->title }}</a></h2>
-									<div class="info-block"><p>{{ $post->description }}</p></div>
-								</div>
-							</div>
-						</div>
+							<h2>{{ $post->title }}</h2>
+							<a class="readmore" href="{{ action('MainController@show', $post->slug) }}">Подробнее</a>
+						</div> 
 					</div>
 					@endif
 				@endforeach
@@ -42,12 +38,12 @@
 			<div class="cards center">
 				@include('includes/main_projects')
 			</div>
-			<div class="section-title text-center">
-				<h3>Официальные сайты компаний, с которыми сотрудничает агентсво «SHEIKH REAL ESTATE»</h3>
-			</div>
 			<div class="partners">
-				<a href="https://www.damacproperties.com" target="_blank"><img src="img/damac-logo.jpg"></a>
-				<a href="http://www.palace-emerald.com" target="_blank"><img src="img/palace-logo.png"></a>
+				<img src="img/banner.jpg">
+				<img src="img/banner.jpg">
+				<img src="img/banner.jpg">
+				<img src="img/banner.jpg">
+				<img src="img/banner.jpg">
 			</div>
 		</div>
 	</div>

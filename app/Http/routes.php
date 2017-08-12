@@ -16,39 +16,17 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'MainController@index');
     Route::get('pages/{slug}', 'MainController@show_page');
     Route::get('/about', 'MainController@about');
-    Route::get('/events', 'MainController@events');
-    Route::post('/events', 'MainController@event_email');
-    Route::get('/event/{slug}', 'MainController@show_event');
+    Route::get('/events', function () { return view('events'); });
+    Route::post('/events', 'UsersController@store');
     Route::get('/investor_relations', function () { return view('investor_relations'); });
     Route::get('/contacts', function () { return view('contacts'); });
-    Route::get('/site_map', function () { return view('site_map'); });
-    Route::get('/conditions', function () { return view('conditions'); });
     Route::get('/message', 'MainController@message');
     Route::get('/offers', 'MainController@offers');
-    Route::get('/offer/{slug}', 'MainController@show_offer');
     Route::get('/projects', 'MainController@projects');
-
-    Route::group(['prefix' => 'media_center'], function() {
-        Route::get('/', 'MainController@releases_and_news');
-        Route::get('photo_gallery', 'MainController@img_gallery');
-        Route::get('photo_gallery/{slug}', 'MainController@show_img');
-        Route::get('video_gallery', 'MainController@video_gallery');
-    });
-    
+    Route::get('/media_center', 'MainController@releases_and_news');
     Route::get('/press_releases', 'MainController@releases');
     Route::get('/release/{slug}', 'MainController@show_release');
     Route::get('/news', 'MainController@news');
-    Route::get('/ajax-call', function(){
-        $coun_id = Input::get('coun_id');
-        $city = \App\City::where('country_id', '=', $coun_id )->get();
-        return response()->json($city);
-    });
-    Route::get('/ajax-get', function(){
-        $region_id = Input::get('region_id');
-        $region = \App\Region::where('city_id', '=', $region_id )->get();
-        return response()->json($region);
-    });
-    
     Route::get('/new/{slug}', 'MainController@show_new');
     Route::get('/all_projects', 'MainController@projects');
     Route::get('/in_progress_projects', 'MainController@projects');
@@ -63,23 +41,16 @@ Route::group(['middleware' => ['web']], function () {
 
 //  Admin panel
     Route::get('/create', ['uses' => 'AdminController@create', 'middleware' => 'auth']);
-    Route::get('/create_offer', ['uses' => 'AdminController@create_offer', 'middleware' => 'auth']);
     Route::post('/create', ['uses' => 'AdminController@store', 'middleware' => 'auth']);
-    Route::post('/create_offer', ['uses' => 'AdminController@store_offer', 'middleware' => 'auth']);
     Route::get('/create_city', ['uses' => 'AdminController@create_city', 'middleware' => 'auth']);
     Route::post('/create_city', ['uses' => 'AdminController@store_city', 'middleware' => 'auth']);
     Route::post('/create_city/{slug}',['uses' => 'AdminController@destroy_city', 'middleware' => 'auth']);
     Route::post('upload', ['uses' => 'AdminController@uploadFiles', 'middleware' => 'auth']);
     Route::post('upload_plans', ['uses' => 'AdminController@uploadPlans', 'middleware' => 'auth']);
-    Route::post('upload_updates', ['uses' => 'AdminController@uploadUpdates', 'middleware' => 'auth']);
     Route::get('/admin', ['uses' => 'AdminController@projects', 'middleware' => 'auth']);
-    Route::get('/ad_offers', ['uses' => 'AdminController@offers', 'middleware' => 'auth']);
     Route::get('/edit/{slug}', ['uses' => 'AdminController@edit', 'middleware' => 'auth']);
-    Route::get('/edit_offer/{slug}', ['uses' => 'AdminController@edit_offer', 'middleware' => 'auth']);
     Route::post('/edit/{slug}',['uses' => 'AdminController@update', 'middleware' => 'auth']);
-    Route::post('/edit_offer/{slug}', ['uses' => 'AdminController@update_offer', 'middleware' => 'auth']);
     Route::post('/admin/{slug}',['uses' => 'AdminController@destroy', 'middleware' => 'auth']);
-    Route::post('/ad_offers/{slug}',['uses' => 'AdminController@destroy_offer', 'middleware' => 'auth']);
 
     Route::get('/create_rel', function () { return view('admin/create_rel_new'); });
     Route::post('/create_rel', ['uses' => 'AdminController@store_rel', 'middleware' => 'auth']);
@@ -94,13 +65,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/edit_new/{slug}', ['uses' => 'AdminController@edit_new', 'middleware' => 'auth']);
     Route::post('/edit_new/{slug}',['uses' => 'AdminController@update_new', 'middleware' => 'auth']);
     Route::post('/novel/{slug}',['uses' => 'AdminController@destroy_new', 'middleware' => 'auth']);
-
-    Route::get('/create_event', function () { return view('admin/create_event'); });
-    Route::post('/create_event', ['uses' => 'AdminController@store_event', 'middleware' => 'auth']);
-    Route::get('/event', ['uses' => 'AdminController@event', 'middleware' => 'auth']);
-    Route::get('/edit_event/{slug}', ['uses' => 'AdminController@edit_event', 'middleware' => 'auth']);
-    Route::post('/edit_event/{slug}',['uses' => 'AdminController@update_event', 'middleware' => 'auth']);
-    Route::post('/event/{slug}',['uses' => 'AdminController@destroy_event', 'middleware' => 'auth']);
 
     Route::get('/create_page', ['uses' => 'AdminController@create_static', 'middleware' => 'auth']);
     Route::post('/create_page', ['uses' => 'AdminController@store_static', 'middleware' => 'auth']);
@@ -117,10 +81,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/email', ['uses' => 'MainController@email', 'middleware' => 'auth']);
     Route::post('/destroy_plan/{slug}',['uses' => 'AdminController@destroy_plan', 'middleware' => 'auth']);
     Route::post('/destroy_image/{slug}',['uses' => 'AdminController@destroy_image', 'middleware' => 'auth']);
-    Route::post('/destroy_offer_image/{slug}',['uses' => 'AdminController@destroy_offer_image', 'middleware' => 'auth']);
-    Route::post('/destroy_update/{slug}',['uses' => 'AdminController@destroy_update', 'middleware' => 'auth']);
-
-
     Route::auth();
 });
 

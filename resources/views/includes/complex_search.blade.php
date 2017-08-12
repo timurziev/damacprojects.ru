@@ -1,41 +1,29 @@
 <div class="filter advanced-filter">
 			<div class="wrapper">
 				<div class="filter-text">
-					<h4>Найти свою уникальную недвижимость</h4>
-					<p>Узнайте больше о недвижимости с помощью этого поля. Укажите страну, город и район для отображения информации нужного вам проекта. В вашем распоряжении жилые апартаменты, отельные апартаменты, отельные номера, виллы и офисные здания.</p>
+					<h4>Найти дом вашей мечты</h4>
+					<p>Хотите узнать больше о наших проектах? Высотные, мода резиденции, фирменные квартиры, розничные или коммерческих разработок - от плана собственности и готовые к въезду</p>
 				</div>
 				<form action="{{ action('MainController@complex_search') }}" method="get" id="filter-form">
 					<div class="row1">
 						<div class="input-wrapper"> 
-							<input type="text" name="search" placeholder="Введите ключевое слово" value="{{ Request::input('search') }}">
+							<input type="text" name="search" placeholder="Что ищем?">
 						</div>
 						<div class="select-wrapper">
-							<select class="drop-list" name="country" id="country">
-								<option value="" selected>Выберите страну</option>
-								@foreach ($countries as $country)
-									<option value="{{ $country->id }}"
-									@if ($country->id == Request::input('country') )
+							<select class="drop-list" name="city">
+								<option disabled selected>Выберите город</option>
+								@foreach ($locations as $location)
+									<option value="{{ $location->id }}"
+									@if ($location->id == Request::input('city') )
 										selected
 									@endif
-										>{{ $country->name }}</option>
+										>{{ $location->name }}</option>
 								@endforeach	
-							</select>
-							<div class="select-arrow"></div>
-						</div>
-						<div class="select-wrapper">
-							<select class="drop-list" name="city" id="city">
-							
 							</select>
 							<div class="select-arrow"></div>
 						</div>
 					</div>
 					<div class="row2">
-						<div class="select-wrapper"> 
-							<select class="drop-list" name="region" id="region">
-							
-							</select>
-							<div class="select-arrow"></div>
-						</div>
 						<div class="select-wrapper"> 
 							<select class="drop-list" name="status">
 								<option disabled selected>Выберите статус</option>

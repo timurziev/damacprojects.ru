@@ -41,67 +41,19 @@
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label"></label>
                         <div class="col-lg-10">
-                            <select class="form-control" name="country">
-                                <option disabled selected>Выберите страну</option>   
-                                @foreach ($countries as $country)
-                                    <option value="{{ $country->id }}"
-                                    @if ($country->id == $project->country_id)
-                                        selected
-                                    @endif
-                                        >{{ $country->name }}</option>
-                                @endforeach 
-                            </select>
-                        </div>
-                        {{ Request::input('country') }}
-                    </div>
-                    <div class="form-group">
-                        <label for="content" class="col-lg-2 control-label"></label>
-                        <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
-                                @foreach ($cities as $city)
-                                    <option value="{{ $city->id }}"
-                                    @if ($city->id == $project->city_id)
+                                @foreach ($locations as $location)
+                                    <option value="{{ $location->id }}"
+                                    @if ($location->id == $project->location_id)
                                         selected
                                     @endif
-                                        >{{ $city->name }}</option>
+                                        >{{ $location->name }}</option>
                                 @endforeach 
                             </select>
                         </div>
                         {{ Request::input('city') }}
                     </div>
-                    <div class="form-group">
-                        <label for="content" class="col-lg-2 control-label"></label>
-                        <div class="col-lg-10">
-                            <select class="form-control" name="region">
-                                <option disabled selected>Выберите район</option>   
-                                @foreach ($regions as $region)
-                                    <option value="{{ $region->id }}"
-                                    @if ($region->id == $project->region_id)
-                                        selected
-                                    @endif
-                                        >{{ $region->name }}</option>
-                                @endforeach 
-                            </select>
-                        </div>
-                        {{ Request::input('region') }}
-                    </div>
-
-                    <script>
-                        var lati = {{$project->lat}};
-                        var lngi = {{$project->lng}};
-                    </script>   
-                    
-                    <div class="form-group">
-                        <label for="" class="col-lg-2 control-label">Карта</label>
-                        <div class="col-lg-10">
-                        <input type="text" id="searchmap_edit" class="form-control">
-                            <div id="map-canvas-edit" class="col-lg-10"></div>
-                        </div>
-                        <input type="hidden" name="lat" id="lat">
-                        <input type="hidden" name="lng" id="lng">
-                    </div>
-                            
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Изображения</label>
                         <div class="col-lg-10">
@@ -117,26 +69,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Удобства</label>
+                        <label for="title" class="col-lg-2 control-label">Сооружение</label>
                         <div class="col-lg-10">
-                            <input id="x" value="{!! $project->facilities !!}" type="hidden" name="facilities">
-                            <trix-editor input="x"></trix-editor>
+                            <input type="text" class="form-control" name="facilities" value="{!! $project->facilities !!}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Дополнительная информация</label>
                         <div class="col-lg-10">
-                            <!-- <input type="text" class="form-control" name="community_info" value="{!! $project->community_info !!}"> -->
-                            <input id="y" value="{!! $project->community_info !!}" type="hidden" name="community_info">
-                            <trix-editor input="y"></trix-editor>
+                            <input type="text" class="form-control" name="community_info" value="{!! $project->community_info !!}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Ход строительства</label>
+                        <label for="title" class="col-lg-2 control-label">Обновления</label>
                         <div class="col-lg-10">
-                            <div action="{{ Request::root() }}/upload_updates" class="dropzone" id="my-update-dropzone">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            </div>
+                            <input type="text" class="form-control" name="update" value="{!! $project->update !!}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -157,7 +104,6 @@
                             <label><input type="radio" name="status" value="1" class="jq-checkbox" @if(1 == $project->category_id) checked @endif><span class="in_text">Завершено</span></label>
                             <label><input type="radio" name="status" value="2" class="jq-checkbox" @if(2 == $project->category_id) checked @endif><span class="in_text">В процессе</span></label>
                             <label><input type="checkbox" value="1" name="is_slide" @if($project->is_slide) checked @endif><span class="in_text">Вывод в слайдер</span></label>
-                            <label><input type="checkbox" value="1" name="is_popular" @if($project->is_popular) checked @endif><span class="in_text">В центре внимания</span></label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -174,46 +120,37 @@
                         </div>
                     </div>
                     </form> 
-                    @if ($images->count())
-                        <div class="form-group">
-                                <label for="content" class="col-lg-2 control-label">Изображения</label>
-                            <div class="col-lg-10">
-                                @foreach ($images as $image)
-                                    <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
-                                            <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    </form>
-                                @endforeach
-                            </div>
+                    <div class="form-group">
+                        @if (empty($images[0]) === false )
+                            <label for="content" class="col-lg-2 control-label">Изображения</label>
+                        @endif
+                        <div class="col-lg-10">
+                            @foreach ($images as $image)
+                                <form method="post" action="{!! action('AdminController@destroy_image', $image->id) !!}" class="pull-left"> 
+                                    @if($project->id == $image->project_id)
+                                        <a href=""><img src="{{ Request::root() }}/uploads/projects/big/{{ $image->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @endif 
+                                </form>
+                            @endforeach
                         </div>
-                    @endif
-                    </br>
-                    @if ($plans->count())
-                        <div class="form-group">
-                                <label for="content" class="col-lg-2 control-label">Планы этажей</label>
-                            <div class="col-lg-10">
-                                @foreach ($plans as $plan)
-                                    <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
-                                            <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    </form>
-                                @endforeach
-                            </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        @if (empty($plans[0]) === false )
+                            <label for="content" class="col-lg-2 control-label">Планы этажей</label>
+                        @endif
+                        <div class="col-lg-10">
+                            @foreach ($plans as $plan)
+                                <form method="post" action="{!! action('AdminController@destroy_plan', $plan->id) !!}" class="pull-left"> 
+                                    @if($project->id == $plan->project_id)
+                                        <a href=""><img src="{{ Request::root() }}/uploads/plans/{{ $plan->name }}"><button type="submit" class="button button-warning">x</button></a>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @endif 
+                                </form>
+                            @endforeach
                         </div>
-                    @endif
-                    @if ($updates->count())
-                        <div class="form-group">
-                                <label for="content" class="col-lg-2 control-label">Ход строительства</label>
-                            <div class="col-lg-10">
-                                @foreach ($updates as $update)
-                                    <form method="post" action="{!! action('AdminController@destroy_update', $update->id) !!}" class="pull-left"> 
-                                            <a href=""><img src="{{ Request::root() }}/uploads/updates/{{ $update->name }}"><button type="submit" class="button button-warning">x</button></a>
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    </form>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
+                    </div>
                 </fieldset>
         </div>
     </div>

@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use App\Project;
 use App\StaticPage;
 use App\MainPage;
-use App\Event;
 use Request;
 
 class ComposerServiceProvider extends ServiceProvider
@@ -26,11 +25,8 @@ class ComposerServiceProvider extends ServiceProvider
         }
 
         view()->composer('layout', function ($view) {
-            $view->with([
-                'static_pages' => StaticPage::orderBy('created_at')->get(),
-                'projects' => Project::all(),
-            ]);
-        });
+            $view->with('static_pages', StaticPage::orderBy('created_at')->get());
+        }); 
 
         view()->composer('investor_relations', function ($view) {
             $view->with('static_pages', StaticPage::orderBy('created_at')->get());

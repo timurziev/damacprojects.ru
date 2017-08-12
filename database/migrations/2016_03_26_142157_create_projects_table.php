@@ -16,11 +16,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->integer('city_id');
-            $table->integer('country_id');
-            $table->integer('region_id');
-            $table->double('lat',20,10)->nullable();
-            $table->double('lng',20,10)->nullable();
+            $table->integer('location_id');
             $table->text('text');
             $table->string('image')->nullable();
             $table->string('media')->nullable();
@@ -29,8 +25,6 @@ class CreateProjectsTable extends Migration
             $table->text('update')->nullable();
             $table->string('download_pdf')->nullable();
             $table->string('view_pdf')->nullable();
-            $table->tinyinteger('is_slide')->nullable();
-            $table->tinyinteger('is_popular')->nullable();
             $table->string('slug')->nullable();
             $table->integer('category_id');
             $table->timestamps();

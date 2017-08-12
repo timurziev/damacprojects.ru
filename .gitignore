@@ -1,9 +1,6 @@
 /vendor
 /node_modules
 /public/storage
-/config
-/public/img
 Homestead.yaml
 Homestead.json
 .env
-composer.json

@@ -17,21 +17,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="content" class="col-lg-1 control-label"></label>
-                        <div class="col-lg-10">
-                            <select class="form-control" name="country">
-                                <option disabled selected>Выберите страну</option>   
-                                @foreach ($countries as $country)
-                                    <option value="{{ $country->id }}"
-                                    @if ($country->id == Request::input('country') )
-                                        selected
-                                    @endif
-                                        >{{ $country->name }}</option>
-                                @endforeach 
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-1">
                             <button type="submit" class="btn btn-primary" id ="submit-form">Отправить</button>
                         </div>
@@ -57,11 +42,11 @@
                                     <th>Заголовок</th>
                                 </tr>
                             </thead>
-               @foreach ($cities as $city)
+               @foreach ($locations as $location)
                     <tr>
-                        <td>{{ $city->id }}</td>
-                        <td>{!! $city->name !!}</td>
-                        <td><form method="post" action="{!! action('AdminController@destroy_city', $city->slug) !!}" class="pull-left">
+                        <td>{{ $location->id }}</td>
+                        <td>{!! $location->name !!}</td>
+                        <td><form method="post" action="{!! action('AdminController@destroy_city', $location->slug) !!}" class="pull-left">
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                             <button type="submit" class="btn btn-warning">Удалить</button>
                         </form></td>

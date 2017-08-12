@@ -147,8 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        //Illuminate\Html\HtmlServiceProvider::class,
-        //Collective\Html\HtmlServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,8 +209,6 @@ return [
         'Form'=> 'Illuminate\Html\FormFacade',
         'HTML'=> 'Illuminate\Html\HtmlFacade',
         'Image' => 'Intervention\Image\Facades\Image',
-        // 'Form' => Collective\Html\FormFacade::class,
-        // 'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

@@ -15,28 +15,24 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ URL::to('/admin') }}">Проекты</a></li>
-                <li class="{{ Request::is('ad_offers') ? 'active' : '' }}"><a href="{{ URL::to('/ad_offers') }}">Предложения</a></li>
                 <li class="{{ Request::is('create') ? 'active' : '' }}"><a href="{{ URL::to('/create') }}">Создать проект <span class="sr-only">(current)</span></a></li>
-                <li class="{{ Request::is('create_offer') ? 'active' : '' }}"><a href="{{ URL::to('/create_offer') }}">Создать предложение <span class="sr-only">(current)</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Медиа центр <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <!-- <li class="{{ Request::is('press_rel') ? 'active' : '' }}"><a href="{{ URL::to('/press_rel') }}">Пресс-релизы</a></li> -->
+                        <li class="{{ Request::is('press_rel') ? 'active' : '' }}"><a href="{{ URL::to('/press_rel') }}">Пресс-релизы</a></li>
                         <li class="{{ Request::is('novel') ? 'active' : '' }}"><a href="{{ URL::to('/novel') }}">Новости</a></li>
-                        <li class="{{ Request::is('event') ? 'active' : '' }}"><a href="{{ URL::to('/event') }}">Мероприятия</a></li>
                         <li class="divider"></li>
-                        <!-- <li class="{{ Request::is('create_rel') ? 'active' : '' }}"><a href="{{ URL::to('/create_rel') }}">Создать пресс-релиз</a></li> -->
+                        <li class="{{ Request::is('create_rel') ? 'active' : '' }}"><a href="{{ URL::to('/create_rel') }}">Создать пресс-релиз</a></li>
                         <li class="{{ Request::is('create_novel') ? 'active' : '' }}"><a href="{{ URL::to('/create_novel') }}">Создать новость</a></li>
-                        <li class="{{ Request::is('create_event') ? 'active' : '' }}"><a href="{{ URL::to('/create_event') }}">Создать мероприятие</a></li>
                     </ul>
                 </li>
-                <!-- <li class="{{ Request::is('add_city') ? 'active' : '' }}"><a href="{{ URL::to('/create_city') }}">Добавить город</a></li> -->
+                <li class="{{ Request::is('add_city') ? 'active' : '' }}"><a href="{{ URL::to('/create_city') }}">Добавить город</a></li>
                 <li class="dropdown">
-                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Страницы <span class="caret"></span></a>  --> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Страницы <span class="caret"></span></a>  
                     <ul class="dropdown-menu" role="menu">
                         <li class="{{ Request::is('about_dam') ? 'active' : '' }}"><a href="{{ URL::to('/about_dam') }}?page=1">O Sheikh</a></li>
                         <li class="{{ Request::is('dam_proj') ? 'active' : '' }}"><a href="{{ URL::to('/dam_proj') }}?page=2">Проекты Sheikh</a></li>
-                        <li class="{{ Request::is('offers_dam') ? 'active' : '' }}"><a href="{{ URL::to('/offers_dam') }}?page=3">Предложения</a></li>
+                        <li class="{{ Request::is('offers') ? 'active' : '' }}"><a href="{{ URL::to('/offers_dam') }}?page=3">Предложения</a></li>
                         <li class="{{ Request::is('investor') ? 'active' : '' }}"><a href="{{ URL::to('/investor') }}?page=4">Инвесторам</a></li>
                     </ul>
                 </li>

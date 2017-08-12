@@ -47,7 +47,7 @@
                                     @if ($country->id == Request::input('country') )
                                         selected
                                     @endif
-                                        >{{ $country->name }}</option>
+                                        >{{ $location->name }}</option>
                                 @endforeach 
                             </select>
                         </div>
@@ -57,42 +57,16 @@
                         <div class="col-lg-10">
                             <select class="form-control" name="city">
                                 <option disabled selected>Выберите город</option>   
-                                @foreach ($cities as $city)
-                                    <option value="{{ $city->id }}"
-                                    @if ($city->id == Request::input('city') )
+                                @foreach ($locations as $location)
+                                    <option value="{{ $location->id }}"
+                                    @if ($location->id == Request::input('city') )
                                         selected
                                     @endif
-                                        >{{ $city->name }}</option>
+                                        >{{ $location->name }}</option>
                                 @endforeach 
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="content" class="col-lg-2 control-label"></label>
-                        <div class="col-lg-10">
-                            <select class="form-control" name="region">
-                                <option disabled selected>Выберите район</option>   
-                                @foreach ($regions as $region)
-                                    <option value="{{ $region->id }}"
-                                    @if ($region->id == Request::input('region') )
-                                        selected
-                                    @endif
-                                        >{{ $region->name }}</option>
-                                @endforeach 
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="" class="col-lg-2 control-label">Карта</label>
-                        <div class="col-lg-10">
-                        <input type="text" id="searchmap" class="form-control">
-                            <div id="map-canvas" class="col-lg-10"></div>
-                        </div>
-                        <input type="hidden" name="lat" id="lat">
-                        <input type="hidden" name="lng" id="lng">
-                    </div>
-                        
                     <div class="form-group">
                         <label for="content" class="col-lg-2 control-label">Изображения</label>
                         <div class="col-lg-10">
@@ -108,26 +82,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Удобства</label>
+                        <label for="title" class="col-lg-2 control-label">Сооружение</label>
                         <div class="col-lg-10">
-                            <input id="x" type="hidden" name="facilities">
-                            <trix-editor input="x"></trix-editor>
+                            <textarea class="form-control" rows="5" name="facilities"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Дополнительная информация</label>
                         <div class="col-lg-10">
-                            <!-- <input type="text" class="form-control" name="community_info"> -->
-                            <input id="y" type="hidden" name="community_info">
-                            <trix-editor input="y"></trix-editor>
+                            <input type="text" class="form-control" name="community_info">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Ход строительства</label>
+                        <label for="title" class="col-lg-2 control-label">Обновления</label>
                         <div class="col-lg-10">
-                            <div action="{{ Request::root() }}/upload_updates" class="dropzone" id="my-update-dropzone">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            </div>
+                            <input type="text" class="form-control" name="update">
                         </div>
                     </div>
                     <div class="form-group">
@@ -148,7 +117,6 @@
                             <label><input type="radio" name="status" value="1" class="jq-checkbox"><span class="in_text">Завершено</span></label>
                             <label><input type="radio" name="status" value="2" class="jq-checkbox" checked><span class="in_text">В процессе</span></label>
                             <label><input type="checkbox" value="1" name="is_slide"><span class="in_text">Вывод в слайдер</span></label>
-                            <label><input type="checkbox" value="1" name="is_popular"><span class="in_text">В центре внимания</span></label>
                         </div>
                     </div>
                     <div class="form-group">
